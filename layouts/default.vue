@@ -55,4 +55,8 @@ body
     z-index: 9999;
   .text-c
     text-align: center;
+  .linkText
+    text-decoration underline
+    color #136CE2
+    cursor pointer
 </style>

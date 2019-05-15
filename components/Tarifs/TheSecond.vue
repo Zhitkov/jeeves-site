@@ -12,9 +12,9 @@
 	      </p>
 	    </v-flex>
 	    <v-flex xs10 >
-		      <p style="display: inline-block; margin-right: 15px" class="title"> Москва </p>
-		      <p style="display: inline-block" class="title"> Санкт-Петербург </p>
-		      <p> Условные границы города </p>
+		      <p style="display: inline-block; margin-right: 15px" class="title linkText"> Москва </p>
+		      <p style="display: inline-block" class="title linkText"> Санкт-Петербург </p>
+		      <p class="link linkText"> Условные границы города </p>
 		    </v-flex>
 	  </v-layout>
 	</v-container>
