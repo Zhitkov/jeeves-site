@@ -1,8 +1,8 @@
 <template>
 	<v-container fluid>
-		<v-layout row wrap>
-			<v-flex md5 xs12>
-				<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
+		<v-layout style="justify-content: center" row wrap>
+			<v-flex xs11>
+				<h1 style="width: 60%" class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
 					<div md6 xs12 class="second-list">
 						<ul>
 							<li>Тщательный отбор в соответствии со строгими критериями.</li>
@@ -29,13 +29,14 @@
 	height auto
 	.second-title
 		color white
-	    font-size 0.8vw 
+	    font-size 10.5px 
 	.second-list
 		ul
 			margin 2% 0
 			li
 				color white
-				font-size 1vw
+				font-size 16px
+				margin-top 5px
 .flex
 	    margin 3vw 0
 </style>

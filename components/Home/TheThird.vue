@@ -1,5 +1,5 @@
 <template>
-	<v-container style="background-size: 100% 100vh; background-position: 1px -25vh; padding: auto 0" fluid>
+	<v-container style="background-size: 100% 100vh; background-position: 1px -25vh; padding: auto 0" >
 	  <v-layout row wrap>
 	    <v-flex xs12 class="text-c third-container">
 	      <h1 class="third-title">K Вашим услугам наш парк новых авто,</h1>
@@ -37,7 +37,7 @@ export default {
 <style scoped>
 @media screen and (max-width: 900px){
 	.third-title {
-		font-size: 20px !important;
+		font-size: 21px !important;
 	}
 	.container {
 		background-position: 1px -30vh !important;

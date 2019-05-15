@@ -26,8 +26,8 @@
 	</v-container>
 </template>
 <script>
-import appInstallButtons from '~/components/appInstallButtons.vue'
-import PhoneForm from '~/components/PhoneForm.vue'
+import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
+import PhoneForm from '~/components/layouts/PhoneForm.vue'
 
 export default {
 	components: {

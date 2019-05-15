@@ -110,9 +110,9 @@ img.second
 	width: 40%
 	opacity: 1
 img.third
-	margin-top 30vh
-	right 4vw !important
-	width: 20%
+	margin-top 25vh
+	right 8vw !important
+	width: 25%
 	opacity: 1
 img.four
 	margin-top 0vh

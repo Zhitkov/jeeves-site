@@ -21,7 +21,7 @@
         ripple
         class="text-capitalize"
       >
-        Item {{ n }}
+        <nuxt-link to="/tarifs"> tarifs </nuxt-link>
 
       </v-tab>
       <v-tab-item

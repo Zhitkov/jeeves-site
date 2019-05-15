@@ -1,37 +1,26 @@
 <template>
   <v-layout class="full-screen" row wrap>
-    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="require('../../static/Uxar1First.png')" :src="require('../../static/Uxar1First.png')">
+    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" :src="require('../../static/tarifs/preview.png')">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 md6>
-            <Logo class="opa"/>
+            <img style="padding-bottom: 65px;" :src="logo">
           </v-flex>
         </v-layout>
       </v-container>
     </v-parallax>
-    <v-flex style="background: white" xs12>
-      <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
-      <Border style="width: 100vw;"/>
-      <h1 class="First-text">Установить</h1>
-      <appInstallButtons/>
-    </v-flex>
   </v-layout>
 </template>
 
 <script>
-import Logo from '~/components/layouts/Logo.vue'
-import Border from '~/components/layouts/Border.vue'
-import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
 
   export default {
     components: {
-      Logo,
-      Border,
-      appInstallButtons
+
     },
     data () {
       return {
-        
+        logo: require('../../static/Fourth/logo2.png'),
       }
     },
     methods: {
@@ -49,9 +38,11 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
 <style lang="stylus" scoped>
 .full-screen
   width 100vw
+div[data-v-00bd8e1c].container
+  align-items: flex-end !important
 .parallax-screen
   width 100vw
-  height 80vh !important
+  height 74vh !important
   .v-parallax__content > .container
     align-content: center;
     align-items: center;
