@@ -1,6 +1,6 @@
 <template>
 	<v-container style="width: 100vw">
-	  <v-layout style="width: 100%" v-for="(car, i) in cars" row wrap>
+	  <v-layout style="width: 100%" v-for="car in cars" row wrap>
 	    <v-flex xs7>
 	    	<!-- hide-delimiters
 	      	hide-delimiter-background -->
@@ -8,10 +8,6 @@
 		    hide-delimiter-background
 		    height="100%"
 		    style="box-shadow: none;">
-		    <style type="text/css">.v-carousel__controls__item:nth-child(1){background-image: url({{ car.img[0] }})}</style>
-		    <style type="text/css">.v-carousel__controls__item:nth-child(2){background-image: url({{ car.img[1] }})}</style>
-		    <style type="text/css">.v-carousel__controls__item:nth-child(3){background-image: url({{ car.img[2] }})}</style>
-		    <style type="text/css">.v-carousel__controls__item:nth-child(4){background-image: url({{ car.img[3] }})}</style>
 		    <v-carousel-item
 		      v-for="(img, i) in car.img"
 		      :key="i"
@@ -19,6 +15,22 @@
 		      contain
 		    ></v-carousel-item>
 		  </v-carousel>
+		  <div class="v-carousel__controls">asdasdasd
+				    <div class="v-item-group theme--dark">
+				        <button type="button" value="0" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
+				            <div class="v-btn__content"></div>
+				        </button>
+				        <button type="button" value="1" class="v-btn v-btn--active v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
+				            <div class="v-btn__content"></div>
+				        </button>
+				        <button type="button" value="2" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
+				            <div class="v-btn__content"></div>
+				        </button>
+				        <button type="button" value="3" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
+				            <div class="v-btn__content"></div>
+				        </button>
+				    </div>
+				</div>
 	    </v-flex>
 	    <v-flex xs5>
 	      	<b>Бизнес</b>
@@ -122,10 +134,10 @@
 		    			name: 'Mercedes 1',
 		    			img: 
 		    			[
-		    				require('../../static/tarifs/cars/plus1.png'),
-		    				require('../../static/tarifs/cars/vip1.png'),
-		    				require('../../static/tarifs/cars/luxe1.png'),
-		    				require('../../static/tarifs/cars/business1.png'),
+		    				require('../../static/cars/plus1.png'),
+		    				require('../../static/cars/vip1.png'),
+		    				require('../../static/cars/luxe1.png'),
+		    				require('../../static/cars/business1.png'),
 		    			],
 		    			info:
 		    			{
@@ -237,10 +249,10 @@
 		    			name: 'Mercedes 1',
 		    			img: 
 		    			[
-		    				require('../../static/tarifs/preview.png'),
-		    				require('../../static/tarifs/cars/vip1.png'),
-		    				require('../../static/tarifs/cars/luxe1.png'),
-		    				require('../../static/tarifs/cars/business1.png'),
+		    				require('../../static/cars/plus1.png'),
+		    				require('../../static/cars/vip1.png'),
+		    				require('../../static/cars/luxe1.png'),
+		    				require('../../static/cars/business1.png'),
 		    			],
 		    			info:
 		    			{
@@ -389,20 +401,14 @@ b{
 	display: none !important;
 }
 button.v-carousel__controls__item{
+    background-image: url(http://localhost:3000/_nuxt/static/tarifs/cars/plus1.png);
     width: 100px;
     height: 100px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
-button.v-carousel__controls__item:hover{
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-/*.v-carousel__controls:nth-child(1){
+/*.v-carousel__controls:first-child{
 	display: none !important;
 }*/
 </style>

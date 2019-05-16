@@ -10,10 +10,10 @@
     <v-flex xs12>
         <TheSecond />
       </v-flex>
-      <!-- <v-flex xs12>
+      <v-flex xs12>
         <TheThird />
       </v-flex>
-      <v-flex xs12>
+      <!-- <v-flex xs12>
         <TheFourth />
       </v-flex> -->
   </v-layout>
@@ -22,14 +22,14 @@
 <script>
 import TheFirst from '~/components/Tarifs/TheFirst.vue'
 import TheSecond from '~/components/Tarifs/TheSecond.vue'
-// import TheThird from '~/components/Tarifs/TheThird.vue'
+import TheThird from '~/components/Tarifs/TheThird.vue'
 // import TheFourth from '~/components/Tarifs/TheFourth.vue'
 
 export default {
   components: {
     TheFirst,
     TheSecond,
-    // TheThird,
+    TheThird,
     // TheFourth,
   }
 }
