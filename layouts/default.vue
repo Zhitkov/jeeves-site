@@ -59,4 +59,6 @@ body
     text-decoration underline
     color #136CE2
     cursor pointer
+  .neue
+    font-family 'Neue' 
 </style>

@@ -121,6 +121,60 @@
 	      <div v-for="infoCar in infoCars"></div>
 
 	    </v-flex>
+	    <v-flex xs12>
+	    	 <v-expansion-panel>
+      <v-expansion-panel-content>
+        <template v-slot:header>
+          	<div>
+          		<p>Подробнее о тарифе <v-icon dark>expand_more</v-icon></p>
+    			<v-img contain :src="carInfoBorder"></v-img>
+    		</div>
+        </template>
+        <v-card>
+          <v-card-text>
+	  			<v-layout row wrap>
+	  				<v-flex xs6>
+	  				  <div v-for="left in car.about.left">
+	  				  	<p class="title">{{ left.title }}</p>
+	  				  	<div v-if="left.subtile">
+	  				  		<p v-for="subtitle in left.subtile">
+	  				  			{{ subtitle }}
+	  				  		</p>
+	  				  	</div>
+	  				  	<div v-if="left.subtitleCost">
+	  				  		<div class="UpDownBorder" v-for="aboutCost in left.subtitleCost">
+	  				  			<p>{{ aboutCost.text }}</p>
+								<v-spacer></v-spacer>
+	  				  			<p>{{ aboutCost.cost }}</p>
+
+	  				  		</div>
+	  				  	</div>
+	  				  </div>
+	  				</v-flex>
+	  				<v-flex xs6>
+	  				  <div v-for="right in car.about.right">
+	  				  	<p class="title">{{ right.title }}</p>
+	  				  	<div v-if="right.subtile">
+	  				  		<p v-for="subtitle in right.subtile">
+	  				  			{{ subtitle }}
+	  				  		</p>
+	  				  	</div>
+	  				  	<div v-if="right.subtitleCost">
+	  				  		<div class="UpDownBorder" v-for="aboutCost in right.subtitleCost">
+	  				  			<p>{{ aboutCost.text }}</p>
+								<v-spacer></v-spacer>
+	  				  			<p>{{ aboutCost.cost }}</p>
+
+	  				  		</div>
+	  				  	</div>
+	  				  </div>
+	  				</v-flex>
+	  			</v-layout>
+          </v-card-text>
+        </v-card>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+	    </v-flex>
 	  </v-layout>
 	</v-container>
 </template>
@@ -128,6 +182,7 @@
 	export default {
 	  	data() {
 	  		return {
+	  			carInfoBorder: require('../../static/tarifs/image.png'),
 		    	cars:
 		    	[
 		    		{
@@ -371,6 +426,13 @@
   }
 </script>
 <style>
+.v-expansion-panel{
+    box-shadow: none;
+}
+.v-expansion-panel__header{
+	display: flex; 
+    /*flex-direction: column; */
+}
 b{
 	font-size: 20px;
 	line-height: 23px;
@@ -387,7 +449,6 @@ b{
 }
 .UpDownBorder:first-child{
     border-top: 1px solid gray;
-    background-color: #000;
 
 }
 .UpDownBorder>p{
