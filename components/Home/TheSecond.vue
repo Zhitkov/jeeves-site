@@ -1,8 +1,10 @@
 <template>
-	<v-parallax style="width: 100vw;" :src="require('../../static/Second.png')" fluid>
+	<v-parallax  style="width: 100vw;" :src="require('../../static/Second.png')" fluid>
 		<v-layout style="justify-content: center" row wrap>
-			<v-flex offset-xs2 xs8>
+			<v-flex offset-xs2 xs8 style="margin: 20px 0 0 0">
+				<v-flex xs5 style="margin: 0 0 30px 0">
 				<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
+			</v-flex>
 						<ul class="second-list">
 							<li>Тщательный отбор в соответствии со строгими критериями.</li>
 							<li>Классический костюм и галстук.</li>

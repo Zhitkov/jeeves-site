@@ -53,7 +53,7 @@ export default {
   }
 body
   overflow: hidden
-  background: #E4E4E4
+  background: #fff
   .loading-container
      background: #000000;
   .nav-fix
