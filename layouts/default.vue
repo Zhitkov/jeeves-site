@@ -52,7 +52,8 @@ export default {
     src: url("../assets/fonts/9116.otf");
   }
 body
-  overflow: hidden;
+  overflow: hidden
+  background: #E4E4E4
   .loading-container
      background: #000000;
   .nav-fix

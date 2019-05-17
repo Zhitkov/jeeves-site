@@ -1,9 +1,9 @@
 <template>
 	<v-container>
-	  <v-layout row wrap justify-center>
-	    <v-flex xs10>
+	  <v-layout row wrap justify-start>
+	    <v-flex xs6>
 	      <p class=" neue"> Тарифы </p>
-	      <p class="subtitlte">
+	      <p style="font-size: 18px" class="subtitlte">
 	      	Давно выяснено, что при оценке дизайна и композиции читаемый  текст мешает 
 			сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более 
 			или менее стандартное заполнение шаблона, а также реальное распределение 

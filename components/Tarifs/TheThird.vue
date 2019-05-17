@@ -5,9 +5,12 @@
 	    	<!-- hide-delimiters
 	      	hide-delimiter-background -->
 	      <v-carousel 
+	      	light
 		    hide-delimiters
+		    next-icon="navigate_next"
 		    height="100%"
-		    style="box-shadow: none;">
+		    style="box-shadow: none;"
+		    :cycle='false'>
 		    <v-carousel-item
 		      v-for="(img, i) in car.img"
 		      :key="i"
@@ -126,7 +129,7 @@
       <v-expansion-panel-content>
         <template v-slot:header>
           	<div>
-          		<p>Подробнее о тарифе <v-icon dark>expand_more</v-icon></p>
+          		<div class="v-expansion-panel__header__icon"><p class="eapansion-title">Подробнее о тарифе</p><i aria-hidden="true" class="v-icon material-icons theme--light">keyboard_arrow_down</i></div>
     			<v-img contain :src="carInfoBorder"></v-img>
     		</div>
         </template>
@@ -426,6 +429,21 @@
   }
 </script>
 <style>
+.theme--light.v-expansion-panel .v-expansion-panel__container{
+	background-color: none
+}
+.eapansion-title {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 0;
+}
+.v-expansion-panel__header__icon:last-child {
+	display: none
+}
+.v-expansion-panel__header__icon:first-child {
+    display: flex;
+    justify-content: center;
+}
 .v-expansion-panel{
     box-shadow: none;
 }
