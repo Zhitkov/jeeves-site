@@ -1,7 +1,7 @@
 <template>
 	<v-container pa-0 :style="'background-image: url(' + bg + ')'" fluid>
 		<v-layout row wrap class="hei100">
-			<v-flex md6 xs12 class="fourth-container hei100">
+			<v-flex offset-xs2 xs5 class="fourth-container">
 				<img :src="logo">
 				<h1 class="neue" style="font-weight: 100;">Мобильное приложение</h1>
 				<div class="phone-container">
@@ -13,15 +13,16 @@
 				</div>
 					<appInstallButtons class="fourth-app-install"/>
 			</v-flex>
-			<v-flex md5 xs12 class="hei100">
-				<v-img
+			<v-flex  xs5 class="fourth-container">
+					<v-img
+					xs5
 					cover
                   :src="phone"
                   :lazy-src="phone"
                   position="center 20%"
                 >
-            </v-img>
-			</v-flex>
+	            </v-img>
+	        </v-flex>
 		</v-layout>
 	</v-container>
 </template>
@@ -59,7 +60,7 @@ export default {
 		color: white;
 	}
 	.fourth-container {
-		margin: 2% 4%;
+		margin-top: 45px;
 	}
 	.phone-container {
 		display: flex;

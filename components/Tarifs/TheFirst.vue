@@ -1,14 +1,10 @@
 <template>
   <v-layout class="full-screen" row wrap>
-    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" :src="require('../../static/tarifs/preview.png')">
-      <v-container>
-        <v-layout row wrap>
-          <v-flex xs12 md6>
-            <img style="padding-bottom: 65px;" :src="logo">
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-parallax>
+    <v-img class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" cover :src="require('../../static/tarifs/preview.png')" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
+      <v-flex offset-xs2>
+        <img style="padding-bottom: 42px;" :src="logo">
+      </v-flex>
+    </v-img>
   </v-layout>
 </template>
 
@@ -36,6 +32,8 @@
 </script>
 
 <style lang="stylus" scoped>
+.v-responsive__content
+  align-self: flex-end;
 .full-screen
   width 100vw
 div[data-v-00bd8e1c].container
@@ -43,13 +41,11 @@ div[data-v-00bd8e1c].container
 .parallax-screen
   width 100vw
   height 74vh !important
-  .v-parallax__content > .container
+  .container
     align-content: center;
     align-items: center;
     align-self: center;
     display: flex;
-    .opa 
-      opacity 1
 .First-text
   text-align center 
   font-size 1.6vw 
@@ -68,6 +64,11 @@ div[data-v-00bd8e1c].container
   .parallax-screen{
     height: 100vh !important;
   }
+}
+</style>
+<style type="text/css">
+.v-responsive__content{
+  align-self: flex-end;
 }
 </style>
 
