@@ -5,7 +5,7 @@
 	    	<!-- hide-delimiters
 	      	hide-delimiter-background -->
 	      <v-carousel 
-		    hide-delimiter-background
+		    hide-delimiters
 		    height="100%"
 		    style="box-shadow: none;">
 		    <v-carousel-item
@@ -461,14 +461,14 @@ b{
 .v-carousel__controls__item > .v-btn__content{
 	display: none !important;
 }
-button.v-carousel__controls__item{
+/*button.v-carousel__controls__item{
     background-image: url(http://localhost:3000/_nuxt/static/tarifs/cars/plus1.png);
     width: 100px;
     height: 100px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-}
+}*/
 /*.v-carousel__controls:first-child{
 	display: none !important;
 }*/

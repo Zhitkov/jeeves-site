@@ -3,7 +3,7 @@
 		<v-layout row wrap class="hei100">
 			<v-flex md6 xs12 class="fourth-container hei100">
 				<img :src="logo">
-				<h1>Мобильное приложение</h1>
+				<h1 class="neue" style="font-weight: 100;">Мобильное приложение</h1>
 				<div class="phone-container">
 					<p>Введите номер телефона, чтобы получить ссылку на приложение </p>
 					<div style="display: flex">
@@ -45,29 +45,33 @@ export default {
 	
 </script>
 <style lang="css" scoped>
-	.hei100, .v-image{
+	.neue {
+	  font-size: 36px;
+	  line-height: 36px; 
+  	}
+	.hei100, .v-image {
 	    height: 100% !important;
 	}
-	.container{
+	.container {
 		background-size: cover;
 		width: 100vw;
 		height: 70vh;
 		color: white;
 	}
-	.fourth-container{
+	.fourth-container {
 		margin: 2% 4%;
 	}
-	.phone-container{
+	.phone-container {
 		display: flex;
 		-webkit-flex-direction: column;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 		margin: 10% 0% 0%;
 	}
-	.fourth-app-install{
+	.fourth-app-install {
 		text-align: left;
 	}
-	.v-btn{
+	.v-btn {
 	    margin: 2px 10px;
 	}
 </style>

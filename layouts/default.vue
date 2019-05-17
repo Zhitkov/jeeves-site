@@ -46,6 +46,11 @@ export default {
 </script>
 
 <style lang="stylus">
+@font-face {
+    font-family: Neue;
+    font-style: normal;
+    src: url("../assets/fonts/9116.otf");
+  }
 body
   overflow: hidden;
   .loading-container
@@ -60,5 +65,5 @@ body
     color #136CE2
     cursor pointer
   .neue
-    font-family 'Neue' 
+    font-family 'Neue' !important
 </style>

@@ -12,7 +12,7 @@
     <v-flex style="background: white" xs12>
       <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
       <Border style="width: 100vw;"/>
-      <h1 class="First-text">Установить</h1>
+      <h1 class=" neue First-text">Установить</h1>
       <appInstallButtons/>
     </v-flex>
   </v-layout>
@@ -47,6 +47,9 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
 </script>
 
 <style lang="stylus" scoped>
+.neue
+  font-size: 36px;
+  line-height: 36px; 
 .full-screen
   width 100vw
 .parallax-screen
