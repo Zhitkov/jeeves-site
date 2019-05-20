@@ -1,7 +1,8 @@
 <template>
 	<v-container fluid style="width: 100vw">
-	  <v-layout style="width: 100%" v-for="car in cars" row wrap>
-	    <v-flex offset-xs2 xs6>
+	  <v-layout style="width: 100%; margin-bottom: 135px;" v-for="car in cars" row wrap>
+	    <v-flex 
+	    xs12 sm12 md5 offset-xs0 offset-lg2>
 	    	<!-- hide-delimiters
 	      	hide-delimiter-background -->
 	      <v-carousel 
@@ -19,24 +20,8 @@
 		      contain
 		    ></v-carousel-item>
 		  </v-carousel>
-		  <div class="v-carousel__controls">
-				    <div class="v-item-group theme--dark">
-				        <button type="button" value="0" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				        <button type="button" value="1" class="v-btn v-btn--active v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				        <button type="button" value="2" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				        <button type="button" value="3" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				    </div>
-				</div>
 	    </v-flex>
-	    <v-flex pa-4 xs3>
+	    <v-flex pa-4 xs12 sm12 md3 offset-xs0 offset-lg0>
 	      	<b>Бизнес</b>
 	      	<div class="UpDownBorder">
 	      		<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,9 +123,9 @@
           <v-card-text >
           	<v-flex style="border-top: dashed 2px #C4C4C4; margin: 5px auto 30px " offset-xs1 xs10></v-flex>
 	  			<v-layout row wrap justify-center>
-	  				<v-flex offset-xs2 xs5 mb5 style="margin: 5px 41px; ">
+	  				<v-flex xs12 sm12 md4 offset-xs0 offset-lg2 style="margin: 5px 41px; ">
 	  				  <div v-for="left in car.about.left">
-	  				  	<p class="title">{{ left.title }}</p>
+	  				  	<p style="margin-top: 15px" class="title">{{ left.title }}</p>
 	  				  	<div v-if="left.subtitle">
 	  				  		<p v-for="subtitle in left.subtitle">
 	  				  			{{ subtitle }}
@@ -156,9 +141,9 @@
 	  				  	</div>
 	  				  </div>
 	  				</v-flex>
-	  				<v-flex xs4 mb5>
+	  				<v-flex xs11 sm11 md5 offset-xs1 offset-lg0>
 	  				  <div v-for="right in car.about.right">
-	  				  	<p class="title">{{ right.title }}</p>
+	  				  	<p style="margin-top: 15px" class="title">{{ right.title }}</p>
 	  				  	<div v-if="right.subtitle">
 	  				  		<p v-for="subtitle in right.subtitle">
 	  				  			{{ subtitle }}
@@ -497,12 +482,12 @@ b{
     margin: 15px;
     font-size: 14px;
 }
-.v-carousel__controls__item > .v-icon.material-icons.theme--dark{
+/*.v-carousel__controls__item > .v-icon.material-icons.theme--dark{
 	display: none !important;
 }
 .v-carousel__controls__item > .v-btn__content{
 	display: none !important;
-}
+}*/
 /*button.v-carousel__controls__item{
     background-image: url(http://localhost:3000/_nuxt/static/tarifs/cars/plus1.png);
     width: 100px;

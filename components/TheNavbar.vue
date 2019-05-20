@@ -10,10 +10,10 @@
             <a class="hidden-xs nav-link" href="">info@slv24.ru</a>
           </v-flex>
           <v-spacer></v-spacer>
-          <v-flex xs1 v-for="n in 7" :key="n">
-            <nuxt-link tag='p' style='margin-bottom: 0px; height: 100%;' to="/tarifs">
+          <v-flex xs1 v-for="nav in navLinks" :key="nav-link">
+            <nuxt-link tag='p' style='margin-bottom: 0px; height: 100%;' :to="nav.link">
               <v-tab ripple class="text-capitalize">
-                 tarifs 
+                 {{ nav.name }}
               </v-tab>
             </nuxt-link>
           </v-flex>
@@ -25,7 +25,7 @@
         <v-card dark class="hidden-md-and-up" flat width="100vw">
           <v-card-title class="mobile-nav white--text">
             <div class="nav-info">
-              <a class="nav-link" href="">
+              <a style="margin-right: 10px;" class="nav-link" href="">
                 8 800 550 39 34
               </a>
             </div>
@@ -46,12 +46,14 @@
                   </v-btn>
               </template>
               <v-list dark>
+            </nuxt-link>
                 <v-list-tile
-                v-for="(item, i) in items"
+                v-for="nav in navLinks"
                 :key="i"
+                :to="nav.link"
                 @click=""
                 >
-                  <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                  <v-list-tile-title ripple class="text-capitalize">{{ nav.name }}</v-list-tile-title>
                 </v-list-tile>
               </v-list>
             </v-menu>
@@ -67,14 +69,44 @@
     data () {
       return {
         active: null,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         items: [
         { title: 'Click Me' },
         { title: 'Click Me' },
         { title: 'Click Me' },
         { title: 'Click Me 2' }
         ],
-        on: true
+        on: true,
+        navLinks:
+        [
+          {
+            name: 'Главная',
+            link: '/',
+          },
+          {
+            name: 'Ассистент',
+            link: '/',
+          },
+          {
+            name: 'Тарифы',
+            link: '/tarifs',
+          },
+          {
+            name: 'Для Бизнеса',
+            link: '/buisness',
+          },
+          {
+            name: 'Контакты',
+            link: '/contacts',
+          },
+          {
+            name: 'Войти',
+            link: '/signin',
+          },
+          {
+            name: 'RUS',
+            link: '/',
+          },
+        ]
       }
     },
     mounted() {

@@ -1,5 +1,5 @@
 <template>
-	<v-parallax  style="width: 100vw;" :src="require('../../static/Second.png')" fluid>
+	<v-parallax  style="width: 100vw;" :lazy-src="bg" :src="bg" fluid>
 		<v-layout style="justify-content: center" row wrap>
 			<v-flex offset-xs2 xs8 style="margin: 20px 0 0 0">
 				<v-flex xs5 style="margin: 0 0 30px 0">
@@ -18,6 +18,15 @@
 		</v-layout>
 	</v-parallax>
 </template>
+<script type="text/javascript">
+	export default {
+		data() {
+			return {
+				bg: require('../../static/Home/Second.png')
+			}
+		}
+	}
+</script>
 <style lang="stylus" scoped>
 .container 
 	background-size cover

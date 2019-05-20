@@ -1,6 +1,6 @@
 <template>
   <v-layout class="full-screen" row wrap>
-    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="require('../../static/Uxar1First.png')" :src="require('../../static/Uxar1First.png')">
+    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="bg" :src="bg">
           <v-flex offset-xs2 xs2>
             <Logo class="opa"/>
           </v-flex>
@@ -27,10 +27,11 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
     },
     data () {
       return {
-        
-      }
-    },
-    methods: {
+        bg: require('../../static/Home/First.png')
+      
+    }
+  }
+    // methods: {
     //   completeNext﻿: function () {
     //   var tl = new TimelineMax;
     //   tl.add(
@@ -38,7 +39,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
     //       );
 
     // },
-  }
+  // }
 }
 </script>
 

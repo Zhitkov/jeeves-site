@@ -16,7 +16,7 @@
     },
     data () {
       return {
-        logo: require('../../static/Fourth/logo2.png'),
+        logo: require('../../static/logos/logo2.png'),
       }
     },
     methods: {
@@ -40,7 +40,7 @@ div[data-v-00bd8e1c].container
   align-items: flex-end !important
 .parallax-screen
   width 100vw
-  height 74vh !important
+  height 65vh !important
   .container
     align-content: center;
     align-items: center;
@@ -48,10 +48,6 @@ div[data-v-00bd8e1c].container
     display: flex;
 .First-text
   text-align center 
-  font-size 1.6vw 
-  margin 5% 25% 1%
-  &:nth-child(3)
-    margin 2% 25% 1%
 .downloads
   margin-bottom 10vw 
 </style>
