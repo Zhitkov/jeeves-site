@@ -1,17 +1,13 @@
 <template>
   <v-layout class="full-screen" row wrap>
-    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="require('../../static/Uxar1First.png')" :src="require('../../static/Uxar1First.png')">
-      <v-container>
-        <v-layout row wrap>
-          <v-flex xs12 md6>
+    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="bg" :src="bg">
+          <v-flex offset-xs2 xs2>
             <Logo class="opa"/>
           </v-flex>
-        </v-layout>
-      </v-container>
     </v-parallax>
-    <v-flex style="background: white" xs12>
+    <v-flex offset-xs2 xs8>
       <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
-      <Border style="width: 100vw;"/>
+      <Border/>
       <h1 class=" neue First-text">Установить</h1>
       <appInstallButtons/>
     </v-flex>
@@ -31,10 +27,11 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
     },
     data () {
       return {
-        
-      }
-    },
-    methods: {
+        bg: require('../../static/Home/First.png')
+      
+    }
+  }
+    // methods: {
     //   completeNext﻿: function () {
     //   var tl = new TimelineMax;
     //   tl.add(
@@ -42,7 +39,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
     //       );
 
     // },
-  }
+  // }
 }
 </script>
 
@@ -64,8 +61,8 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
       opacity 1
 .First-text
   text-align center 
-  font-size 1.6vw 
-  margin 5% 25% 1%
+  font-size 32px
+  margin 70px 0 30px
   &:nth-child(3)
     margin 2% 25% 1%
 .downloads

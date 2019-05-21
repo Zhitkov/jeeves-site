@@ -20,7 +20,7 @@
 		display flex
 		width 100%
 		height 100%
-		-webkit-justify-content center 
-		justify-content center 
+		-webkit-justify-content flex-start 
+		justify-content flex-start
 		
 </style>

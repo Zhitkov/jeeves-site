@@ -1,12 +1,12 @@
 <template>
-	<div class="phone-form">
+	<div v-if="aboutBuisness" class="phone-form2">
 		 <v-select
           :items="items"
           label="+7"
           solo
-          background-color="#333333"
-          dark
-          style="width: 30% !important;"
+          background-color="#fff"
+          light
+          style="width: 40% !important;"
         ></v-select>
         <v-text-field
         	class='tel-mask'
@@ -14,22 +14,43 @@
             single-line
             solo
             mask="(###) ###-##-##"
-            dark
+            light
             required
           ></v-text-field>
 	</div>
+  <div v-else class="phone-form">
+     <v-select
+          :items="items"
+          label="+7"
+          solo
+          background-color="#333333"
+          dark
+          style="width: 40% !important;"
+        ></v-select>
+        <v-text-field
+          class='tel-mask'
+            label="Телефон"
+            single-line
+            solo
+            mask="(###) ###-##-##"
+            dark
+            required
+          ></v-text-field>
+  </div>
 </template>
 
 <script>
  export default {
     data: () => ({
       items: ['+7', '+1', '+12'],
-    })
+    }),
+    props:['aboutBuisness']
+
   }
 </script>
 
 <style lang="css" scoped>
-	.phone-form{
+	.phone-form, .phone-form2 {
 		display: flex;
 		-webkit-flex-wrap: nowrap;
 		-ms-flex-wrap: nowrap;
@@ -40,11 +61,26 @@
 		width:  250px;
 		align-content: center;
 	}
+  .phone-form2 {
+    width:  50% !important;
+  }
+
+</style>
+<style >
+  .phone-form2 .v-input__slot {
+      border-radius: 10px 0 0 10px !important;
+      background: #fff !important;
+      border-right: #000 solid 1px !important;
+  }
+  .phone-form2 .tel-mask .v-input__slot {
+      border-radius: 0 10px 10px 0 !important;
+      background: #fff !important;
+  }
 </style>
 
 <style lang="stylus">
-  .v-input__slot
+  .phone-form .v-input__slot
     min-width 60px
-	.tel-mask .v-input__slot
+	.phone-form .tel-mask .v-input__slot
 		background linear-gradient(90deg, #393185 0%, #18F2D9 100%) !important
 </style>

@@ -1,3 +1,4 @@
+
 <template>
 	<v-container style="background-size: 100% 100vh; background-position: 1px -25vh; padding: auto 0" >
 	  <v-layout row wrap>
@@ -14,7 +15,6 @@
 <script>
 import TheCarsCarousel from '~/components/Home/TheCarsCarousel.vue'
 import { TweenMax, TweenLite, Power2 } from 'gsap';
-
 export default {
   components: {
     TheCarsCarousel,
@@ -26,7 +26,7 @@ export default {
 .container
 	height 100vh
 	width  100vw
-	background-image url('../../static/road.png') 
+	background-image url('../../static/Home/road.png') 
 	.third-container
 		height 55%
 		margin-top: 2%

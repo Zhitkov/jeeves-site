@@ -11,7 +11,7 @@
 			<Logo style="width: 70px;  margin-top: -130px;"/>
 			<strong class="subheading">
 				<ul>
-					<li>Водителям</li>
+					<nuxt-link tag="li" to="/drivers">Водителям</nuxt-link>
 					<li>Вакансии</li>
 					<li>FAQ </li>
 				</ul>

@@ -1,9 +1,12 @@
 <template>
-	<v-container pa-0 :style="'background-image: url(' + bg + ')'" fluid>
-		<v-layout row wrap class="hei100">
+	<v-container pa-0 :style="'background-size: cover; background-image: url(' + bg + ')'" fluid>
+		<v-layout row wrap class="hidden-sm-and-down hei100">
 			<v-flex offset-xs2 xs5 class="fourth-container">
-				<img :src="logo">
-				<h1 class="neue" style="font-weight: 100;">Мобильное приложение</h1>
+				<v-flex xs4 style="display: flex">
+						<img :src="logo">
+						<appInstallButtons class="fourth-app-install"/>
+				</v-flex>
+				<h1 class="neue" style="font-weight: 100;">Скачать приложение прямо сейчас</h1>
 				<div class="phone-container">
 					<p>Введите номер телефона, чтобы получить ссылку на приложение </p>
 					<div style="display: flex">
@@ -11,18 +14,38 @@
 						<v-btn large color="primary">Отправить заявку</v-btn>
 					</div>
 				</div>
-					<appInstallButtons class="fourth-app-install"/>
 			</v-flex>
-			<v-flex  xs5 class="fourth-container">
+			<v-flex  xs5 style="margin-top: 0" class="fourth-container">
 					<v-img
 					xs5
-					cover
+					contain
                   :src="phone"
                   :lazy-src="phone"
-                  position="center 20%"
+                  position="90% top"
+                  style="background-size: auto 100%;"
                 >
 	            </v-img>
 	        </v-flex>
+		</v-layout>
+		<v-layout row wrap class="hidden-md-and-up">
+		  <v-flex xs12 class="fourth-container">
+				<v-flex xs4 style="display: flex">
+					<v-flex xs6>
+						<img :src="logo">
+					</v-flex>
+					<v-flex offset-xs7 xs6>
+						<appInstallButtons class="fourth-app-install"/>
+					</v-flex>
+				</v-flex>
+				<h1 class="neue" style="font-weight: 100;">Скачать приложение прямо сейчас</h1>
+				<div class="phone-container">
+					<p>Введите номер телефона, чтобы получить ссылку на приложение </p>
+					<div style="display: flex">
+						<PhoneForm/>
+						<v-btn large color="primary">Отправить заявку</v-btn>
+					</div>
+				</div>
+			</v-flex>
 		</v-layout>
 	</v-container>
 </template>
@@ -37,8 +60,8 @@ export default {
     },
 	data () {
 		return {
-			bg: require('../../static/Home/Fourth/bg.png'),
-			phone: require('../../static/Home/Fourth/iphone.png'),
+			bg: require('../../static/tarifs/Fourth/car.png'),
+			phone: require('../../static/tarifs/Fourth/phones.png'),
 			logo: require('../../static/logos/logo2.png'),
 		}
 	}
@@ -56,7 +79,7 @@ export default {
 	.container {
 		background-size: cover;
 		width: 100vw;
-		height: 70vh;
+		height: 42.7vh;
 		color: white;
 	}
 	.fourth-container {
@@ -67,20 +90,28 @@ export default {
 		-webkit-flex-direction: column;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
-		margin: 10% 0% 0%;
+		margin: 1% 0% 0% 0%;
 	}
 	.fourth-app-install {
 		text-align: left;
+		flex-direction: column;
+	    display: flex;
 	}
 	.v-btn {
 	    margin: 2px 10px;
 	}
 </style>
+<style type="text/css">
+	.hei100 .v-image__image--contain {
+	    background-size: auto 100%;
+	}
+</style>
 <style scoped>
 @media screen and (max-width: 900px){
 	.container{
-		height: 85vh;
+		height: 50vh;
 	    padding: 20px !important;
+	    
     }
     .v-btn--large {
 	    font-size: 15px;
@@ -95,9 +126,10 @@ export default {
 	}
 	.phone-container > div{
 		display: flex;
-	    flex-direction: column;
-	    align-items: center;
-	    padding-bottom: 10px;
+	    flex-direction: row;
+	    align-items: flex-start;
+	    /*align-items: center;*/
+	    padding-bottom: 0px;
 	}
 	.downloads{
 	    text-align: center !important;

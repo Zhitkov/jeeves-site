@@ -1,7 +1,8 @@
 <template>
-	<v-container style="width: 100vw">
-	  <v-layout style="width: 100%" v-for="car in cars" row wrap>
-	    <v-flex xs7>
+	<v-container fluid style="width: 100vw">
+	  <v-layout style="width: 100%; margin-bottom: 135px;" v-for="car in cars" row wrap>
+	    <v-flex 
+	    xs12 sm12 md5 offset-xs0 offset-lg2>
 	    	<!-- hide-delimiters
 	      	hide-delimiter-background -->
 	      <v-carousel 
@@ -11,6 +12,7 @@
 		    height="100%"
 		    style="box-shadow: none;"
 		    :cycle='false'>
+		    <p class="car-name">{{car.name}}</p>
 		    <v-carousel-item
 		      v-for="(img, i) in car.img"
 		      :key="i"
@@ -18,24 +20,8 @@
 		      contain
 		    ></v-carousel-item>
 		  </v-carousel>
-		  <div class="v-carousel__controls">asdasdasd
-				    <div class="v-item-group theme--dark">
-				        <button type="button" value="0" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				        <button type="button" value="1" class="v-btn v-btn--active v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				        <button type="button" value="2" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				        <button type="button" value="3" class="v-btn v-btn--icon v-btn--small theme--dark v-carousel__controls__item">
-				            <div class="v-btn__content"></div>
-				        </button>
-				    </div>
-				</div>
 	    </v-flex>
-	    <v-flex xs5>
+	    <v-flex pa-4 xs12 sm12 md3 offset-xs0 offset-lg0>
 	      	<b>Бизнес</b>
 	      	<div class="UpDownBorder">
 	      		<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,35 +116,36 @@
         <template v-slot:header>
           	<div>
           		<div class="v-expansion-panel__header__icon"><p class="eapansion-title">Подробнее о тарифе</p><i aria-hidden="true" class="v-icon material-icons theme--light">keyboard_arrow_down</i></div>
-    			<v-img contain :src="carInfoBorder"></v-img>
+    			<v-img v-show="$vuetify.icons.expand===false" contain :src="carInfoBorder"></v-img>
     		</div>
         </template>
         <v-card>
-          <v-card-text>
-	  			<v-layout row wrap>
-	  				<v-flex xs6>
+          <v-card-text >
+          	<v-flex style="border-top: dashed 2px #C4C4C4; margin: 5px auto 30px " offset-xs1 xs10></v-flex>
+	  			<v-layout row wrap justify-center>
+	  				<v-flex xs12 sm12 md4 offset-xs0 offset-lg2 style="margin: 5px 41px; ">
 	  				  <div v-for="left in car.about.left">
-	  				  	<p class="title">{{ left.title }}</p>
-	  				  	<div v-if="left.subtile">
-	  				  		<p v-for="subtitle in left.subtile">
+	  				  	<p style="margin-top: 15px" class="title">{{ left.title }}</p>
+	  				  	<div v-if="left.subtitle">
+	  				  		<p v-for="subtitle in left.subtitle">
 	  				  			{{ subtitle }}
 	  				  		</p>
 	  				  	</div>
-	  				  	<div v-if="left.subtitleCost">
+	  				  	<div class="costAbout" v-if="left.subtitleCost">
 	  				  		<div class="UpDownBorder" v-for="aboutCost in left.subtitleCost">
 	  				  			<p>{{ aboutCost.text }}</p>
 								<v-spacer></v-spacer>
-	  				  			<p>{{ aboutCost.cost }}</p>
+	  				  			<p style="white-space: nowrap; font-weight: 800">{{ aboutCost.cost }}</p>
 
 	  				  		</div>
 	  				  	</div>
 	  				  </div>
 	  				</v-flex>
-	  				<v-flex xs6>
+	  				<v-flex xs11 sm11 md5 offset-xs1 offset-lg0>
 	  				  <div v-for="right in car.about.right">
-	  				  	<p class="title">{{ right.title }}</p>
-	  				  	<div v-if="right.subtile">
-	  				  		<p v-for="subtitle in right.subtile">
+	  				  	<p style="margin-top: 15px" class="title">{{ right.title }}</p>
+	  				  	<div v-if="right.subtitle">
+	  				  		<p v-for="subtitle in right.subtitle">
 	  				  			{{ subtitle }}
 	  				  		</p>
 	  				  	</div>
@@ -166,13 +153,14 @@
 	  				  		<div class="UpDownBorder" v-for="aboutCost in right.subtitleCost">
 	  				  			<p>{{ aboutCost.text }}</p>
 								<v-spacer></v-spacer>
-	  				  			<p>{{ aboutCost.cost }}</p>
+	  				  			<p style="font-weight: 800">{{ aboutCost.cost }}</p>
 
 	  				  		</div>
 	  				  	</div>
 	  				  </div>
 	  				</v-flex>
 	  			</v-layout>
+	  			<v-img v-show="$vuetify.icons.expand===true" contain :src="carInfoBorder"></v-img>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -428,14 +416,9 @@
     }
   }
 </script>
-<style>
-.theme--light.v-expansion-panel .v-expansion-panel__container{
-	background-color: none
-}
-.eapansion-title {
-	font-weight: 500;
-	font-size: 18px;
-	margin-bottom: 0;
+<style type="text/css">
+.v-image__image--contain{
+    background-size: 70%;
 }
 .v-expansion-panel__header__icon:last-child {
 	display: none
@@ -444,12 +427,38 @@
     display: flex;
     justify-content: center;
 }
+/*.v-expansion-panel__header{
+	background: #E4E4E4;
+	display: flex; 
+    flex-direction: column; 
+}
+.v-expansion-panel__body{
+	background: #E4E4E4
+}*/
+</style>
+<style scoped>
+.costAbout>.UpDownBorder:first-child{
+	border-bottom: none
+}
+.costAbout>.UpDownBorder:nth-child(2){
+	border-top: 1px solid gray
+}
+.car-name{
+	font-weight: 800;
+	font-size: 18px;
+	position: absolute;
+    margin-top: 35%;
+}
+.theme--light.v-expansion-panel .v-expansion-panel__container{
+	background-color: none
+}
+.eapansion-title {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 0;
+}
 .v-expansion-panel{
     box-shadow: none;
-}
-.v-expansion-panel__header{
-	display: flex; 
-    /*flex-direction: column; */
 }
 b{
 	font-size: 20px;
@@ -466,19 +475,19 @@ b{
     height: 12.5%;
 }
 .UpDownBorder:first-child{
-    border-top: 1px solid gray;
+    border-top: 0px solid gray;
 
 }
-.UpDownBorder>p{
-    margin: 0 15px 0 15px;
+.UpDownBorder>p {
+    margin: 15px;
     font-size: 14px;
 }
-.v-carousel__controls__item > .v-icon.material-icons.theme--dark{
+/*.v-carousel__controls__item > .v-icon.material-icons.theme--dark{
 	display: none !important;
 }
 .v-carousel__controls__item > .v-btn__content{
 	display: none !important;
-}
+}*/
 /*button.v-carousel__controls__item{
     background-image: url(http://localhost:3000/_nuxt/static/tarifs/cars/plus1.png);
     width: 100px;
@@ -490,4 +499,6 @@ b{
 /*.v-carousel__controls:first-child{
 	display: none !important;
 }*/
+
+
 </style>
