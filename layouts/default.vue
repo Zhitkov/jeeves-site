@@ -51,6 +51,8 @@ export default {
     font-style: normal;
     src: url("../assets/fonts/9116.otf");
   }
+.theme--light.application
+  background: #fff !important
 body
   overflow: hidden
   background: #fff

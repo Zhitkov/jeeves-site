@@ -2,7 +2,7 @@
   <v-container fluid pa-0 style="height: 50px">
     <v-layout mb-0 pa-0 row wrap justify-center>
       <v-flex offset-xs2 xs10>
-        <v-tabs v-model="active" color="#00000000" dark slider-color="#136CE2" class="hidden-sm-and-down">
+        <!-- <v-tabs v-model="active" color="#00000000" dark slider-color="#136CE2" class="hidden-sm-and-down">
           <v-flex style="justify-content: flex-start;" justify-start xs1 class="v-tabs__div nav-info">
             <a class="hidden-xs nav-link" href="">8 800 550 39 34</a>
           </v-flex>
@@ -17,9 +17,42 @@
               </v-tab>
             </nuxt-link>
           </v-flex>
-            <v-tab-item style="width: 100%;" v-for="n in 7" :key="n"></v-tab-item>
+            <v-tab-item style="width: 100%;" v-for="n in navLinks.length" :key="n"></v-tab-item>
           <v-spacer></v-spacer>
-        </v-tabs>
+        </v-tabs> -->
+
+        <v-tabs
+        v-model="active"
+        color="#000000a0"
+        dark
+        slider-color="#136CE2"
+        class="hidden-sm-and-down"
+        >
+        <div class="v-tabs__div nav-info">
+          <a class="hidden-sm-and-up nav-link" href=""><v-btn dark icon v-on="on"><v-icon>phone_iphone</v-icon></v-btn></a>
+          <a class="hidden-xs nav-link" href="">8 800 550 39 34</a>
+        </div>
+        <div class="v-tabs__div nav-info text-lowercase">
+          <a class="hidden-sm-and-up nav-link" href=""><v-btn dark icon v-on="on"><v-icon>email</v-icon></v-btn></a>
+          <a class="hidden-xs nav-link" href="">info@slv24.ru</a>
+        </div>
+        <v-tab
+        v-for="nav in navLinks"
+        :key="n"
+        ripple
+        class="text-capitalize"
+        >
+        <nuxt-link :to="nav.link"> {{ nav.name }} </nuxt-link>
+
+      </v-tab>
+      <v-tab-item
+      v-for="n in 7"
+      :key="n"
+      >
+    </v-tab-item>
+  </v-tabs>
+
+
       </v-flex>
       <v-flex xs12>
         <v-card dark class="hidden-md-and-up" flat width="100vw">
