@@ -1,13 +1,14 @@
 <template>
 	<v-layout row wrap>
-      <v-flex v-for="(item,i) in items"
+      <v-flex v-for="(car,i) in cars"
 	      	 :key="i" xs12>
-    	<img :src="item.src"
-	      	 :class="item.pos"
-	      	 ></img>
+		<div :class="car.pos+' coolCar'">
+		    <p><b>{{ car.text }}</b></p>
+	    	<img :class="car.pos" :src="car.src"></img>
+		</div>
 		<div v-show="count === i" class="tarifs" style="width: 19vw;">
 	      	<v-btn outline color="black">Тарифы</v-btn>
-	      	<p>{{item.text}}</p>
+	      	<p>{{car.mark}}</p>
 	    </div>
       </v-flex>
       <div class="carousel-icons">
@@ -24,29 +25,33 @@ import Vuetify, {
   export default {
     data () {
       return {
-        items: [
+        cars: [
           {
             src: require('../../static/cars/luxe1.png'),
             pos: 'first',
-            text: 'Mercedes-Benz S-class BMW 7 Series',
+            text: 'VIP',
+            mark: 'Mercedes-Benz S-class BMW 7 Series',
             current: false
           },
           {
             src: require('../../static/cars/vip1.png'),
             pos: 'second',
-            text: 'Mercedes-Benz S-class BMW 7 Series 2',
+            text: 'Премиум',
+            mark: 'Premium wow car',
             current: true
           },
           {
             src: require('../../static/cars/plus1.png'),
             pos: 'third',
-            text: 'Mercedes-Benz S-class BMW 7 Series 3',
+            text: 'Минивен',
+            mark: 'Miniven wow car',
             current: false
           },
           {
             src: require('../../static/cars/business1.png'),
             pos: 'four',
-            text: 'Mercedes-Benz S-class BMW 7 Series 4',
+            text: 'Бизнес',
+            mark: 'Buisness wow car',
             current: false
           }
         ],
@@ -59,26 +64,28 @@ import Vuetify, {
     	completeNext﻿: function () {
 			var tl = new TimelineMax;
 			tl.add(
-		    		TweenLite.to('.first', 1, {className: "four"}),
-		    		TweenLite.to('.second', 1, {className: "third"}),
-		    		TweenLite.to('.third', 1, {className: "first"}),
-		    		TweenLite.to('.four', 1, {className: "second", onComplete: this.currentCar})
+		    		TweenLite.to('.first.coolCar', 1, {className: "four coolCar"}),
+		    		TweenLite.to('.second.coolCar', 1, {className: "third coolCar"}),
+		    		TweenLite.to('.third.coolCar', 1, {className: "first coolCar"}),
+		    		// TweenLite.to('.four.coolCar', 1, {className: "second coolCar"})
+		    		TweenLite.to('.four.coolCar', 1, {className: "second coolCar", onComplete: this.currentCar})
     			);
 
 		},
 		completePrev: function () {
 			var tl = new TimelineMax;
 			tl.add(
-		    		TweenLite.to('.first', 1, {className: "third"}),
-		    		TweenLite.to('.second', 1, {className: "four"}),
-		    		TweenLite.to('.third', 1, {className: "second"}),
-		    		TweenLite.to('.four', 1, {className: "first", onComplete: this.currentCar})
+		    		TweenLite.to('.first.coolCar', 1, {className: "third coolCar"}),
+		    		TweenLite.to('.second.coolCar', 1, {className: "four coolCar"}),
+		    		TweenLite.to('.third.coolCar', 1, {className: "second coolCar"}),
+		    		// TweenLite.to('.four.coolCar', 1, {className: "first coolCar"})
+		    		TweenLite.to('.four.coolCar', 1, {className: "first coolCar", onComplete: this.currentCar})
     			);
 		},
 		currentCar: function () {
 			let current = document.querySelector('.second');
 			let link = window.location.href;
-			let currentCar = this.items.find((element, i, array) => {
+			let currentCar = this.cars.find((element, i, array) => {
 				if (current.src === link + element.src.substring(1)) {
 					this.count = i;
 					console.log(i);
@@ -94,46 +101,41 @@ import Vuetify, {
 .layout
 	-webkit-justify-content center
 	justify-content center
-	
-img
-	width: 10%
+
+.coolCar
 	position absolute
 	background-size: auto !important;
-img.first
-	margin-top 0vh
-	right: -6vw !important
-	width: 10%
-	opacity: 1
-img.second
-	margin-top 20vh
-	right: 55vw !important
-	width: 40%
-	opacity: 1
-img.third
-	margin-top 25vh
-	right 8vw !important
+.coolCar > img
+	height auto
+
+.coolCar.first
+	width: 15%
+	margin-top 5vh
+	right: -5vw !important
+.coolCar.second
+	width: 34%
+	margin-top 30vh
+	right: 49vw !important
+.coolCar.third
 	width: 25%
-	opacity: 1
-img.four
-	margin-top 0vh
-	right 95vw !important
-	width: 10%
-	opacity: 1
-img.away-four
-	margin-top 0vh
-	right 110vw !important
-	width 10%
-	opacity 0
-img.away-first
-	margin-top 0vh
-	right -10vw !important
-	width 10%
-	opacity 0
+	margin-top 25vh
+	right 10vw !important
+.coolCar.four
+	width: 20%
+	margin-top 5vh
+	right 88vw !important
+
+
+img
+	width: 100%
+	position absolute
+	background-size: auto !important;
 </style>
 
 <style lang="stylus" scoped>
 .carousel-icons
     margin-top: 8%
+    z-index: 99;
     .v-icon
 	    font-size: 40px
 	    &:first-child

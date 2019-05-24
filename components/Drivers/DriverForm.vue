@@ -1,94 +1,148 @@
 <template>
 	<v-layout row wrap>
-	  <v-flex offset-xs2 xs4>
-	    <v-flex xs9 >
-			<v-select
-			class='driver-select'
-	          :items="cities"
-	          label="Город"
-	          outline
-	          background-color="#fff"
-	        ></v-select>
-		</v-flex>
-	    <v-flex xs9 >
-			<v-select
-			class='driver-select'
-	          :items="workers"
-	          label="Желаемый тип рабочих"
-	          outline
-	          background-color="#fff"
-	        ></v-select>
-		</v-flex>
-	    <v-flex xs9 >
-			<v-text-field
-			class="form-white"
-			label="ФИО"
-			outline
-			></v-text-field>
-		</v-flex>
-	    <v-flex xs9 >
-			<v-text-field
-			class="form-white"
-			outline
-			v-model="email"
-			:rules="[rules.required, rules.email]"
-			label="E-mail"
-			></v-text-field>
-		</v-flex>
-	    <v-flex xs9 style="display: flex;">
-			<PhoneForm class="driver-phone" :aboutBuisness="true" style="width: 50%;"/>
-			<v-btn color="primary" large style="width: 50% !important; margin-top: 2px; border-radius: 3px;">Отправить заявку</v-btn>
-		</v-flex>
-	  </v-flex>
-	  <v-flex column xs4>
-    	<v-flex class="step" xs1 >
-			<p class="step-title"> Заявка на сайте </p>
-			<v-text-field
-			class="form-white"
-			label="1"
-			outline
-			disabled
-			></v-text-field>
-		</v-flex>
-		<v-flex class="step" xs1 >
-			<p class="step-title"> Собеседование </p>
-			<v-text-field
-			class="form-white"
-			label="2"
-			outline
-			disabled
-			></v-text-field>
-		</v-flex>
-		<v-flex class="step" xs1 >
-			<p class="step-title"> Тест на вождение и знание города </p>
-			<v-text-field
-			class="form-white"
-			label="3"
-			outline
-			disabled
-			></v-text-field>
-		</v-flex>
-		<v-flex class="step" xs1 >
-			<p class="step-title"> Внутреннее обучение </p>
-			<v-text-field
-			class="form-white"
-			label="4"
-			outline
-			disabled
-			></v-text-field>
-		</v-flex>
-		<v-flex class="step" xs1 >
-			<p class="step-title"> Вы в команде </p>
-			<v-text-field
-			class="form-white"
-			label="5"
-			outline
-			disabled
-			></v-text-field>
-		</v-flex>
-	  </v-flex>
-	</v-layout>
+		<v-flex offset-xs4 xs4  style="display: flex; justify-content: center;">
+	      <v-menu nudge-bottom="30" nudge-right="10" :close-on-click="menuOpen" :close-on-content-click="menuOpen" content-class="superCard" bottom left>
+	      	<template >
+	      		<div @click="menuOpen = !menuOpen" slot="activator" class="driver-about">
+	      			<p class="linkText">Требования к атомобилям</p>
+	      			<v-icon>expand_more</v-icon>
+					<div style="margin-top: 22px; margin-left: 42px;" v-if="!menuOpen" class="tooltip-arrow-up"></div>
+	      		</div>
+	      	</template>
+	      	<v-card class="superCard" style="width: 40vw; max-width: 650px; padding: 30px; height: 430px;">
+	      		<v-card-tile style="background: white !important;">
+	      		<v-card-tile-title style="">
+	      			<ul class="forCars">
+	      				<v-icon @click="menuOpen = !menuOpen" class="clear">clear</v-icon>
+	      				<li>Бизнес <v-spacer></v-spacer> <b> Mercedes E-Class, BMW 5</b></li>
+	      				<li>Бизнес <v-spacer></v-spacer> <b> Mercedes E-Class, BMW 5</b></li>
+	      				<li>Бизнес <v-spacer></v-spacer> <b> Mercedes E-Class, BMW 5</b></li>
+	      				<li>Бизнес <v-spacer></v-spacer> <b> Mercedes E-Class, BMW 5</b></li>
+	      				<b class="about">Возраст авто не старше 3-х лет, только черный и белый цвета, салон кожа или кожзаменитель, отсутствие каких либо дефектов.</b>
+	      			</ul>
+	      		</v-card-tile-title>
+	      	</v-card-tile>
+	      </v-card>
+	  </v-menu>
+	  	<v-flex xs3></v-flex>
+	  	<v-menu id="app2" nudge-bottom="30" nudge-left="100" :close-on-click="menuOpen2" :close-on-content-click="menuOpen2" bottom right>
+	      	<template >
+	      		<div @click="menuOpen2 = !menuOpen2" slot="activator" class="driver-about">
+	      			<p class="linkText">Требования к водителям</p> 
+		  			<v-icon>expand_more</v-icon>
+					<div style="margin-top: 22px; margin-left: 40px;" v-if="!menuOpen2" class="tooltip-arrow-up"></div>
+	      		</div>
+	      	</template>
+	      	<v-card style="width: 40vw; max-width: 650px; padding: 30px; height: 430px;">
+	      		<v-card-tile style="background: white !important;">
+	      		<v-card-tile-title style="">
+	      			<ul class="forDrivers">
+	      				<v-icon @click="menuOpen2 = !menuOpen2" class="clear">clear</v-icon>
+	      				<b class="about">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона,</b>
+	      				<ol>
+	      					<li>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.</li>
+	      					<li>Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.</li>
+	      					<li>Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum.</li>
+	      					<li>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</li>
+	      					<li> Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.</li>
+	      					<li>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.</li>
+	      				</ol>
+	      			</ul>
+	      		</v-card-tile-title>
+	      	</v-card-tile>
+	      </v-card>
+	  </v-menu>
+</v-flex>
+<v-flex offset-xs2 xs4>
+	<v-flex xs9 >
+		<v-select
+		class='driver-select'
+		:items="cities"
+		label="Город"
+		outline
+		background-color="#fff"
+		></v-select>
+	</v-flex>
+	<v-flex xs9 >
+		<v-select
+		class='driver-select'
+		:items="workers"
+		label="Желаемый тип рабочих"
+		outline
+		background-color="#fff"
+		></v-select>
+	</v-flex>
+	<v-flex xs9 >
+		<v-text-field
+		class="form-white"
+		label="ФИО"
+		outline
+		></v-text-field>
+	</v-flex>
+	<v-flex xs9 >
+		<v-text-field
+		class="form-white"
+		outline
+		v-model="email"
+		:rules="[rules.required, rules.email]"
+		label="E-mail"
+		></v-text-field>
+	</v-flex>
+	<v-flex xs9 style="display: flex;">
+		<PhoneForm class="driver-phone" :aboutBuisness="true" style="width: 50%;"/>
+		<v-btn color="primary" large style="width: 50% !important; margin-top: 2px; border-radius: 3px;">Отправить заявку</v-btn>
+	</v-flex>
+</v-flex>
+<v-flex column xs4>
+	<v-flex class="step" xs1 >
+		<p class="step-title"> Заявка на сайте </p>
+		<v-text-field
+		class="form-white"
+		label="1"
+		outline
+		disabled
+		></v-text-field>
+	</v-flex>
+	<v-flex class="step" xs1 >
+		<p class="step-title"> Собеседование </p>
+		<v-text-field
+		class="form-white"
+		label="2"
+		outline
+		disabled
+		></v-text-field>
+	</v-flex>
+	<v-flex class="step" xs1 >
+		<p class="step-title"> Тест на вождение и знание города </p>
+		<v-text-field
+		class="form-white"
+		label="3"
+		outline
+		disabled
+		></v-text-field>
+	</v-flex>
+	<v-flex class="step" xs1 >
+		<p class="step-title"> Внутреннее обучение </p>
+		<v-text-field
+		class="form-white"
+		label="4"
+		outline
+		disabled
+		></v-text-field>
+	</v-flex>
+	<v-flex class="step" xs1 >
+		<p class="step-title"> Вы в команде </p>
+		<v-text-field
+		class="form-white"
+		label="5"
+		outline
+		disabled
+		></v-text-field>
+	</v-flex>
+</v-flex>
+</v-layout>
 </template>
+
 
 <script>
 	import PhoneForm from '~/components/layouts/PhoneForm.vue'
@@ -106,7 +160,9 @@
 					return pattern.test(value) || 'Invalid e-mail.'
 				},
 				required: value => !!value || 'Required.',
-			}
+			},
+			menuOpen: true,
+			menuOpen2: true
 		}),
 			props:['aboutBuisness'],
 	}
@@ -115,6 +171,9 @@
 <style type="text/css">
 .driver-select .v-input__slot{
 	border-color: gray !important
+}
+.step{
+    min-width: 54px !important;
 }
 	.step .v-input__slot label{
 		color: #000 !important;
@@ -133,4 +192,76 @@
 	.driver-phone .v-input__slot {
 		    border: 1px solid gray !important;
 	}
+
+</style>
+<style scoped>
+	.driver-about > p {
+		margin-bottom: 0px;
+	}
+	.driver-about{
+		display: flex;
+		-webkit-justify-content: center;
+		        justify-content: center;
+		margin-bottom: 30px;
+	}
+	.forCars {
+		background: white;
+		width: 90%;
+		text-align: center;
+	}
+	.forCars ul  {
+		width: 100%;
+	}
+	.forCars li  {
+		text-decoration: none;
+		list-style: none;
+		width: 100%;
+		display: flex;
+	    margin-left: 0px !important;
+	    padding: 15px;
+	    font-size: 14px;
+	    border-bottom: 1px solid gray;
+	}
+	ul > li:nth-child(5)  {
+	    margin-bottom: 20px !important;
+	}
+	.about {
+		color: #2196f3 !important;
+	}
+	.forDrivers > ol > li {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 16px;
+		margin: 10px 0;
+	}
+
+    div.tooltip-arrow-up {
+		/*border-left: 10px solid #00000000;
+		border-right: 10px solid #00000000;
+		border-bottom: 10px solid red;*/
+		width: 15px;
+		height: 15px;
+		transform: rotate(45deg);
+		background-color: #FFF;
+		box-shadow: inset 1px 1px 1px 0px #000000a0;
+		position: absolute;
+		z-index: 9999999;
+    }
+    .clear{
+    	position: absolute; 
+    	right: 10px; 
+    	top: 10px; 
+    	cursor: pointer
+    }
+    .v-menu__content.theme--light.menuable__content__active{
+		box-shadow: 0px 0px 2px 0px;
+		width: 40vw;
+		max-width: 650px
+    }
+
+/*@media screen and (max-width: 900px){
+    div.tooltip-arrow-up {
+  	display: none;
+  }
+}*/
 </style>

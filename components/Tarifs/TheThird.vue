@@ -1,7 +1,7 @@
 <template>
 	<v-container fluid style="width: 100vw">
 	  <v-layout style="width: 100%; margin-bottom: 135px;" v-for="car in cars" row wrap>
-	    <v-flex 
+	    <v-flex class="third-car"
 	    xs12 sm12 md5 offset-xs0 offset-lg2>
 	    	<!-- hide-delimiters
 	      	hide-delimiter-background -->
@@ -21,7 +21,7 @@
 		    ></v-carousel-item>
 		  </v-carousel>
 	    </v-flex>
-	    <v-flex pa-4 xs12 sm12 md3 offset-xs0 offset-lg0>
+	    <v-flex pa-0 xs12 sm12 md3 offset-xs0 offset-lg0>
 	      	<b>Бизнес</b>
 	      	<div class="UpDownBorder">
 	      		<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@
           <v-card-text >
           	<v-flex style="border-top: dashed 2px #C4C4C4; margin: 5px auto 30px " offset-xs1 xs10></v-flex>
 	  			<v-layout row wrap justify-center>
-	  				<v-flex xs12 sm12 md4 offset-xs0 offset-lg2 style="margin: 5px 41px; ">
+	  				<v-flex xs12 sm12 md3 offset-xs0 offset-lg2 style="margin: 5px 41px; ">
 	  				  <div v-for="left in car.about.left">
 	  				  	<p style="margin-top: 15px" class="title">{{ left.title }}</p>
 	  				  	<div v-if="left.subtitle">
@@ -437,6 +437,10 @@
 }*/
 </style>
 <style scoped>
+.third-car{
+    display: flex;
+    align-self: center;
+}
 .costAbout>.UpDownBorder:first-child{
 	border-bottom: none
 }
@@ -479,6 +483,7 @@ b{
 
 }
 .UpDownBorder>p {
+    margin-left: 0px !important;
     margin: 15px;
     font-size: 14px;
 }

@@ -1,22 +1,22 @@
 <template>
-	<v-parallax  style="width: 100vw;" :lazy-src="bg" :src="bg" fluid>
+	<v-img class="second-block"  style="min-width: 100vw; width: auto;" :lazy-src="bg" :src="bg" fluid>
 		<v-layout style="justify-content: center" row wrap>
-			<v-flex offset-xs2 xs8 style="margin: 20px 0 0 0">
-				<v-flex xs5 style="margin: 0 0 30px 0">
-				<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
-			</v-flex>
-						<ul class="second-list">
-							<li>Тщательный отбор в соответствии со строгими критериями.</li>
-							<li>Классический костюм и галстук.</li>
-							<li>Владеют иностранными языками.</li>
-							<li>Подождут в аэропорту с табличкой, если укажете номер рейса.</li>
-							<li>Откроют для Вас дверь, помогут с багажом, в случае дождя встретят с зонтом. </li>
-							<li>Прислушиваются к Вашим пожеланиям по маршруту, музыке, температуре.</li>
-						</ul>
+			<v-flex xs8 style="margin: 20px 0 0 105px">
+				<v-flex offset-xs1 xs6 style="margin: 0 0 30px 0; min-width: 430px;">
+					<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
+				</v-flex>
+				<ul class="second-list">
+					<li>Тщательный отбор в соответствии со строгими критериями.</li>
+					<li>Классический костюм и галстук.</li>
+					<li>Владеют иностранными языками.</li>
+					<li>Подождут в аэропорту с табличкой, если укажете номер рейса.</li>
+					<li>Откроют для Вас дверь, помогут с багажом, в случае дождя встретят с зонтом. </li>
+					<li>Прислушиваются к Вашим пожеланиям по маршруту, музыке, температуре.</li>
+				</ul>
 
 			</v-flex>
 		</v-layout>
-	</v-parallax>
+	</v-img>
 </template>
 <script type="text/javascript">
 	export default {
@@ -45,7 +45,7 @@
 	margin: 10px auto;
 }
 .second-list{
-	margin: 10px;
+	margin: 10px 10px 10px 0px;
 }
 .second-list > li{
 	color: white;
@@ -64,5 +64,10 @@
 		font-size: 16px !important;
 	}
 	
+}
+</style>
+<style type="text/css">
+.second-block .v-responsive__content {
+	align-self: center !important;
 }
 </style>

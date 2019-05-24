@@ -157,7 +157,7 @@ div[data-v-00bd8e1c].container
   align-items: flex-end !important
 .parallax-screen
   width 100vw
-  height 65vh !important
+  height 80vh !important
 .container
   align-content: center
   align-items: center

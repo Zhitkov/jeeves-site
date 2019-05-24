@@ -1,7 +1,6 @@
 <template>
   <v-container fluid pa-0 style="height: 50px">
     <v-layout mb-0 pa-0 row wrap justify-center>
-      <v-flex offset-xs2 xs10>
         <!-- <v-tabs v-model="active" color="#00000000" dark slider-color="#136CE2" class="hidden-sm-and-down">
           <v-flex style="justify-content: flex-start;" justify-start xs1 class="v-tabs__div nav-info">
             <a class="hidden-xs nav-link" href="">8 800 550 39 34</a>
@@ -21,80 +20,91 @@
           <v-spacer></v-spacer>
         </v-tabs> -->
 
-        <v-tabs
-        v-model="active"
-        color="#000000a0"
-        dark
-        slider-color="#136CE2"
-        class="hidden-sm-and-down"
-        >
-        <div class="v-tabs__div nav-info">
-          <a class="hidden-sm-and-up nav-link" href=""><v-btn dark icon v-on="on"><v-icon>phone_iphone</v-icon></v-btn></a>
-          <a class="hidden-xs nav-link" href="">8 800 550 39 34</a>
-        </div>
-        <div class="v-tabs__div nav-info text-lowercase">
-          <a class="hidden-sm-and-up nav-link" href=""><v-btn dark icon v-on="on"><v-icon>email</v-icon></v-btn></a>
-          <a class="hidden-xs nav-link" href="">info@slv24.ru</a>
-        </div>
-        <v-tab
-        v-for="nav in navLinks"
-        :key="n"
-        ripple
-        class="text-capitalize"
-        >
-        <nuxt-link :to="nav.link"> {{ nav.name }} </nuxt-link>
-
-      </v-tab>
-      <v-tab-item
-      v-for="n in 7"
-      :key="n"
-      >
-    </v-tab-item>
+        <v-flex offset-xs2 xs10>
+          <v-tabs
+          v-model="active"
+          color="#00000000"
+          dark
+          slider-color="#136CE2"
+          class="hidden-sm-and-down"
+          >
+          <v-flex class="v-tabs__div nav-info text-lowercase" xs2>
+            
+            <a style="margin: 0 5%" class="hidden-xs nav-link" href="">8 800 550 39 34</a>
+            <a style="margin: 0 5%" class="hidden-xs nav-link" href="">info@slv24.ru</a>
+          </v-flex>
+          <v-flex class="v-tabs__div text-lowercase" offset-xs3 xs5>
+            <nuxt-link
+            class="nav-links"
+            v-for="nav in navLinks"
+            :key="n"
+            :to="nav.link">
+            <v-tab ripple class="text-capitalize"> {{ nav.name }} </v-tab>
+          </nuxt-link>
+          <v-tab-item
+          v-for="n in 6"
+          :key="n"
+          >
+        </v-tab-item> 
+        <v-menu bottom left>
+          <template v-slot:activator="{ on }">
+            <v-tab v-on="on" ripple class="text-capitalize"> {{ currentLang }} <v-icon>expand_more</v-icon> </v-tab>
+          </template> 
+          <v-list dark>
+            <v-list-tile
+            v-for="lang in langs"
+            :key="i"
+            @click=""
+            >
+            <v-list-tile-title ripple class="text-capitalize">{{ lang.name }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+    </v-flex>
   </v-tabs>
+</v-flex>
 
 
-      </v-flex>
-      <v-flex xs12>
-        <v-card dark class="hidden-md-and-up" flat width="100vw">
-          <v-card-title class="mobile-nav white--text">
-            <div class="nav-info">
-              <a style="margin-right: 10px;" class="nav-link" href="">
-                8 800 550 39 34
-              </a>
-            </div>
-            <div class="nav-info text-lowercase">
-              <a class="nav-link" href="">
-                info@slv24.ru
-              </a>
-            </div>
-            <v-spacer></v-spacer>
-            <v-menu bottom left>
-              <template v-slot:activator="{ on }">
-                  <v-btn
-                  dark
-                  icon
-                  v-on="on"
-                  >
-                    <v-icon>menu</v-icon>
-                  </v-btn>
-              </template>
-              <v-list dark>
-            </nuxt-link>
-                <v-list-tile
-                v-for="nav in navLinks"
-                :key="i"
-                :to="nav.link"
-                @click=""
-                >
-                  <v-list-tile-title ripple class="text-capitalize">{{ nav.name }}</v-list-tile-title>
-                </v-list-tile>
-              </v-list>
-            </v-menu>
-          </v-card-title>
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-container>
+<v-flex xs12>
+  <v-card dark class="hidden-md-and-up" flat width="100vw">
+    <v-card-title class="mobile-nav white--text">
+      <div class="nav-info">
+        <a style="margin-right: 10px;" class="nav-link" href="">
+          8 800 550 39 34
+        </a>
+      </div>
+      <div class="nav-info text-lowercase">
+        <a class="nav-link" href="">
+          info@slv24.ru
+        </a>
+      </div>
+      <v-spacer></v-spacer>
+      <v-menu bottom left>
+        <template v-slot:activator="{ on }">
+          <v-btn
+          dark
+          icon
+          v-on="on"
+          >
+          <v-icon>menu</v-icon>
+        </v-btn>
+      </template>
+      <v-list dark>
+        <v-list-tile
+        v-for="nav in navLinks"
+        :key="i"
+        :to="nav.link"
+        @click=""
+        >
+        <v-list-tile-title ripple class="text-capitalize">{{ nav.name }}</v-list-tile-title>
+      </v-list-tile>
+    </v-list>
+  </v-menu>
+</v-card-title>
+</v-card>
+</v-flex>
+</v-layout>
+</v-container>
 </template>
 
 <script>
@@ -135,11 +145,22 @@
             name: 'Войти',
             link: '/signin',
           },
+        ],
+        langs: [
           {
             name: 'RUS',
             link: '/',
           },
-        ]
+          {
+            name: 'CHA',
+            link: '/',
+          },
+          {
+            name: 'ENG',
+            link: '/',
+          },
+        ],
+        currentLang: 'RUS'
       }
     },
     mounted() {
@@ -155,6 +176,13 @@
 </script>
 
 <style lang="stylus" scoped>
+.theme--dark.v-list 
+  background: #000000a0;
+.nav-links
+  height 100%
+  text-decoration none
+  &:nth-child(4)
+    min-width: 110px;
 .layout
   background #000000a0
 .nav-link

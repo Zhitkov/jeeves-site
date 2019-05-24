@@ -1,11 +1,11 @@
 <template>
-		<v-layout style="padding-top: 20vh; width: 100vw; height: 80vh; background: linear-gradient(to top, #000 0%, #ffffff50 100%) !important;" row wrap>
-		  <v-flex offset-xs1 xs10 offset-md2 md4 justify-center>
-		    <Logo/>
+		<v-layout style="padding-top: 20vh; width: 100vw; height: 100vh; background: linear-gradient(to top, #000 0%, #ffffff50 100%) !important;" row wrap>
+		  <v-flex offset-xs1 xs10 offset-md1 md3 justify-start>
+		    <Logo style="margin-left: 80px"/>
 		  </v-flex>
-		  <v-flex offset-xs1 xs10 offset-md1 md3>
+		  <v-flex  pa-4 offset-md2 xs10 md3>
 		    <p class="title">Вход в личный кабинет</p>
-		    <Form :aboutBuisness="false"/>
+		    <Form class="signIn" :aboutBuisness="false"/>
 		  </v-flex>
 		</v-layout>
 </template>
@@ -40,7 +40,7 @@ export default {
 }
 .logo{
 	display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 </style>
 <style>

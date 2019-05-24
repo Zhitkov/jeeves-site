@@ -1,6 +1,6 @@
 
 <template>
-	<v-container style="background-size: 100% 100vh; background-position: 1px -25vh; padding: auto 0" >
+	<v-container fluid style="background-size: 100% 100vh; background-position: center -25vh; padding: auto 0" >
 	  <v-layout row wrap>
 	    <v-flex xs12 class="text-c third-container">
 	      <h1 class="third-title">K Вашим услугам наш парк новых авто,</h1>

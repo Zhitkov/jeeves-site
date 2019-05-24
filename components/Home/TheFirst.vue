@@ -1,11 +1,11 @@
 <template>
   <v-layout class="full-screen" row wrap>
     <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="bg" :src="bg">
-          <v-flex offset-xs2 xs2>
-            <Logo class="opa"/>
+          <v-flex offset-md2 md2>
+            <Logo class="opa" style="display: flex;justify-content: flex-start;"/>
           </v-flex>
     </v-parallax>
-    <v-flex offset-xs2 xs8>
+    <v-flex offset-xs3 xs6>
       <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
       <Border/>
       <h1 class=" neue First-text">Установить</h1>

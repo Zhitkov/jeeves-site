@@ -23,7 +23,7 @@
     <v-flex offset-xs2 xs10>
       <p class="driver-title"> Преимущества работы с JEEVES </p>
     </v-flex>
-    <v-flex offset-xs1 xs10>
+    <v-flex offset-xs1 xs9>
       <AboutVector :aboutBuisness="false"/>
     </v-flex>
     <v-flex offset-xs2 xs10>
