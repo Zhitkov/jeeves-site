@@ -5,7 +5,7 @@
             <Logo class="opa" style="display: flex;justify-content: flex-start;"/>
           </v-flex>
     </v-parallax>
-    <v-flex offset-md2 md8 xs12>
+    <v-flex offset-md3 md6 xs12>
       <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
       <Border/>
       <h1 class=" neue First-text">Установить</h1>
