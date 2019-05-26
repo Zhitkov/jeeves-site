@@ -1,7 +1,7 @@
 <template>
 	<v-container pa-0 :style="'background-image: url(' + bg + ')'" fluid>
 		<v-layout row wrap class="hei100">
-			<v-flex offset-xs2 xs5 class="fourth-container">
+			<v-flex offset-md2 md5 offset-xs1 xs12 class="fourth-container">
 				<img :src="logo">
 				<h1 class="neue" style="font-weight: 100;">Мобильное приложение</h1>
 				<div class="phone-container">

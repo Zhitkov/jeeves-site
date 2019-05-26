@@ -10,8 +10,9 @@
 		    hide-delimiters
 		    next-icon="navigate_next"
 		    height="100%"
-		    style="box-shadow: none;"
-		    :cycle='false'>
+		    style="box-shadow: none; min-height: 160px;"
+		    :cycle='false'
+		    >
 		    <p class="car-name">{{car.name}}</p>
 		    <v-carousel-item
 		      v-for="(img, i) in car.img"

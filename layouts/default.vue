@@ -56,8 +56,10 @@ export default {
 body
   overflow: hidden
   background: #fff
+  .v-parallax__image
+    min-height: 137vh !important;
   .loading-container
-     background: #000000;
+    background: #000000;
   .nav-fix
     position: fixed;
     z-index: 9999;

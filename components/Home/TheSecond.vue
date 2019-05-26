@@ -1,10 +1,11 @@
 <template>
 	<v-img class="second-block"  style="min-width: 100vw; width: auto;" :lazy-src="bg" :src="bg" fluid>
 		<v-layout style="justify-content: center" row wrap>
-			<v-flex xs8 style="margin: 20px 0 0 105px">
-				<v-flex offset-xs1 xs6 style="margin: 0 0 30px 0; min-width: 430px;">
+			<v-flex offset-xs1 xs10 offset-md2 md8>
+				<v-flex offset-xs0 xs12 offset-md1 md8>
 					<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
 				</v-flex>
+				<v-flex offset-xs0 xs12 offset-md1 md6>
 				<ul class="second-list">
 					<li>Тщательный отбор в соответствии со строгими критериями.</li>
 					<li>Классический костюм и галстук.</li>
@@ -13,6 +14,7 @@
 					<li>Откроют для Вас дверь, помогут с багажом, в случае дождя встретят с зонтом. </li>
 					<li>Прислушиваются к Вашим пожеланиям по маршруту, музыке, температуре.</li>
 				</ul>
+				</v-flex>
 
 			</v-flex>
 		</v-layout>

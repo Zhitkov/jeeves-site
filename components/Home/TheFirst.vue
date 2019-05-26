@@ -1,11 +1,11 @@
 <template>
   <v-layout class="full-screen" row wrap>
     <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="bg" :src="bg">
-          <v-flex offset-md2 md2>
+          <v-flex offset-md2 md2 offset-xs3 xs6>
             <Logo class="opa" style="display: flex;justify-content: flex-start;"/>
           </v-flex>
     </v-parallax>
-    <v-flex offset-xs3 xs6>
+    <v-flex offset-md2 md8 xs12>
       <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
       <Border/>
       <h1 class=" neue First-text">Установить</h1>
@@ -58,7 +58,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
     align-self: center;
     display: flex;
     .opa 
-      opacity 1
+      align-items: center;
 .First-text
   text-align center 
   font-size 32px
@@ -71,7 +71,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
 <style scoped>
 @media screen and (max-width: 900px){
   .First-text{
-    font-size: 20px; 
+    font-size: 17px; 
     margin: 5% 10% 1%;
   }
   .parallax-screen{
