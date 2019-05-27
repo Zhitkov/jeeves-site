@@ -28,11 +28,13 @@
           slider-color="#136CE2"
           class="hidden-sm-and-down"
           >
-          <v-flex class="v-tabs__div nav-info text-lowercase" offset-lg2 offset-md1 xs2>
+          <v-flex class="v-tabs__div nav-info text-lowercase" offset-xs1 xs1>
             <a  class="nav-link" href="tel:+78005503934">8 800 550 39 34</a>
+          </v-flex>
+          <v-flex style="justify-content: center;" class="v-tabs__div nav-info text-lowercase" xs1>
             <a class="nav-link" href="mailto:info@slv24.ru">info@slv24.ru</a>
           </v-flex>
-          <v-flex class="v-tabs__div text-lowercase" offset-md2 xs5>
+          <v-flex class="v-tabs__div text-lowercase" offset-xs3 xs5>
             <nuxt-link
             class="nav-links"
             v-for="nav in navLinks"
@@ -60,6 +62,8 @@
         </v-list>
       </v-menu>
     </v-flex>
+    <v-flex xs1></v-flex>
+
   </v-tabs>
 </v-flex>
 
@@ -175,6 +179,9 @@
 </script>
 
 <style lang="stylus" scoped>
+.flex.v-tabs__div.text-lowercase.offset-xs3.xs5 {
+  justify-content: center;
+}
 .theme--dark.v-list 
   background: #000000a0;
 .nav-links
@@ -191,9 +198,10 @@
   background none
 .mobile-nav
   background #000000a0 !important
-.v-tabs__div
-  display: flex;
-  height: 100%;
+.nav-info
+  justify-content: flex-end;
+  // display: flex;
+  // height: 100%;
 // .v-tabs__container
 // 	margin: auto 5vw
 // 	.v-tabs__div
@@ -210,8 +218,14 @@
 // 		margin-right 5vw
 .nav-info
     margin auto none
-    a 
-      margin: 0 5%
+    // a 
+    //   margin-right:5%
+</style>
+
+<style type="text/css">
+.v-tabs.hidden-sm-and-down[data-v-20ae26d4]  .v-tabs__container{
+  justify-content: center;
+}
 </style>
 
 <style scoped>

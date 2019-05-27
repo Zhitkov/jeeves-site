@@ -1,29 +1,21 @@
 <template>
-  <v-layout class="full-screen" row wrap>
-    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="bg" :src="bg">
-          <v-flex offset-md2 md2 offset-xs3 xs6>
-            <Logo class="opa" style="display: flex;justify-content: flex-start;"/>
-          </v-flex>
-    </v-parallax>
-    <v-flex offset-md3 md6 xs12>
-      <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
-      <Border/>
-      <h1 class=" neue First-text">Установить</h1>
-      <appInstallButtons/>
-    </v-flex>
-  </v-layout>
+  <v-container style="display: flex; align-items: center; margin-left: 0;">
+    <v-layout class="full-screen" row wrap>
+            <v-flex offset-md1 md2 offset-xs3 xs6>
+              <Logo class="opa"/>
+            </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
 import Logo from '~/components/layouts/Logo.vue'
 import Border from '~/components/layouts/Border.vue'
-import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
 
   export default {
     components: {
       Logo,
       Border,
-      appInstallButtons
     },
     data () {
       return {
@@ -49,24 +41,15 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
   line-height: 36px; 
 .full-screen
   width 100vw
-.parallax-screen
-  width 100vw
-  height 80vh !important
-  .v-parallax__content > .container
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    display: flex;
-    .opa 
-      align-items: center;
-.First-text
-  text-align center 
-  font-size 32px
-  margin 70px 0 30px
-  &:nth-child(3)
-    margin 2% 25% 1%
-.downloads
-  margin-bottom 10vw 
+
+  // .v-parallax__content > .container
+  //   align-content: center;
+  //   align-items: center;
+  //   align-self: center;
+  //   display: flex;
+  .opa 
+    justify-content: center;
+    padding-left: 40px;
 </style>
 <style scoped>
 @media screen and (max-width: 900px){

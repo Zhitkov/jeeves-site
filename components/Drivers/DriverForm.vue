@@ -1,15 +1,15 @@
 <template>
 	<v-layout row wrap>
-		<v-flex offset-xs4 xs4  style="display: flex; justify-content: center;">
-	      <v-menu nudge-bottom="30" nudge-right="10" :close-on-click="menuOpen" :close-on-content-click="menuOpen" content-class="superCard" bottom left>
+		<v-flex offset-md3 md2 offset-xs1 xs10 style="display: flex; justify-content: center;">
+	      <v-menu nudge-bottom="30" nudge-right="65" :close-on-click="menuOpen" :close-on-content-click="menuOpen" bottom left>
 	      	<template >
 	      		<div @click="menuOpen = !menuOpen" slot="activator" class="driver-about">
 	      			<p class="linkText">Требования к атомобилям</p>
 	      			<v-icon>expand_more</v-icon>
-					<div style="margin-top: 22px; margin-left: 42px;" v-if="!menuOpen" class="tooltip-arrow-up"></div>
+					<div style="margin-top: 22px; margin-left: 87px;" v-if="!menuOpen" class="tooltip-arrow-up"></div>
 	      		</div>
 	      	</template>
-	      	<v-card class="superCard" style="width: 40vw; max-width: 650px; padding: 30px; height: 430px;">
+	      	<v-card class="superCard">
 	      		<v-card-tile style="background: white !important;">
 	      		<v-card-tile-title style="">
 	      			<ul class="forCars">
@@ -24,16 +24,18 @@
 	      	</v-card-tile>
 	      </v-card>
 	  </v-menu>
-	  	<v-flex xs3></v-flex>
-	  	<v-menu id="app2" nudge-bottom="30" nudge-left="100" :close-on-click="menuOpen2" :close-on-content-click="menuOpen2" bottom right>
+	</v-flex>
+	 <v-flex offset-md1 md2 offset-xs1 xs10 style="display: flex; justify-content: center;">
+
+	  	<v-menu id="app2" nudge-bottom="30" nudge-left="70" :close-on-click="menuOpen2" :close-on-content-click="menuOpen2" bottom right>
 	      	<template >
 	      		<div @click="menuOpen2 = !menuOpen2" slot="activator" class="driver-about">
 	      			<p class="linkText">Требования к водителям</p> 
 		  			<v-icon>expand_more</v-icon>
-					<div style="margin-top: 22px; margin-left: 40px;" v-if="!menuOpen2" class="tooltip-arrow-up"></div>
+					<div style="margin-top: 22px; margin-left: 82px;" v-if="!menuOpen2" class="tooltip-arrow-up"></div>
 	      		</div>
 	      	</template>
-	      	<v-card style="width: 40vw; max-width: 650px; padding: 30px; height: 430px;">
+	      	<v-card class="superCard">
 	      		<v-card-tile style="background: white !important;">
 	      		<v-card-tile-title style="">
 	      			<ul class="forDrivers">
@@ -53,8 +55,8 @@
 	      </v-card>
 	  </v-menu>
 </v-flex>
-<v-flex offset-xs2 xs4>
-	<v-flex xs9 >
+<v-flex offset-xs1 xs10 offset-md2 md4>
+	<v-flex md9 xs12 >
 		<v-select
 		class='driver-select'
 		:items="cities"
@@ -63,7 +65,7 @@
 		background-color="#fff"
 		></v-select>
 	</v-flex>
-	<v-flex xs9 >
+	<v-flex md9 xs12 >
 		<v-select
 		class='driver-select'
 		:items="workers"
@@ -72,14 +74,14 @@
 		background-color="#fff"
 		></v-select>
 	</v-flex>
-	<v-flex xs9 >
+	<v-flex md9 xs12 >
 		<v-text-field
 		class="form-white"
 		label="ФИО"
 		outline
 		></v-text-field>
 	</v-flex>
-	<v-flex xs9 >
+	<v-flex md9 xs12 >
 		<v-text-field
 		class="form-white"
 		outline
@@ -88,12 +90,12 @@
 		label="E-mail"
 		></v-text-field>
 	</v-flex>
-	<v-flex xs9 style="display: flex;">
+	<v-flex md9 xs12 style="display: flex;">
 		<PhoneForm class="driver-phone" :aboutBuisness="true" style="width: 50%;"/>
 		<v-btn color="primary" large style="width: 50% !important; margin-top: 2px; border-radius: 3px;">Отправить заявку</v-btn>
 	</v-flex>
 </v-flex>
-<v-flex column xs4>
+<v-flex xs4 class="steps">
 	<v-flex class="step" xs1 >
 		<p class="step-title"> Заявка на сайте </p>
 		<v-text-field
@@ -172,6 +174,11 @@
 .driver-select .v-input__slot{
 	border-color: gray !important
 }
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .step{
     min-width: 54px !important;
 }
@@ -197,6 +204,12 @@
 <style scoped>
 	.driver-about > p {
 		margin-bottom: 0px;
+	}
+	.superCard {
+		width: 40vw;
+		max-width: 650px;
+		padding: 30px;
+		height: 430px;
 	}
 	.driver-about{
 		display: flex;
@@ -259,9 +272,23 @@
 		max-width: 650px
     }
 
-/*@media screen and (max-width: 900px){
-    div.tooltip-arrow-up {
-  	display: none;
-  }
-}*/
+@media screen and (max-width: 900px){
+	    .steps {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	.v-menu__content.theme--light.menuable__content__active {
+		margin-top: .2vh !important;
+		left: 0vw !important;
+		width: 100% !important;
+	}
+	.superCard {
+		left: 0vw;
+		width: 100vw;
+		max-width: 100vw;
+		padding: 0px;
+		height: 100%;
+	}
+}
 </style>

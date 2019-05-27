@@ -5,9 +5,7 @@
 	    <v-flex xs12 class="text-c third-container">
 	    	<v-flex offset-md3 md6 xs12>
 			      <h1 class="third-title">K Вашим услугам наш парк новых авто,</h1>
-	    	<v-flex offset-xs1 xs10>
 			      <h3 class="third-subtitle">которые мы содержим в безупречной чистоте и таком же техническом состоянии.</h3>
-			</v-flex>
 			      <p class="third-text">Никакого брендирования.</p>
 	    	</v-flex>
 	    </v-flex>

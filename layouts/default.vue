@@ -1,11 +1,11 @@
 <template>
   <v-app light>
-    <v-container v-if="false" class="loading-container" fill-height fluid>
+<!--     <v-container v-if="false" class="loading-container" fill-height fluid>
       <v-layout row justify-center align-center>
         <v-progress-circular indeterminate :size="70" :width="7" color="white"></v-progress-circular>
       </v-layout>
-    </v-container>
-    <div v-else>
+    </v-container> -->
+    <div>
       <TheNavbar class="nav-fix"/>
         <nuxt />
       <TheFooter/>

@@ -1,8 +1,8 @@
 <template>
-	<v-container fluid style="width: 100vw">
-	  <v-layout style="width: 100%; margin-bottom: 135px;" v-for="car in cars" row wrap>
+	<v-container style="width: 100vw">
+	  <v-layout style="width: 100%; margin-bottom: 135px; display: flex;justify-content: flex-start;" v-for="car in cars" row wrap>
 	    <v-flex class="third-car"
-	    xs12 sm12 md5 offset-xs0 offset-lg2>
+	    xs12 sm12 md5 offset-xs0 offset-lg1>
 	    	<!-- hide-delimiters
 	      	hide-delimiter-background -->
 	      <v-carousel 
@@ -13,7 +13,7 @@
 		    style="box-shadow: none; min-height: 160px;"
 		    :cycle='false'
 		    >
-		    <p class="car-name">{{car.name}}</p>
+		    <p class="car-name">{{ car.name }}</p>
 		    <v-carousel-item
 		      v-for="(img, i) in car.img"
 		      :key="i"
@@ -22,7 +22,7 @@
 		    ></v-carousel-item>
 		  </v-carousel>
 	    </v-flex>
-	    <v-flex pa-0 xs12 sm12 md3 offset-xs0 offset-lg0>
+	    <v-flex pa-0 xs12 sm12 md4 offset-xs0 offset-lg0>
 	      	<b>Бизнес</b>
 	      	<div class="UpDownBorder">
 	      		<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">

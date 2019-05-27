@@ -1,7 +1,8 @@
 <template>
-	<v-container pa-0 :style="'background-image: url(' + bg + ')'" fluid>
+      <v-img :src="bg" style="width: 100vw; min-height: 70vh;">
+	<v-container style="margin-left: 0;">
 		<v-layout row wrap class="hei100">
-			<v-flex offset-md2 md5 offset-xs1 xs12 class="fourth-container">
+			<v-flex offset-md1 md5 offset-xs1 xs10 class="fourth-container">
 				<img :src="logo">
 				<h1 class="neue" style="font-weight: 100;">Мобильное приложение</h1>
 				<div class="phone-container">
@@ -13,7 +14,7 @@
 				</div>
 					<appInstallButtons class="fourth-app-install"/>
 			</v-flex>
-			<v-flex  xs5 class="fourth-container">
+			<v-flex  xs5 class="fourth-phone">
 					<v-img
 					xs5
 					cover
@@ -25,6 +26,7 @@
 	        </v-flex>
 		</v-layout>
 	</v-container>
+  </v-img>
 </template>
 <script>
 import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
@@ -37,9 +39,9 @@ export default {
     },
 	data () {
 		return {
-			bg: require('../../static/Home/Fourth/bg.png'),
 			phone: require('../../static/Home/Fourth/iphone.png'),
 			logo: require('../../static/logos/logo2.png'),
+		    bg: require('../../static/Home/Fourth/bg.png'),
 		}
 	}
 }
@@ -50,9 +52,6 @@ export default {
 	  font-size: 36px;
 	  line-height: 36px; 
   	}
-	.hei100, .v-image {
-	    height: 100% !important;
-	}
 	.container {
 		background-size: cover;
 		width: 100vw;
@@ -61,6 +60,7 @@ export default {
 	}
 	.fourth-container {
 		margin-top: 45px;
+	    padding-left: 50px;
 	}
 	.phone-container {
 		display: flex;
@@ -77,9 +77,20 @@ export default {
 	}
 </style>
 <style scoped>
+
+@media screen and (max-width: 1400px){
+.fourth-container {
+		margin-top: 45px;
+	    padding-left: 15px;
+	}
+}
 @media screen and (max-width: 900px){
+	.fourth-container {
+		margin-top: 45px;
+	    padding-left: 0;
+	}
 	.container{
-		height: 85vh;
+		height: 80vh;
 	    padding: 20px !important;
     }
     .v-btn--large {
@@ -90,8 +101,8 @@ export default {
 	.fourth-app-install{
 		text-align: center !important;
 	}
-	.v-image{
-		display: none !important;
+	.fourth-phone {
+		display: none;
 	}
 	.phone-container > div{
 		display: flex;
@@ -102,5 +113,10 @@ export default {
 	.downloads{
 	    text-align: center !important;
 	}
+}
+</style>
+<style type="text/css">
+div[data-v-32a09d94] .v-responsive__content{
+	    align-self: center;
 }
 </style>
