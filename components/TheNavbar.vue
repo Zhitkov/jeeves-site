@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid pa-0 style="height: 50px">
+  <v-container fluid pa-0 style="height: 50px;">
     <v-layout mb-0 pa-0 row wrap justify-center>
         <!-- <v-tabs v-model="active" color="#00000000" dark slider-color="#136CE2" class="hidden-sm-and-down">
           <v-flex style="justify-content: flex-start;" justify-start xs1 class="v-tabs__div nav-info">
@@ -20,7 +20,7 @@
           <v-spacer></v-spacer>
         </v-tabs> -->
 
-        <v-flex offset-xs2 xs10>
+        <v-flex xs12>
           <v-tabs
           v-model="active"
           color="#00000000"
@@ -28,12 +28,11 @@
           slider-color="#136CE2"
           class="hidden-sm-and-down"
           >
-          <v-flex class="v-tabs__div nav-info text-lowercase" xs2>
-            
-            <a style="margin: 0 5%" class="hidden-xs nav-link" href="">8 800 550 39 34</a>
-            <a style="margin: 0 5%" class="hidden-xs nav-link" href="">info@slv24.ru</a>
+          <v-flex class="v-tabs__div nav-info text-lowercase" offset-lg2 offset-md1 xs2>
+            <a  class="nav-link" href="tel:+78005503934">8 800 550 39 34</a>
+            <a class="nav-link" href="mailto:info@slv24.ru">info@slv24.ru</a>
           </v-flex>
-          <v-flex class="v-tabs__div text-lowercase" offset-xs3 xs5>
+          <v-flex class="v-tabs__div text-lowercase" offset-md2 xs5>
             <nuxt-link
             class="nav-links"
             v-for="nav in navLinks"
@@ -42,7 +41,7 @@
             <v-tab ripple class="text-capitalize"> {{ nav.name }} </v-tab>
           </nuxt-link>
           <v-tab-item
-          v-for="n in 6"
+          v-for="n in 7"
           :key="n"
           >
         </v-tab-item> 
@@ -211,11 +210,15 @@
 // 		margin-right 5vw
 .nav-info
     margin auto none
+    a 
+      margin: 0 5%
 </style>
 
-<!-- <style scoped>
-
-@media screen and (max-width: 1200px){
-  
+<style scoped>
+@media screen and (max-width: 1200px) {
+  .v-card__title {
+      padding: 16px 1rem;
+  }
 }
-</style> -->
+
+</style>

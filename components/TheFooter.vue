@@ -104,12 +104,13 @@ import Logo from '~/components/layouts/Logo.vue'
 		margin-left: 30px;
 		cursor: pointer;
 	}
-	.v-card__title {
-	    padding: 16px 3rem;
-	}
 </style>
 
 <style scoped>
+	.v-card__title {
+	    padding: 16px 3rem;
+	}
+	
 @media screen and (max-width: 900px){
 	.v-card__actions{
 		margin: 50px 0 0;
