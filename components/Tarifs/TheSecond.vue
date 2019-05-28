@@ -1,9 +1,12 @@
 <template>
-	  <v-layout style="margin: 45px auto;" row wrap justify-start>
+	  <v-layout style="margin: 20px auto;" row wrap justify-start>
+	  	<v-spacer></v-spacer>
+	  	<v-flex offset-xs1 xs10>
+	  	  
 	    <v-flex 
-	    xs10 sm10 md6 offset-xs1 offset-lg3>
+	    xs10 sm10 md5 offset-xs1 offset-lg1>
 	      <p class=" neue"> Тарифы </p>
-	      <p style="font-size: 18px; font-weight: 100" class="subtitlte">
+	      <p style="font-size: 18px; font-weight: 100; line-height: 21px;" class="subtitlte">
 	      	Давно выяснено, что при оценке дизайна и композиции читаемый  текст мешает 
 			сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более 
 			или менее стандартное заполнение шаблона, а также реальное распределение 
@@ -12,7 +15,7 @@
 	      </p>
 	    </v-flex>
 	    <v-flex 
-	    xs10 sm10 md3 offset-xs1 offset-lg3 >
+	    xs10 sm10 md3 offset-xs1 offset-lg1 >
 		      <p style="display: inline-block; margin-right: 15px" class=" linkText neue" @click="mapCity = true"> Москва </p>
 		      <p style="display: inline-block" class=" linkText neue" @click="mapCity = false"> Санкт-Петербург </p>
 
@@ -47,6 +50,8 @@
 
 
 		    </v-flex>
+	  	</v-flex>
+
 	  </v-layout>
 </template>
 
@@ -68,7 +73,7 @@
 	line-height: 36px;
 	font-weight: 100;
 	margin-top: 11px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 </style>
 

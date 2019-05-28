@@ -1,10 +1,13 @@
 <template>
   <v-layout class="full-screen" row wrap>
-    <v-img class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" cover :src="require('../../static/tarifs/preview.png')" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
-      <v-flex offset-xs1>
+    <v-flex xs2>
+      
+      <v-img class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" cover :src="require('../../static/tarifs/preview.png')" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
+      <v-flex offset-xs2>
         <img class="logo2" style="padding-bottom: 42px;" :src="logo">
       </v-flex>
     </v-img>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -53,12 +56,10 @@ div[data-v-00bd8e1c].container
 </style>
 <style scoped>
 .logo2{
-  padding-left: 60px;
+
 }
 @media screen and (max-width: 1400px){
-  .logo2{
-    padding-left: 20px;
-  }
+
 }
 @media screen and (max-width: 900px){
   .First-text{

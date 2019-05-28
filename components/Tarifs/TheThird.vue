@@ -1,16 +1,15 @@
 <template>
-	<v-container style="width: 100vw">
-	  <v-layout style="width: 100%; margin-bottom: 135px; display: flex;justify-content: flex-start;" v-for="car in cars" row wrap>
+	<v-container pa-0 style="width: 100vw">
+	  <v-layout v-for="car in cars" row wrap>
+	  		<v-flex offset-xs1 md10 xs12 class="car-block">
 	    <v-flex class="third-car"
-	    xs12 sm12 md5 offset-xs0 offset-lg1>
-	    	<!-- hide-delimiters
-	      	hide-delimiter-background -->
+	     px-2 offset-md1 md6 xs12  >
 	      <v-carousel 
 	      	light
 		    hide-delimiters
 		    next-icon="navigate_next"
 		    height="100%"
-		    style="box-shadow: none; min-height: 160px;"
+		    style="box-shadow: none;"
 		    :cycle='false'
 		    >
 		    <p class="car-name">{{ car.name }}</p>
@@ -22,8 +21,8 @@
 		    ></v-carousel-item>
 		  </v-carousel>
 	    </v-flex>
-	    <v-flex pa-0 xs12 sm12 md4 offset-xs0 offset-lg0>
-	      	<b>Бизнес</b>
+	    <v-flex px-4  md4  xs10>
+	      	<b style="padding-bottom: 5px;">Бизнес</b>
 	      	<div class="UpDownBorder">
 	      		<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M13.814 4.90886C13.814 7.34669 11.8506 9.31771 9.43508 9.31771C7.01954 9.31771 5.05615 7.34669 5.05615 4.90886C5.05615 2.47103 7.01954 0.5 9.43508 0.5C11.8506 0.5 13.814 2.47103 13.814 4.90886Z" stroke="black"/>
@@ -91,7 +90,7 @@
 				<v-spacer></v-spacer>
 	      		<p> {{ car.info.costMin }} ₽</p>
 	      	</div>
-	      	<div class="UpDownBorder">
+	      	<div style="border-bottom: none !important;" class="UpDownBorder">
 				<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<ellipse cx="9.34196" cy="2.08536" rx="2.27848" ry="2.08536" fill="#1D1919"/>
 					<ellipse cx="4.10142" cy="4.39016" rx="2.05064" ry="1.97561" fill="#1D1919"/>
@@ -108,16 +107,16 @@
 	      	</div>
 
 	      </div>
-	      <div v-for="infoCar in infoCars"></div>
 
 	    </v-flex>
+	</v-flex>
 	    <v-flex xs12>
 	    	 <v-expansion-panel>
       <v-expansion-panel-content>
         <template v-slot:header>
           	<div>
-          		<div class="v-expansion-panel__header__icon"><p class="eapansion-title">Подробнее о тарифе</p><i aria-hidden="true" class="v-icon material-icons theme--light">keyboard_arrow_down</i></div>
-    			<v-img v-show="$vuetify.icons.expand===false" contain :src="carInfoBorder"></v-img>
+          		<div @click="car.active = !car.active" class="v-expansion-panel__header__icon"><p class="eapansion-title">Подробнее о тарифе</p><i aria-hidden="true" class="v-icon material-icons theme--light">keyboard_arrow_down</i></div>
+    			<v-img v-if="!car.active" contain :src="carInfoBorder"></v-img>
     		</div>
         </template>
         <v-card>
@@ -179,6 +178,7 @@
 		    	[
 		    		{
 		    			name: 'Mercedes 1',
+		    			active: false,
 		    			img: 
 		    			[
 		    				require('../../static/cars/plus1.png'),
@@ -294,6 +294,7 @@
 		    		},
 		    		{
 		    			name: 'Mercedes 1',
+		    			active: false,
 		    			img: 
 		    			[
 		    				require('../../static/cars/plus1.png'),
@@ -419,7 +420,7 @@
 </script>
 <style type="text/css">
 .v-image__image--contain{
-    background-size: 70%;
+    background-size: 85%;
 }
 .v-expansion-panel__header__icon:last-child {
 	display: none
@@ -438,10 +439,14 @@
 }*/
 </style>
 <style scoped>
-.third-car{
+.car-block {
+	display: flex; 
+	flex-direction: row;
+}
+/*.third-car{
     display: flex;
     align-self: center;
-}
+}*/
 .costAbout>.UpDownBorder:first-child{
 	border-bottom: none
 }
@@ -473,20 +478,34 @@ b{
     display: block;
     padding-bottom: 15px;
 }
+.UpDownBorder > svg {
+	margin-right: 15px;
+}
 .UpDownBorder{
 	display: flex;
     border-bottom: 1px solid gray;
     align-items: center;
     height: 12.5%;
 }
-.UpDownBorder:first-child{
+.UpDownBorder:first-child {
     border-top: 0px solid gray;
 
+}
+.UpDownBorder>p:last-child {
+width: 50px;
+text-align: left;
 }
 .UpDownBorder>p {
     margin-left: 0px !important;
     margin: 15px;
     font-size: 14px;
+}
+
+@media screen and (max-width: 900px){
+	.car-block {
+		display: flex; 
+		flex-direction: column !important;
+	}
 }
 /*.v-carousel__controls__item > .v-icon.material-icons.theme--dark{
 	display: none !important;

@@ -1,32 +1,32 @@
 <template>
-      <v-img :src="bg" style="width: 100vw; min-height: 70vh;">
-	<v-container style="margin-left: 0;">
-		<v-layout row wrap class="hei100">
-			<v-flex offset-md1 md5 offset-xs1 xs10 class="fourth-container">
-				<img :src="logo">
-				<h1 class="neue" style="font-weight: 100;">Мобильное приложение</h1>
-				<div class="phone-container">
-					<p>Введите номер телефона, чтобы получить ссылку на приложение </p>
-					<div style="display: flex">
-						<PhoneForm/>
-						<v-btn large color="primary">Отправить заявку</v-btn>
+		<v-flex xs12>
+	<v-img cover :src="bg" style="width: 100vw;">
+			<v-layout row wrap>
+				<v-flex offset-md2 md5 offset-xs1 xs10 class="fourth-block">
+					<img :src="logo">
+					<h1 class="neue">Мобильное приложение</h1>
+					<div class="phone-container">
+						<p>Введите номер телефона, чтобы получить ссылку на приложение </p>
+						<div style="display: flex">
+							<PhoneForm/>
+							<v-btn large color="primary">Отправить заявку</v-btn>
+						</div>
 					</div>
-				</div>
 					<appInstallButtons class="fourth-app-install"/>
-			</v-flex>
-			<v-flex  xs5 class="fourth-phone">
+				</v-flex>
+				<v-flex  xs5 class="fourth-phone">
 					<v-img
 					xs5
 					cover
-                  :src="phone"
-                  :lazy-src="phone"
-                  position="center 20%"
-                >
-	            </v-img>
-	        </v-flex>
+					:src="phone"
+					:lazy-src="phone"
+					position="center 20%"
+					>
+				</v-img>
+			</v-flex>
 		</v-layout>
-	</v-container>
-  </v-img>
+</v-img>
+	</v-flex>
 </template>
 <script>
 import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
@@ -51,16 +51,11 @@ export default {
 	.neue {
 	  font-size: 36px;
 	  line-height: 36px; 
+	  font-weight: 100;
+	  color: white;
   	}
-	.container {
-		background-size: cover;
-		width: 100vw;
-		height: 70vh;
-		color: white;
-	}
-	.fourth-container {
+	.fourth-block {
 		margin-top: 45px;
-	    padding-left: 50px;
 	}
 	.phone-container {
 		display: flex;
@@ -68,6 +63,9 @@ export default {
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 		margin: 10% 0% 0%;
+	}
+	.phone-container > p {
+		color: #FFF;
 	}
 	.fourth-app-install {
 		text-align: left;
@@ -81,7 +79,6 @@ export default {
 @media screen and (max-width: 1400px){
 .fourth-container {
 		margin-top: 45px;
-	    padding-left: 15px;
 	}
 }
 @media screen and (max-width: 900px){
@@ -118,5 +115,8 @@ export default {
 <style type="text/css">
 div[data-v-32a09d94] .v-responsive__content{
 	    align-self: center;
+}
+div[data-v-32a09d94] .v-responsive.v-image{
+	    height: 55vh;
 }
 </style>

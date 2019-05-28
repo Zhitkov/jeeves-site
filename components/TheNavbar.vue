@@ -1,73 +1,59 @@
 <template>
-  <v-container fluid pa-0 style="height: 50px;">
-    <v-layout mb-0 pa-0 row wrap justify-center>
-        <!-- <v-tabs v-model="active" color="#00000000" dark slider-color="#136CE2" class="hidden-sm-and-down">
-          <v-flex style="justify-content: flex-start;" justify-start xs1 class="v-tabs__div nav-info">
-            <a class="hidden-xs nav-link" href="">8 800 550 39 34</a>
-          </v-flex>
-          <v-flex justify-end xs1 class="v-tabs__div nav-info text-lowercase">
-            <a class="hidden-xs nav-link" href="">info@slv24.ru</a>
-          </v-flex>
-          <v-spacer></v-spacer>
-          <v-flex xs1 v-for="nav in navLinks" :key="nav-link">
-            <nuxt-link tag='p' style='margin-bottom: 0px; height: 100%;' :to="nav.link">
-              <v-tab ripple class="text-capitalize">
-                 {{ nav.name }}
-              </v-tab>
-            </nuxt-link>
-          </v-flex>
-            <v-tab-item style="width: 100%;" v-for="n in navLinks.length" :key="n"></v-tab-item>
-          <v-spacer></v-spacer>
-        </v-tabs> -->
-
-        <v-flex xs12>
-          <v-tabs
-          v-model="active"
-          color="#00000000"
-          dark
-          slider-color="#136CE2"
-          class="hidden-sm-and-down"
-          >
-          <v-flex class="v-tabs__div nav-info text-lowercase" offset-xs1 xs1>
-            <a  class="nav-link" href="tel:+78005503934">8 800 550 39 34</a>
-          </v-flex>
-          <v-flex style="justify-content: center;" class="v-tabs__div nav-info text-lowercase" xs1>
-            <a class="nav-link" href="mailto:info@slv24.ru">info@slv24.ru</a>
-          </v-flex>
-          <v-flex class="v-tabs__div text-lowercase" offset-xs3 xs5>
-            <nuxt-link
-            class="nav-links"
-            v-for="nav in navLinks"
-            :key="n"
-            :to="nav.link">
-            <v-tab ripple class="text-capitalize"> {{ nav.name }} </v-tab>
-          </nuxt-link>
-          <v-tab-item
-          v-for="n in 7"
+  <v-container py-0 style=" min-width: 100%; background: #000000a0">
+    <v-layout row wrap>
+      <v-flex offset-xs1 xs10>
+        <v-tabs
+        v-model="active"
+        @onload="console.log('test', active);"
+        color="#00000000"
+        dark
+        slider-color="#136CE2"
+        class="hidden-sm-and-down"
+        >
+        <v-spacer></v-spacer>
+        <v-flex mr-2 justify-center class="v-tabs__div nav-info text-lowercase" xs1>
+          <a  class="nav-link" href="tel:+78005503934">8 800 550 39 34</a>
+        </v-flex>
+        <v-flex style="justify-content: flex-start;" class="v-tabs__div nav-info text-lowercase" xs1>
+          <a class="nav-link" href="mailto:info@slv24.ru">info@slv24.ru</a>
+        </v-flex>
+        <v-flex class="v-tabs__div text-lowercase" offset-xs3 xs5>
+          <nuxt-link
+          class="nav-links"
+          :id="nav.link"
+          v-for="nav in navLinks"
           :key="n"
+          :to="nav.link">
+          <v-tab ripple class="text-capitalize"> {{ nav.name }} </v-tab>
+        </nuxt-link>
+        <v-tab-item
+        v-for="n in 7"
+        :key="n"
+        >
+      </v-tab-item> 
+      <v-menu bottom left>
+        <template v-slot:activator="{ on }">
+          <v-tab v-on="on" ripple class="text-capitalize"> {{ currentLang }} <v-icon>expand_more</v-icon> </v-tab>
+        </template> 
+        <v-list dark>
+          <v-list-tile
+          v-for="lang in langs"
+          :key="i"
+          @click=""
           >
-        </v-tab-item> 
-        <v-menu bottom left>
-          <template v-slot:activator="{ on }">
-            <v-tab v-on="on" ripple class="text-capitalize"> {{ currentLang }} <v-icon>expand_more</v-icon> </v-tab>
-          </template> 
-          <v-list dark>
-            <v-list-tile
-            v-for="lang in langs"
-            :key="i"
-            @click=""
-            >
-            <v-list-tile-title ripple class="text-capitalize">{{ lang.name }}</v-list-tile-title>
-          </v-list-tile>
-        </v-list>
-      </v-menu>
-    </v-flex>
-    <v-flex xs1></v-flex>
+          <v-list-tile-title ripple class="text-capitalize">{{ lang.name }}</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-menu>
+  </v-flex>
+        <v-spacer></v-spacer>
 
-  </v-tabs>
+</v-tabs>
 </v-flex>
 
+</v-layout>
 
+<v-layout row wrap>
 <v-flex xs12>
   <v-card dark class="hidden-md-and-up" flat width="100vw">
     <v-card-title class="mobile-nav white--text">
@@ -114,7 +100,7 @@
   export default {
     data () {
       return {
-        active: null,
+        active: 0,
         items: [
         { title: 'Click Me' },
         { title: 'Click Me' },
@@ -190,32 +176,14 @@
   &:nth-child(4)
     min-width: 110px;
 .layout
-  background #000000a0
+  background #00000000
 .nav-link
   color white
   text-decoration none
 .theme--dark.v-sheet
   background none
-.mobile-nav
-  background #000000a0 !important
 .nav-info
-  justify-content: flex-end;
-  // display: flex;
-  // height: 100%;
-// .v-tabs__container
-// 	margin: auto 5vw
-// 	.v-tabs__div
-// 		width 5vw
-// 	.nav-info
-// 		padding 12px 6px 
-// 		width 10vw
-// 	.v-tabs__div:nth-child(3)
-// 		margin-right 38vw
-// 	.v-tabs__div:nth-child(2)
-// 		width 7vw
-// 		margin-left 5vw
-// 	.v-tabs__div:last-child
-// 		margin-right 5vw
+  justify-content: center;
 .nav-info
     margin auto none
     // a 
@@ -223,9 +191,9 @@
 </style>
 
 <style type="text/css">
-.v-tabs.hidden-sm-and-down[data-v-20ae26d4]  .v-tabs__container{
+/*.v-tabs.hidden-sm-and-down[data-v-20ae26d4]  .v-tabs__container{
   justify-content: center;
-}
+}*/
 </style>
 
 <style scoped>

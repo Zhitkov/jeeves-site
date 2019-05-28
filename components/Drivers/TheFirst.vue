@@ -1,8 +1,8 @@
 <template>
   <v-layout class="full-screen" row wrap>
-    <v-img class="parallax-screen change" dark :lazy-src="require('../../static/Drivers/bg.png')" cover :src="require('../../static/Drivers/bg.png')" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
-      <v-flex offset-xs1 xs2>
-        <img style="padding-bottom: 42px; float: right;" :src="logo">
+    <v-img class="parallax-screen change" dark cover :src="driver" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
+      <v-flex offset-xs2 xs2>
+        <img style="padding-bottom: 42px;" :src="logo">
       </v-flex>
     </v-img>
     <v-flex offset-md2 md8 offset-xs1 xs10>
@@ -23,7 +23,7 @@
     <v-flex offset-md2 md8 offset-xs1 xs10>
       <p class="driver-title"> Преимущества работы с JEEVES </p>
     </v-flex>
-    <v-flex offset-xs1 xs10>
+    <v-flex offset-xs1 xs9>
       <AboutVector style="max-width: 1500px;" :aboutBuisness="false"/>
     </v-flex>
     <v-flex offset-md2 md8 offset-xs1 xs10>
@@ -46,6 +46,7 @@ import DriverForm from '~/components/Drivers/DriverForm.vue'
     data () {
       return {
         logo: require('../../static/logos/logo2.png'),
+        driver: require('../../static/Drivers/bg.png')
       }
     },
     methods: {
@@ -91,6 +92,7 @@ div[data-v-00bd8e1c].container
   font-size: 21px !important;
   font-weight: 100;
   margin-top: 35px;
+  line-height: 25px;
 }
 @media screen and (max-width: 900px){
   .driver-title {

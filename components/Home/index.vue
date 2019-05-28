@@ -1,34 +1,24 @@
 <template>
-  <v-layout
+  <v-container ma-0 pa-0 style="min-width: 100vw">
+    <v-layout
     column
     justify-center
     align-center
-  >
-    <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="bg1" :src="bg1">
-      <v-flex xs12 style="display: flex">
-          <TheFirst />
-      </v-flex>
-    </v-parallax>
-    <v-container>
-      <v-layout row wrap>
-        <v-flex offset-md2 md8 xs12>
-          <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
-          <Border/>
-          <h1 class=" neue First-text" style="font-weight: 100;">Установить</h1>
-          <appInstallButtons/>
-        </v-flex>
-      </v-layout>
-    </v-container>
-    <v-flex xs12>
-        <TheSecond />
-      </v-flex>
+    >
       <v-flex xs12>
-        <TheThird />
+        <TheFirst />
       </v-flex>
-        <v-flex xs12>
-          <TheFourth />
-        </v-flex>
+    <v-flex xs12>
+      <TheSecond />
+    </v-flex>
+    <v-flex xs12>
+      <TheThird />
+    </v-flex>
+    <v-flex xs12>
+      <TheFourth />
+    </v-flex>
   </v-layout>
+</v-container>
 </template>
 
 <script>
