@@ -26,7 +26,7 @@
 
 			</v-card-title>
 		</v-flex>
-		<v-flex xs5 style="display: flex;justify-content: flex-end;">
+		<v-flex xs5 style="display: flex;justify-content: flex-end; margin-top: 10px">
 
 		<v-btn
 		class="icons"
@@ -51,10 +51,10 @@
 </v-flex>
 <v-flex offset-xs2 xs8>
 	<v-card-actions dark class="footer-action dark justify-start">
-		<p>&copy; 2017 «Jeeves». Все права защищены</p>
-		<div class="sas">
-			<p>Условия использования</p>
-			<p>Политика конфиденциальности</p>
+		<p style="font-size: 18px;">&copy; 2017 «Jeeves». Все права защищены</p>
+		<div>
+			<p style="font-size: 14px;">Условия использования</p>
+			<p style="font-size: 14px;">Политика конфиденциальности</p>
 		</div>
 	</v-card-actions>
 </v-flex>
@@ -95,6 +95,7 @@ import Logo from '~/components/layouts/Logo.vue'
 	    border-color: #000;
 	}
 	.footer-action {
+		font-weight: 300;
 		display: flex !important;
 		-webkit-justify-content: space-between !important;
 		justify-content: space-between !important;
@@ -102,6 +103,9 @@ import Logo from '~/components/layouts/Logo.vue'
 	}
 	.footer-action > div {
 		display: flex;
+	}
+	.footer-action > div > p:first-child {
+		margin-right: 20px;
 	}
 	.sas > p {
 		/*margin-right: 20px;*/
@@ -111,6 +115,7 @@ import Logo from '~/components/layouts/Logo.vue'
 		align-self: flex-start;
 	}
 	.subheading > ul {
+		font-weight: 500;
 		list-style: none;
 		font-size: 20px;
 		margin-left: 30px;

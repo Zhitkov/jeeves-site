@@ -44,9 +44,11 @@
 	color: white;
     font-size: 21px; 
 	margin: 10px auto;
+	font-weight: 500
 }
 .second-list{
 	margin: 10px 10px 10px 0px;
+	font-weight: 500
 }
 .second-list > li{
 	color: white;

@@ -36,7 +36,7 @@
       </v-flex>
       <v-flex xs12 class='contact-container'>
         <div class="vector">
-        <svg style="align-self: end;margin-top: 5px;" width="18" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="18" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M7.00118 0.000603042C6.98739 -7.2142e-05 6.97345 -0.000184691 6.9594 0.000287265C4.12172 0.0955983 2.37059 1.32302 1.33849 2.78723C0.32417 4.22621 0.0264506 5.85894 0.00123974 6.78404C-0.0201531 7.56904 0.238392 8.47651 0.538774 9.25588C0.843646 10.0469 1.21508 10.7649 1.46878 11.1916L1.48492 11.2188L1.50436 11.2437L6.62856 17.8113C6.79843 18.029 7.11262 18.0678 7.33034 17.8979C7.39202 17.8498 7.43933 17.7901 7.47162 17.7242L12.4945 11.2424L12.5134 11.2181L12.5291 11.1916C12.7828 10.7649 13.1542 10.0469 13.4591 9.25588C13.7595 8.47651 14.018 7.56905 13.9966 6.78404C13.9713 5.85544 13.6604 4.22266 12.6344 2.78487C11.592 1.32406 9.83296 0.0982587 7.00118 0.000603042ZM7.015 16.6809L11.6849 10.6546C11.9126 10.2679 12.2495 9.61381 12.526 8.89625C12.8134 8.15069 13.0129 7.39377 12.997 6.81128C12.9757 6.03052 12.7044 4.60444 11.8204 3.36573C10.956 2.15441 9.485 1.08926 6.97565 1.00032C4.46682 1.08924 3.00842 2.15385 2.15584 3.36337C1.28353 4.60089 1.02224 6.02702 1.00087 6.81128C0.984994 7.39377 1.18452 8.15069 1.47187 8.89625C1.74826 9.61337 2.08489 10.2671 2.31254 10.6539L7.015 16.6809Z" fill="#136CE2"/>
   <path d="M9.12752 6.5395C9.12752 7.76443 8.09414 8.787 6.78227 8.787C5.4704 8.787 4.43701 7.76443 4.43701 6.5395C4.43701 5.31457 5.4704 4.29199 6.78227 4.29199C8.09414 4.29199 9.12752 5.31457 9.12752 6.5395Z" stroke="#136CE2"/>
   </svg>
@@ -55,16 +55,15 @@
         <p class="thin contacts">partners@slv24.ru</p>
         <p class="thin contacts">oko@servisvip.ru</p>
       </v-flex>
-
+<v-flex offset-xs2 xs10>
+  
       <v-dialog
       v-model="dialog"
       width="500"
     >
-      <template v-slot:activator="{ on }">
         
-        <v-flex v-on="on" style="margin-top: 30px" offset-xs2 xs10 class=' thin'><p class="black-underline">Оставить отзыв о работе мобильного приложения.</p></v-flex>
-        <v-flex v-on="on" style="margin-bottom: 50px" offset-xs2 xs10 class='thin'><p class="black-underline">Оставить отзыв об уровне нашего сервиса.</p></v-flex>
-      </template>
+        <p slot="activator" class="black-underline thin">Оставить отзыв о работе мобильного приложения.</p>
+        <p slot="activator" class="black-underline thin">Оставить отзыв об уровне нашего сервиса.</p>
 
       <v-card>
         <v-card-title
@@ -73,7 +72,7 @@
           style="display: flex; justify-content: center;"
         >
           <span class="neue" style="font-size: 38px !important;">Отзыв</span>
-           <v-icon @click="dialog = false" style="position: absolute; right: 10px; top: 10px;">clear</v-icon>
+           <v-icon @click="dialog = false" class="clear">clear</v-icon>
            <b style="font-size: 20px; text-align: center;">Ваше мнение очень важно для нас, чтобы сделать наш сервис лучше для вас.</b>
         </v-card-title>
 
@@ -102,15 +101,52 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
+      <v-dialog
+              v-model="dialog2"
+              width="500"
+              >
           <v-btn
             color="primary"
             @click="dialog = false"
+            slot="activator"
           >
             Отправить
+          </v-btn>
+
+
+
+
+<v-card>
+        <v-card-title
+          class="headline lighten-2"
+          primary-title
+          style="display: flex; justify-content: center;"
+        >
+          <span class="neue" style="font-size: 38px !important;">Спасибо</span>
+           <b style="font-size: 21px; line-height: 25px; text-align: center; font-weight: 500;">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.</b>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            @click="dialog2 = false"
+            slot="activator"
+          >
+            Завершить
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+
+
+
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+</v-flex>
+
 
 
   </v-layout>
@@ -124,9 +160,10 @@
     },
     data () {
       return {
-        logo: require('../../static/logos/logo2.png'),
+        logo: require('../../static/logos/logo2.svg'),
         bg: require('../../static/Contacts/bg.png'),
         dialog: false,
+        dialog2: false,
         on: true
 
       }
@@ -135,6 +172,10 @@
 </script>
 
 <style lang="stylus" scoped>
+.clear
+  position absolute 
+  right 10px
+  top 10px
 .blue-text 
   color: #136CE2;
   p 
@@ -145,15 +186,22 @@
   box-shadow: inset 0 0px 0 white, inset 0 -1px 0 black
   display: inline-flex;
   margin-bottom 5px
-  // border-bottom #000 solid 1px
+  display: block;
+  &:first-child
+    margin-top: 30px
+  &:last-child
+    margin-bottom: 50px
 .contact-container
-  display: flex; 
-  align-items: center
+  display flex
+  align-items center
   .vector
     display flex
-    align-self: end;
-    justify-self: center;
-    width: 20px;
+    align-self end
+    justify-self center
+    width 20px
+    svg
+      align-self end
+      margin-top 5px
 .contacts
   margin-left: 10px;
   margin-bottom: 0
@@ -164,8 +212,6 @@
   align-self: flex-end
 .full-screen
   width 100vw
-div[data-v-00bd8e1c].container
-  align-items: flex-end !important
 .parallax-screen
   width 100vw
   height 57vh !important

@@ -3,13 +3,13 @@
     <v-spacer></v-spacer>
     <v-flex xs12>
     <v-parallax v-loading="completeNext﻿" class="parallax-screen change" dark :lazy-src="bg" :src="bg">
-          <v-flex offset-md2 md2 style="min-width: 212px;">
-            <Logo class="opa" style="display: flex;justify-content: flex-start;"/>
+          <v-flex offset-md2 md2 offset-xs3 xs6 style="min-width: 212px;">
+            <Logo class="opa" style="display: flex;justify-content: flex-start;     align-items: center;"/>
           </v-flex>
     </v-parallax>
-    <v-flex offset-xs2 xs7>
+    <v-flex offset-md2 md8 offset-xs1 xs10>
       <h1 class="First-text">Комфорт поездок бизнес-классом и личный ассистент в одном мобильном приложении </h1>
-      <Border/>
+      <Border style="margin-left: 0;width: 100%"/>
       <h1 class=" neue First-text">Установить</h1>
       <appInstallButtons/>
     </v-flex>
@@ -53,7 +53,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
   width 100vw
 .parallax-screen
   width 100vw
-  height 80vh !important
+  height 76vh !important
   .v-parallax__content > .container
     align-content: center;
     align-items: center;
@@ -65,6 +65,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
   text-align center 
   font-size 32px
   margin 50px 0 10px
+  font-weight 500
   &:nth-child(3)
     margin 2% 25% 1%
 .downloads

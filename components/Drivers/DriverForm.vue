@@ -2,13 +2,11 @@
 	<v-layout row wrap>
 		<v-flex offset-md3 md2 offset-xs1 xs10 style="display: flex; justify-content: center;">
 	      <v-menu nudge-bottom="30" nudge-right="65" :close-on-click="menuOpen" :close-on-content-click="menuOpen" bottom left>
-	      	<template >
 	      		<div @click="menuOpen = !menuOpen" slot="activator" class="driver-about">
 	      			<p class="linkText">Требования к атомобилям</p>
 	      			<v-icon>expand_more</v-icon>
 					<div style="margin-top: 22px; margin-left: 87px;" v-if="!menuOpen" class="tooltip-arrow-up"></div>
 	      		</div>
-	      	</template>
 	      	<v-card class="superCard">
 	      		<v-card-tile style="background: white !important;">
 	      		<v-card-tile-title style="">
@@ -28,13 +26,11 @@
 	 <v-flex offset-md1 md2 offset-xs1 xs10 style="display: flex; justify-content: center;">
 
 	  	<v-menu id="app2" nudge-bottom="30" nudge-left="70" :close-on-click="menuOpen2" :close-on-content-click="menuOpen2" bottom right>
-	      	<template >
 	      		<div @click="menuOpen2 = !menuOpen2" slot="activator" class="driver-about">
 	      			<p class="linkText">Требования к водителям</p> 
 		  			<v-icon>expand_more</v-icon>
 					<div style="margin-top: 22px; margin-left: 82px;" v-if="!menuOpen2" class="tooltip-arrow-up"></div>
 	      		</div>
-	      	</template>
 	      	<v-card class="superCard">
 	      		<v-card-tile style="background: white !important;">
 	      		<v-card-tile-title style="">

@@ -3,18 +3,24 @@
       <v-flex v-for="(car,i) in cars"
 	      	 :key="i" xs12>
 		<div :class="car.pos+' coolCar'">
-		    <p><b>{{ car.text }}</b></p>
+		    <b>{{ car.text }}</b>
 	    	<img :class="car.pos" :src="car.src"></img>
 		</div>
-		<div v-show="count === i" class="tarifs" style="width: 19vw;">
-	      	<v-btn outline color="black">Тарифы</v-btn>
-	      	<p>{{car.mark}}</p>
-	    </div>
       </v-flex>
-      <div class="carousel-icons">
-	      <v-icon @click="completePrev">arrow_back_ios</v-icon>
-	      <v-icon @click="completeNext">arrow_forward_ios</v-icon>
-      </div>
+      <v-flex class="carousel-elements" xs12>
+      	<v-flex offset-xs5 xs2 style="display: flex; justify-content: center;">
+			<svg @click="completePrev" width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M14.6731 1.25L1.25 14.6729L14.6731 28.0959" stroke="#707070" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+			<svg @click="completeNext" width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1.25 1.25L14.6731 14.6729L1.25 28.0959" stroke="#707070" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</v-flex>
+		<v-flex offset-xs2 xs5 style="display:flex; margin-top: 20%;">
+			<v-flex offset-xs2 xs4><p style="font-weight: 100;">Mercedes-Benz S-class BMW 7 Series</p></v-flex>
+			<v-flex offset-xs1 xs5><v-btn to="/tarifs" style="margin: auto 15%;width: 70%; height: 70%;" outline color="black">Тарифы</v-btn></v-flex>
+		</v-flex>
+	</v-flex>
 	</v-layout>
 </template>
 
@@ -30,7 +36,6 @@ import Vuetify, {
             src: require('../../static/cars/luxe1.png'),
             pos: 'first',
             text: 'VIP',
-            mark: 'Mercedes-Benz S-class BMW 7 Series',
             current: false
           },
           {
@@ -105,6 +110,13 @@ import Vuetify, {
 .coolCar
 	position absolute
 	background-size: auto !important;
+.coolCar > b
+	bottom 0vw
+	left 0%
+	position absolute
+	background-size: auto !important;
+	font-weight 500
+	z-index: 10
 .coolCar > img
 	height auto
 
@@ -112,18 +124,30 @@ import Vuetify, {
 	width: 15%
 	margin-top 5vh
 	right: -5vw !important
+	b
+		left 20%
+		font-size 18px
 .coolCar.second
-	width: 34%
-	margin-top 30vh
-	right: 49vw !important
+	width: 40%
+	margin-top 27vh
+	right: 43vw !important
+	b
+		left 20%
+		font-size 32px
 .coolCar.third
 	width: 25%
 	margin-top 25vh
-	right 10vw !important
+	right 8vw !important
+	b
+		left 10%
+		font-size 18px
 .coolCar.four
 	width: 20%
 	margin-top 5vh
 	right 88vw !important
+	b
+		left 71%
+		font-size 18px
 
 
 img
@@ -133,13 +157,15 @@ img
 </style>
 
 <style lang="stylus" scoped>
-.carousel-icons
+.carousel-elements
     margin-top: 8%
     z-index: 99;
-    .v-icon
-	    font-size: 40px
-	    &:first-child
-    	    margin-right: 15px
+    svg
+    	cursor: pointer;
+    	&:first-child
+		    margin-right: 20px
+    	&:last-child
+		    margin-left: 20px
 </style>
 
 <style lang="stylus" scoped>

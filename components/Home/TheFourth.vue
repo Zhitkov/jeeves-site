@@ -1,5 +1,5 @@
 <template>
-		<v-flex xs12>
+		<v-flex xs12 style="height: 55vh;">
 	<v-img cover :src="bg" style="width: 100vw;">
 			<v-layout row wrap>
 				<v-flex offset-md2 md5 offset-xs1 xs10 class="fourth-block">
@@ -14,7 +14,7 @@
 					</div>
 					<appInstallButtons class="fourth-app-install"/>
 				</v-flex>
-				<v-flex  xs5 class="fourth-phone">
+				<v-flex  xs4 class="fourth-phone">
 					<v-img
 					xs5
 					cover
@@ -40,7 +40,7 @@ export default {
 	data () {
 		return {
 			phone: require('../../static/Home/Fourth/iphone.png'),
-			logo: require('../../static/logos/logo2.png'),
+			logo: require('../../static/logos/logo2.svg'),
 		    bg: require('../../static/Home/Fourth/bg.png'),
 		}
 	}
@@ -58,6 +58,7 @@ export default {
 		margin-top: 45px;
 	}
 	.phone-container {
+		font-weight: 300;
 		display: flex;
 		-webkit-flex-direction: column;
 		    -ms-flex-direction: column;
@@ -87,7 +88,7 @@ export default {
 	    padding-left: 0;
 	}
 	.container{
-		height: 80vh;
+		max-height: 80vh;
 	    padding: 20px !important;
     }
     .v-btn--large {
@@ -110,6 +111,9 @@ export default {
 	.downloads{
 	    text-align: center !important;
 	}
+}
+.v-responsive__content {
+	    height: 55vh;
 }
 </style>
 <style type="text/css">

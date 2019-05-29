@@ -62,7 +62,7 @@ export default {
 		return {
 			bg: require('../../static/tarifs/Fourth/car.png'),
 			phone: require('../../static/tarifs/Fourth/phones.png'),
-			logo: require('../../static/logos/logo2.png'),
+			logo: require('../../static/logos/logo2.svg'),
 		}
 	}
 }

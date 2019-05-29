@@ -19,7 +19,7 @@
     },
     data () {
       return {
-        logo: require('../../static/logos/logo2.png'),
+        logo: require('../../static/logos/logo2.svg'),
       }
     },
     methods: {

@@ -116,7 +116,7 @@
           },
           {
             name: 'Ассистент',
-            link: '/',
+            link: '/assistent',
           },
           {
             name: 'Тарифы',

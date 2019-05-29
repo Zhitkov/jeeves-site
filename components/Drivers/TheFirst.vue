@@ -9,17 +9,26 @@
       <p  class="driver-title"> Зарабатывайте с JEEVES </p>
     </v-flex>
     <v-flex style="margin-top: 0px !important;" class="thin" offset-md2 md5 offset-xs1 xs10>
-      <b style="color: #136CE2;">JEEVES</b> — это не просто личный водитель на премиальном автомобиле,
-    это личный ассистент!</v-flex>
+      <b style="color: #136CE2;">JEEVES</b> — компания с высокими стандартами качества и обслуживания.</v-flex>
     <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
+      Водитель - это лицо компании, наша главная гордость и ценность, по качеству работы которого формируется мнение о компании в целом.
+    </v-flex>
+   <!--  <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
       Основным принципом работы компании, является высочайший уровень предоставляемых услуг. С нашей помощью пассажиры получают высококлассный сервис, а водители — достойно зарабатывают.
       Наша главная ценность и гордость  — это наши сотрудники.
+    </v-flex> -->
+    <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
+       Мы сотрудничаем с профессионалами, с большой ответственностью подходящим к своему делу, соблюдающими этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем  виде. 
     </v-flex>
     <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
-      Принимаем в команду Водителей на автомобили нашего парка,
-      а так же  приглашаем к сотрудничеству парки и Водителей с личными
-      авто бизнес/премиум класса.
+      Приглашаем к сотрудничеству! 
+      <ul>
+        <li>Водителей на автомобили нашего автопарка</li>
+        <li>Водителей на с личным автомобилем бизнес или премиум класса</li>
+        <li>Автопарки бизнес и премиум класса</li>
+      </ul>
     </v-flex>
+    <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>Cтаньте частью команды и зарабатывайте вместе с <b style="color: #136CE2;">JEEVES</b>!</v-flex>
     <v-flex offset-md2 md8 offset-xs1 xs10>
       <p class="driver-title"> Преимущества работы с JEEVES </p>
     </v-flex>
@@ -45,7 +54,7 @@ import DriverForm from '~/components/Drivers/DriverForm.vue'
     },
     data () {
       return {
-        logo: require('../../static/logos/logo2.png'),
+        logo: require('../../static/logos/logo2.svg'),
         driver: require('../../static/Drivers/bg.png')
       }
     },
@@ -80,6 +89,9 @@ div[data-v-00bd8e1c].container
   text-align center 
 .downloads
   margin-bottom 10vw 
+li
+  list-style-type circle
+  padding-left 10px
 </style>
 <style scoped>
 .driver-title {
