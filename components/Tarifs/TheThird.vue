@@ -9,7 +9,8 @@
 		    hide-delimiters
 		    next-icon="navigate_next"
 		    height="100%"
-		    style="box-shadow: none;"
+		    style="box-shadow: none; "
+		    class="car-carousel"
 		    :cycle='false'
 		    >
 		    <p class="car-name">{{ car.name }}</p>
@@ -18,6 +19,7 @@
 		      :key="i"
 		      :src="img"
 		      contain
+
 		    ></v-carousel-item>
 		  </v-carousel>
 	    </v-flex>
@@ -55,10 +57,10 @@
 	  				  		</p>
 	  				  	</div>
 	  				  	<div class="costAbout" v-if="left.subtitleCost">
-	  				  		<div class="UpDownBorder" v-for="aboutCost in left.subtitleCost">
+	  				  		<div style="border: none !important;" class="UpDownBorder" v-for="aboutCost in left.subtitleCost">
 	  				  			<p style="font-weight: 300">{{ aboutCost.text }}</p>
 								<v-spacer></v-spacer>
-	  				  			<p style="white-space: nowrap; font-weight: 800">{{ aboutCost.cost }}</p>
+	  				  			<p style="width: 120px;white-space: nowrap; font-weight: 800; text-align: end;">{{ aboutCost.cost }}</p>
 
 	  				  		</div>
 	  				  	</div>
@@ -73,7 +75,7 @@
 	  				  		</p>
 	  				  	</div>
 	  				  	<div v-if="right.subtitleCost">
-	  				  		<div class="UpDownBorder" v-for="aboutCost in right.subtitleCost">
+	  				  		<div style="border: none !important;" class="UpDownBorder" v-for="aboutCost in right.subtitleCost">
 	  				  			<p style="font-weight: 300">{{ aboutCost.text }}</p>
 								<v-spacer></v-spacer>
 	  				  			<p style="font-weight: 500">{{ aboutCost.cost }}</p>
@@ -148,10 +150,10 @@
 		    			active: false,
 		    			img: 
 		    			[
-		    				require('../../static/cars/plus1.png'),
-		    				require('../../static/cars/vip1.png'),
-		    				require('../../static/cars/luxe1.png'),
 		    				require('../../static/cars/business1.png'),
+		    				require('../../static/cars/vip1.png'),
+		    				require('../../static/cars/plus1.png'),
+		    				require('../../static/cars/luxe1.png'),
 		    			],
 		    			info:
 		    			[ 3, 4, 257, 22, 499, 500, 5 ],
@@ -256,10 +258,226 @@
 		    			active: false,
 		    			img: 
 		    			[
+		    				require('../../static/cars/business1.png'),
 		    				require('../../static/cars/plus1.png'),
 		    				require('../../static/cars/vip1.png'),
 		    				require('../../static/cars/luxe1.png'),
+		    			],
+		    			info:
+						[ 3, 4, 257, 22, 499, 500, 5 ],
+		    			about:
+		    			{
+		    				left:
+		    				[
+		    					{
+		    						title:  'Минимальная стоитмость поездки',
+		    						subtitleCost: [
+			    						{
+			    							text: 'Условные границы Москвы указаны на странице города. При подаче в пределах города',
+			    							cost: '1000 ₽'
+			    						}
+		    						],
+		    						subtitle:''
+
+		    					},
+		    					{
+		    						title:  'Отмена поздки',
+		    						subtitleCost: [
+			    						{
+			    							text: 'Отмена в течение первых 5 мин после выезда автомобиля',
+			    							cost: 'Бесплатно'
+			    						},
+			    						{
+			    							text: 'Отмена спустя 5 мин после выезда автомобиля',
+			    							cost: '500 ₽'
+			    						},
+			    						{
+			    							text: 'Подача авто',
+			    							cost: '500 ₽ + 40 ₽/мин'
+			    						},
+		    						],
+		    						subtitle:''
+
+		    					},
+		    					{
+		    						title:  'Ожидание и парковка',
+		    						subtitleCost: '',
+		    						subtitle:
+		    						[
+			    						'Водитель бесплатно подождёт вас 5 минут. Каждая следующая минута ожидания оплачивается по тарифу. За частные парковки и проезд по платным дорогам пассажир платит самостоятельно. Также при согласовании со службой поддержки их может оплатить водитель. В таком случае дополнительные расходы будут добавлены к общему счёту за поездку.',
+			    						'Если при поездке в аэропорт вы укажете в комментарии к заказу номер рейса, мы встретим вас с табличкой в зоне прилёта. В таком случае стоимость платной парковки добавится к цене поездки.'
+			    					]
+		    					},
+		    				],
+		    				right:
+		    				[
+		    					{
+		    						title:  'Трансферы',
+		    						subtitleCost: '',
+		    						subtitle:
+		    						[
+			    						'Указаны фиксированные стоимости поездок без дополнительных остановок из или в черту города (условные границы обозначены на странице города). При поездке с остановками стоимость рассчитывается по основному тарифу, но не может быть меньше стоимости трансфера без остановок.'
+			    					]
+		    					},
+		    					{
+		    						title:  'Отмена поздки',
+		    						subtitleCost: [
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Шереметьево ',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Шереметьево ',
+			    							cost: '4500 ₽'
+			    						},
+		    						],
+		    						subtitle:''
+
+		    					},
+		    					{
+		    						title:  'Трансферы из города в аэропорт и обратно',
+		    						subtitleCost: '',
+		    						subtitle:
+		    						[
+			    						'Указаны фиксированные стоимости поездок без дополнительных остановок из или в черту города (условные границы обозначены на странице города). При поездке с остановками стоимость рассчитывается по основному тарифу, но не может быть меньше стоимости трансфера без остановок.'
+			    					]
+		    					},
+		    				],
+		    			},
+		    		},
+		    		{
+		    			name: 'Mercedes 1',
+		    			active: false,
+		    			img: 
+		    			[
+		    				require('../../static/cars/vip1.png'),
 		    				require('../../static/cars/business1.png'),
+		    				require('../../static/cars/plus1.png'),
+		    				require('../../static/cars/luxe1.png'),
+		    			],
+		    			info:
+						[ 3, 4, 257, 22, 499, 500, 5 ],
+		    			about:
+		    			{
+		    				left:
+		    				[
+		    					{
+		    						title:  'Минимальная стоитмость поездки',
+		    						subtitleCost: [
+			    						{
+			    							text: 'Условные границы Москвы указаны на странице города. При подаче в пределах города',
+			    							cost: '1000 ₽'
+			    						}
+		    						],
+		    						subtitle:''
+
+		    					},
+		    					{
+		    						title:  'Отмена поздки',
+		    						subtitleCost: [
+			    						{
+			    							text: 'Отмена в течение первых 5 мин после выезда автомобиля',
+			    							cost: 'Бесплатно'
+			    						},
+			    						{
+			    							text: 'Отмена спустя 5 мин после выезда автомобиля',
+			    							cost: '500 ₽'
+			    						},
+			    						{
+			    							text: 'Подача авто',
+			    							cost: '500 ₽ + 40 ₽/мин'
+			    						},
+		    						],
+		    						subtitle:''
+
+		    					},
+		    					{
+		    						title:  'Ожидание и парковка',
+		    						subtitleCost: '',
+		    						subtitle:
+		    						[
+			    						'Водитель бесплатно подождёт вас 5 минут. Каждая следующая минута ожидания оплачивается по тарифу. За частные парковки и проезд по платным дорогам пассажир платит самостоятельно. Также при согласовании со службой поддержки их может оплатить водитель. В таком случае дополнительные расходы будут добавлены к общему счёту за поездку.',
+			    						'Если при поездке в аэропорт вы укажете в комментарии к заказу номер рейса, мы встретим вас с табличкой в зоне прилёта. В таком случае стоимость платной парковки добавится к цене поездки.'
+			    					]
+		    					},
+		    				],
+		    				right:
+		    				[
+		    					{
+		    						title:  'Трансферы',
+		    						subtitleCost: '',
+		    						subtitle:
+		    						[
+			    						'Указаны фиксированные стоимости поездок без дополнительных остановок из или в черту города (условные границы обозначены на странице города). При поездке с остановками стоимость рассчитывается по основному тарифу, но не может быть меньше стоимости трансфера без остановок.'
+			    					]
+		    					},
+		    					{
+		    						title:  'Отмена поздки',
+		    						subtitleCost: [
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Шереметьево ',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Внуково',
+			    							cost: '4500 ₽'
+			    						},
+			    						{
+			    							text: 'Аэропорт Шереметьево ',
+			    							cost: '4500 ₽'
+			    						},
+		    						],
+		    						subtitle:''
+
+		    					},
+		    					{
+		    						title:  'Трансферы из города в аэропорт и обратно',
+		    						subtitleCost: '',
+		    						subtitle:
+		    						[
+			    						'Указаны фиксированные стоимости поездок без дополнительных остановок из или в черту города (условные границы обозначены на странице города). При поездке с остановками стоимость рассчитывается по основному тарифу, но не может быть меньше стоимости трансфера без остановок.'
+			    					]
+		    					},
+		    				],
+		    			},
+		    		},
+		    		{
+		    			name: 'Mercedes 1',
+		    			active: false,
+		    			img: 
+		    			[
+		    				require('../../static/cars/plus1.png'),
+		    				require('../../static/cars/business1.png'),
+		    				require('../../static/cars/vip1.png'),
+		    				require('../../static/cars/luxe1.png'),
 		    			],
 		    			info:
 						[ 3, 4, 257, 22, 499, 500, 5 ],
@@ -370,6 +588,7 @@
   }
 </script>
 <style type="text/css">
+
 p{
 	font-weight: 300
 }
@@ -391,16 +610,18 @@ p{
 .v-expansion-panel__body{
 	background: #E4E4E4
 }*/
+.v-window-item[data-v-56608fae] .v-responsive.v-image.v-carousel__item .v-responsive__sizer {
+	padding-bottom: 60.3333% !important;
+}
 </style>
 <style scoped>
 .car-block {
 	display: flex; 
 	flex-direction: row;
 }
-/*.third-car{
+.third-car{
     display: flex;
-    align-self: center;
-}*/
+}
 .costAbout>.UpDownBorder:first-child{
 	border-bottom: none
 }
@@ -433,22 +654,24 @@ b{
     padding-bottom: 15px;
 }
 .UpDownBorder > svg {
-	margin-right: 15px;
+	margin-right: 12px;
 }
 .UpDownBorder{
 	display: flex;
     border-bottom: 1px solid gray;
     align-items: center;
     height: 12.5%;
+    max-height: 42px;
+    
 }
 .UpDownBorder:first-child {
     border-top: 0px solid gray;
 
 }
 .UpDownBorder>p:last-child {
-width: 50px;
-text-align: left;
-font-weight: 500;
+	width: 50px;
+	text-align: left;
+	font-weight: 500;
 }
 .UpDownBorder>p {
     margin-left: 0px !important;
