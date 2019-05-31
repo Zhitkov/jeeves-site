@@ -53,7 +53,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
   width 100vw
 .parallax-screen
   width 100vw
-  height 76vh !important
+  height 80vh !important
   .v-parallax__content > .container
     align-content: center;
     align-items: center;
@@ -72,7 +72,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
   margin-bottom 10vw 
 </style>
 <style scoped>
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
   .First-text{
     font-size: 20px; 
     margin: 5% 10% 1%;

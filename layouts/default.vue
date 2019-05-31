@@ -46,6 +46,9 @@ export default {
 </script>
 
 <style lang="stylus">
+.static 
+  max-width: 1200px !important;
+  width: 1200px !important;
 @font-face {
     font-family: Neue;
     font-style: normal;
@@ -61,7 +64,7 @@ body
   overflow: hidden
   background: #fff
   .v-parallax__image
-    min-height: 137vh !important;
+    min-height: 110vh;
   .loading-container
     background: #000000;
   .nav-fix
@@ -75,4 +78,9 @@ body
     cursor pointer
   .neue
     font-family 'Neue' !important
+@media screen and (max-width: 2000px) {
+  .v-parallax__image{
+    min-height: 137vh !important;
+  }
+}
 </style>

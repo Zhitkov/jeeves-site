@@ -123,28 +123,28 @@ import Vuetify, {
 .coolCar.first
 	width: 15%
 	margin-top 5vh
-	right: -5vw !important
+	right: -5vw 
 	b
 		left 20%
 		font-size 18px
 .coolCar.second
 	width: 40%
 	margin-top 27vh
-	right: 43vw !important
+	right: 43vw
 	b
 		left 20%
 		font-size 32px
 .coolCar.third
 	width: 25%
 	margin-top 25vh
-	right 8vw !important
+	right 8vw 
 	b
 		left 10%
 		font-size 18px
 .coolCar.four
 	width: 20%
 	margin-top 5vh
-	right 88vw !important
+	right 88vw 
 	b
 		left 71%
 		font-size 18px

@@ -1,10 +1,9 @@
 <template>
-  <v-container py-0 style=" min-width: 100%; background: #000000a0">
+  <v-container mx-0 py-0 style=" min-width: 100%;">
     <v-layout row wrap>
       <v-flex offset-xs1 xs10>
         <v-tabs
         v-model="active"
-        @onload="console.log('test', active);"
         color="#00000000"
         dark
         slider-color="#136CE2"
@@ -156,15 +155,19 @@
 
     },
     methods: {
-      next () {
-        const active = parseInt(this.active)
-        this.active = (active < 2 ? active + 1 : 0)
-      }
+      // next () {
+      //   const active = parseInt(this.active)
+      //   this.active = (active < 2 ? active + 1 : 0)
+      // }
+
     }
   }
 </script>
 
 <style lang="stylus" scoped>
+.container{
+  background: #000000a0
+}
 .flex.v-tabs__div.text-lowercase.offset-xs3.xs5 {
   justify-content: center;
 }
@@ -191,6 +194,14 @@
 </style>
 
 <style type="text/css">
+.static {
+  /*display: flex;
+  justify-content: center;*/
+  width: 1140px !important;
+}
+div[data-v-20ae26d4] .theme--dark.v-tabs__bar{
+  background: none !important
+}
 /*.v-tabs.hidden-sm-and-down[data-v-20ae26d4]  .v-tabs__container{
   justify-content: center;
 }*/

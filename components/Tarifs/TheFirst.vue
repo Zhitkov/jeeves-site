@@ -38,7 +38,7 @@
 .v-responsive__content
   align-self: flex-end;
 .full-screen
-  width 100vw
+  width 100vwz
 div[data-v-00bd8e1c].container
   align-items: flex-end !important
 .parallax-screen
