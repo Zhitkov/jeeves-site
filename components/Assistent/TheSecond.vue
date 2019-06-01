@@ -1,6 +1,6 @@
 <template>
 			<v-layout row wrap>
-		<v-flex xs12 style="height: 60vh;">
+		<v-flex xs12 style="height: 65vh;">
 					<v-flex style="display; position: absolute; z-index: 9;margin-top: -5px;width: 33%;margin: -5px 33%;">
 						<img class="logo" :src="logo">
 					</v-flex>
@@ -57,5 +57,11 @@ export default {
 		line-height: 64px;
 		color: white;
 	    text-align: center;
+	}
+	img {
+		height: 20%;
+	}
+	.fourth-block {
+		margin-top: 12%;
 	}
 </style>

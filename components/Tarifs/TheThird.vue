@@ -1,9 +1,9 @@
 <template>
-	<v-container pa-0 style="width: 100vw">
+	<v-container mb-5 pa-0 style="width: 100vw">
 	  <v-layout v-for="car in cars" row wrap>
 	  		<v-flex offset-xs1 md10 xs12 class="car-block">
 	    <v-flex class="third-car"
-	     px-2 offset-md1 md6 xs12  >
+	     px-2 offset-md1 md7 xs12  >
 	      <v-carousel 
 	      	light
 		    hide-delimiters
@@ -23,7 +23,7 @@
 		    ></v-carousel-item>
 		  </v-carousel>
 	    </v-flex>
-	    <v-flex px-4  md4  xs10>
+	    <v-flex pl-4  md5  xs10>
 	      	<b style="padding-bottom: 5px; font-weight: 500;">Бизнес</b>
 	      	<div v-for="(info, i) in car.info" class="UpDownBorder">
 	      		<div style="width: 30px"><img :src="icons[i]"/></div>
@@ -46,9 +46,11 @@
         </template>
         <v-card>
           <v-card-text >
-          	<v-flex style="border-top: dashed 2px #C4C4C4; margin: 5px auto 30px " offset-xs1 xs10></v-flex>
+          	<v-flex px-2 mx-4 style="border-top: dashed 2px #C4C4C4; margin: 5px auto 30px " xs12></v-flex>
 	  			<v-layout row wrap justify-center>
-	  				<v-flex xs12 sm12 md4 offset-xs0 offset-lg2 style="margin: 5px 41px; ">
+	  				<v-flex px-2 mx-4 style="display: flex;" row xs12>
+	  				  
+	  				<v-flex pr-3 xs12 sm12 md6 offset-xs0>
 	  				  <div v-for="left in car.about.left">
 	  				  	<p style="margin-top: 15px; font-weight: 500" class="title">{{ left.title }}</p>
 	  				  	<div v-if="left.subtitle">
@@ -66,7 +68,7 @@
 	  				  	</div>
 	  				  </div>
 	  				</v-flex>
-	  				<v-flex mx-5 xs11 sm11 md4 offset-xs0 offset-lg1>
+	  				<v-flex pl-3 xs11 sm11 md6 offset-xs0 >
 	  				  <div v-for="right in car.about.right">
 	  				  	<p style="margin-top: 15px; font-weight: 500" class="title">{{ right.title }}</p>
 	  				  	<div v-if="right.subtitle">
@@ -83,6 +85,7 @@
 	  				  		</div>
 	  				  	</div>
 	  				  </div>
+	  				</v-flex>
 	  				</v-flex>
 	  				<v-flex xs12>
     					<v-img cover :src="carInfoBorder"></v-img>
@@ -593,7 +596,7 @@ p{
 	font-weight: 300
 }
 .v-image__image--contain{
-    background-size: 85%;
+    background-size: 90%;
 }
 .v-expansion-panel__header__icon:last-child {
 	display: none
@@ -632,7 +635,7 @@ p{
 	font-weight: 800;
 	font-size: 18px;
 	position: absolute;
-    margin-top: 35%;
+    margin-top: 45%;
 }
 .theme--light.v-expansion-panel .v-expansion-panel__container{
 	background-color: none

@@ -6,10 +6,12 @@
 	<v-card
 	class="flex"
 	flat
+	style="display: flex; justify-content: center;"
 	>
+		<div class="static">
 	<v-layout row wrap>
 
-		<v-flex offset-xs2 xs3>
+		<v-flex xs3>
 
 			<v-card-title class="size">
 				<Logo style="width: 70px;  margin-top: -130px;"/>
@@ -26,7 +28,7 @@
 
 			</v-card-title>
 		</v-flex>
-		<v-flex xs5 style="display: flex;justify-content: flex-end; margin-top: 10px">
+		<v-flex xs9 style="display: flex;justify-content: flex-end; margin-top: 10px">
 
 		<v-btn
 		class="icons"
@@ -49,7 +51,7 @@
 	</svg>
 </v-btn>
 </v-flex>
-<v-flex offset-xs2 xs8>
+<v-flex xs12>
 	<v-card-actions dark class="footer-action dark justify-start">
 		<p style="font-size: 18px;">&copy; 2017 «Jeeves». Все права защищены</p>
 		<div>
@@ -59,6 +61,7 @@
 	</v-card-actions>
 </v-flex>
 </v-layout>
+</div>
 </v-card>
 
 </v-footer>

@@ -4,12 +4,12 @@
     justify-center
     align-center
   >
-    <v-flex xs12>
+    <!-- <v-flex xs12> -->
         <TheFirst />
-    </v-flex>
-    <v-flex xs12>
+    <!-- </v-flex> -->
+    <!-- <v-flex xs12> -->
         <TheSecond />
-    </v-flex>
+    <!-- </v-flex> -->
   </v-layout>
 </template>
 

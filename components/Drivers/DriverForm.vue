@@ -1,6 +1,8 @@
 <template>
-	<v-layout row wrap>
-		<v-flex offset-md3 md2 offset-xs1 xs10 style="display: flex; justify-content: center;">
+	<v-layout style="display: flex; justify-content: center;" row wrap>
+		<div style="flex-direction: column;" class="static">
+			<div style="display: flex;">
+		<v-flex pl-5 offset-md3 md4 offset-xs1 xs10 style="display: flex; justify-content: center;">
 	      <v-menu nudge-bottom="30" nudge-right="65" :close-on-click="menuOpen" :close-on-content-click="menuOpen" bottom left>
 	      		<div @click="menuOpen = !menuOpen" slot="activator" class="driver-about">
 	      			<p class="linkText">Требования к атомобилям</p>
@@ -51,7 +53,9 @@
 	      </v-card>
 	  </v-menu>
 </v-flex>
-<v-flex offset-xs1 xs10 offset-md2 md4>
+</div>
+<div style="display: flex;">
+<v-flex xs10 md7>
 	<v-flex md9 xs12 >
 		<v-select
 		class='driver-select'
@@ -138,6 +142,8 @@
 		></v-text-field>
 	</v-flex>
 </v-flex>
+</div>
+</div>
 </v-layout>
 </template>
 
