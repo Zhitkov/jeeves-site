@@ -1,10 +1,12 @@
 <template>
 	  <v-layout style="margin: 20px auto;" row wrap justify-start>
-	  	<v-spacer></v-spacer>
+	  	<div class="static">
+	  		
+	  	<!-- <v-spacer></v-spacer> -->
 	  	<v-flex offset-xs1 xs10>
 	  	  
 	    <v-flex 
-	    xs10 sm10 md5 offset-xs1 offset-lg1>
+	    px-2 mx-4 xs10 sm10 md9>
 	      <p class=" neue"> Тарифы </p>
 	      <p style="font-size: 18px; font-weight: 100; line-height: 21px;" class="subtitlte">
 	      	Давно выяснено, что при оценке дизайна и композиции читаемый  текст мешает 
@@ -15,7 +17,7 @@
 	      </p>
 	    </v-flex>
 	    <v-flex 
-	    xs10 sm10 md4 offset-xs1 offset-lg1 >
+	    px-2 mx-4 xs10 sm10 md5 >
 
 				<v-menu :close-on-content-click="false" style="display: block" nudge-bottom="0" nudge-right="0" content-class="superCard" bottom>
 			      	<template >
@@ -61,7 +63,7 @@
 
 		    </v-flex>
 	  	</v-flex>
-
+	  	</div>
 	  </v-layout>
 </template>
 

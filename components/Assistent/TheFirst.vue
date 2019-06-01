@@ -1,12 +1,13 @@
 <template>
-  <v-layout class="full-screen" row wrap>
+  <v-layout justify-center class="full-screen" row wrap>
     <v-img class="parallax-screen change" dark cover :src="bg">
       <!-- <v-flex offset-xs2 xs2>
         <img style="padding-bottom: 42px;" :src="logo">
       </v-flex> -->
     </v-img>
-	<v-flex mb-5 offset-md2 md5 offset-xs1 xs10>
-		<p  class="assistent-title"> <b style="color: #3c96f3">JEEVES</b> — это не просто личный водитель на  премиальном автомобиле, это личный ассистент! </p>
+    <div style="flex-direction: column;" class="static">
+	<v-flex mx-4 pr-3 mb-5 md6 xs10>
+		<p  class="assistent-title"> <b style="color: #3c96f3">JEEVES</b> — это не просто личный водитель на премиальном автомобиле, это личный ассистент! </p>
 		<p class="text1">В основе нашей философии лежит желание, вернуть Вам время для занятия действительно важными и интересными делами</p>
 		<p class="text1">Позвольте ассистенту избавить Вас от суеты повседневных задач</p>
 		<p class="text1">Оперативно и четко справимся с любым поручением, от встречи в аэропорту с табличкой и сопровождения первых лиц до доставки цветов и поисков игрушки для Вашего ребенка.</p>
@@ -14,7 +15,7 @@
       <img  :src="phone"></img>
   </v-flex>
     </v-flex>
-    <v-flex my-2 class="text2" v-for="text2 in texts2" offset-md2 md5 offset-xs1 xs10>
+    <v-flex mx-4 my-2 class="text2" v-for="text2 in texts2" md6 xs10>
 			<h2 class="title">
 				{{ text2.title }}
 			</h2>
@@ -22,6 +23,7 @@
 				{{ text2.subtitle }}
 			</p>
     </v-flex>
+    </div>
   </v-layout>
 </template>
 

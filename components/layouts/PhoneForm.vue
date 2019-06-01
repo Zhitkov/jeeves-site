@@ -6,7 +6,7 @@
           solo
           background-color="#fff"
           light
-          style="width: 40% !important;"
+          style="width: 50% !important;"
         ></v-select>
         <v-text-field
         	class='tel-mask'

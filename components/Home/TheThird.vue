@@ -1,5 +1,5 @@
 <template>
-	<v-container fluid style="background-size: 100% 100vh; background-position: center -25vh; padding: auto 0; min-width: 100vw; margin-bottom: 165px;" >
+	<v-container fluid style="background-size: 100% 100vh; background-position: center -25vh; padding: auto 0; min-width: 100vw; margin-bottom: 165px; height: 100vh;" >
 	  <v-layout column wrap >
 	    <v-flex xs12>
 	    <v-flex offset-md2 md8 xs12 class="text-c third-container">
@@ -8,7 +8,13 @@
 	      <p class="third-text">Никакого брендирования.</p>
 	    </v-flex>
 	    </v-flex>
-	    <TheCarsCarousel/>
+	    <TheCarsCarousel style="margin-bottom: 20vh;"/>
+	    <div class="static">
+	    <v-flex offset-xs2 xs5 style="display:flex; margin-top: 27%;">
+			<v-flex offset-xs2 xs4><p style="font-weight: 100;">Mercedes-Benz S-class BMW 7 Series</p></v-flex>
+			<v-flex offset-xs1 xs5><v-btn to="/tarifs" style="margin: auto 15%;width: 70%; height: 70%;" outline color="black">Тарифы</v-btn></v-flex>
+		</v-flex>
+	    </div>
 	  </v-layout>
 	</v-container>
 </template>

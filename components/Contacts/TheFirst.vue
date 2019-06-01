@@ -1,9 +1,11 @@
 <template>
   <v-layout class="full-screen contact" row wrap>
-    <v-img cover class="parallax-screen change" dark :lazy-src="bg" cover :src="bg" gradient="to right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
-      <v-flex offset-xs2>
+    <v-img cover class="parallax-screen change" dark :lazy-src="bg" cover :src="bg">
+      <div class="static">
+      <v-flex mx-3>
         <img style="padding-bottom: 42px;" :src="logo">
       </v-flex>
+      </div>
     </v-img>
       <v-flex offset-md2 md8 offset-xs1 xs10>
         <p style="font-size: 36px; margin: 50px auto 30px auto" class="neue">Контактная информация</p>
@@ -208,8 +210,6 @@
 .thin
   font-weight 100 
   font-size 21px
-.v-responsive__content
-  align-self: flex-end
 .full-screen
   width 100vw
 .parallax-screen
@@ -237,6 +237,10 @@
 }
 </style>
 <style>
+div[data-v-6a7bb5d0] .v-responsive__content {
+  display: flex;
+  justify-content: center;
+}
 .contact .v-image__image{
   box-shadow: inset 10px -30px 150px 30px #000 !important;
 }

@@ -26,29 +26,24 @@ export default {
     loading: true
   }),
   mounted() {
-    // window.addEventListener("load", function(event) {
-    //   console.log("All resources finished loading!");
-    // });
+
   },
   methods: {
     look : () => {
       return this.loading = false;;
     }
   }
-  // mounted () {
-  //   this.$nextTick(() => {
-  //     this.$nuxt.$loading.start();
-  //     this.loading = false
-  //     setTimeout(() => this.$nuxt.$loading.finish(), 1000)
-  //   })
-  // }
+ 
 }
 </script>
 
 <style lang="stylus">
 .static 
+  justify-self: center;
+  display: flex;
+  align-self: center;
   max-width: 1200px !important;
-  width: 1200px !important;
+  // width: 1200px !important;
 @font-face {
     font-family: Neue;
     font-style: normal;
