@@ -26,38 +26,29 @@ export default {
     loading: true
   }),
   mounted() {
-    // window.addEventListener("load", function(event) {
-    //   console.log("All resources finished loading!");
-    // });
+
   },
   methods: {
     look : () => {
       return this.loading = false;;
     }
   }
-  // mounted () {
-  //   this.$nextTick(() => {
-  //     this.$nuxt.$loading.start();
-  //     this.loading = false
-  //     setTimeout(() => this.$nuxt.$loading.finish(), 1000)
-  //   })
-  // }
+ 
 }
 </script>
 
 <style lang="stylus">
 .static 
+  justify-self: center;
+  display: flex;
+  align-self: center;
   max-width: 1200px !important;
-  width: 1200px !important;
+  // width: 1200px !important;
 @font-face {
     font-family: Neue;
     font-style: normal;
     src: url("../assets/fonts/9116.otf");
   }
-  .v-text-field--outline>.v-input-control>.v-input__slot 
-    background #fff !important
-    -webkit-border-radius auto !important 
-    border-radius auto !important 
 .theme--light.application
   background: #fff !important
 body
@@ -83,4 +74,16 @@ body
     min-height: 137vh !important;
   }
 }
+
+div[data-v-5404b582] .v-text-field--outline > .v-input__control > .v-input__slot
+  background: #fff !important;
+
+div[data-v-5404b582] .v-text-field--outline.v-input--has-state>.v-input__control>.v-input__slot 
+    background: white !important;
+    
+div[data-v-5404b582] .v-text-field--outline.v-input--is-focused>.v-input__control>.v-input__slot
+    background: white !important;
+    
+div[data-v-2980cee7] .v-text-field--outline.v-input--is-focused>.v-input__control>.v-input__slot 
+    background: white !important;
 </style>

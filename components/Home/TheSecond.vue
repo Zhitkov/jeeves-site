@@ -1,11 +1,12 @@
 <template>
 			<v-layout row wrap>
 	<v-img class="second-block" cover style="justify-content: center; width: 100vw;" :lazy-src="bg" :src="bg">
-				<v-flex md12>
-					<v-flex offset-xs1 xs10 offset-md2 md4>
+				<div class="static">
+				<v-flex px-2 mx-4 md12>
+					<v-flex xs10 md6>
 						<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
 					</v-flex>
-					<v-flex offset-xs1 xs10 offset-md2 md6>
+					<v-flex xs10 md6>
 					<ul class="second-list">
 						<li>Тщательный отбор в соответствии со строгими критериями.</li>
 						<li>Классический костюм и галстук.</li>
@@ -17,6 +18,7 @@
 					</v-flex>
 
 				</v-flex>
+			</div>
 	</v-img>
 			</v-layout>
 </template>
@@ -72,6 +74,8 @@
 <style type="text/css">
 .second-block .v-responsive__content {
 	align-self: center !important;
+	display: flex;
+    justify-content: center;
 }
 .layout.row.wrap[data-v-e67e62e0] .v-responsive__sizer {
 	padding: 10% 0 !important;

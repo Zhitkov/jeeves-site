@@ -16,10 +16,6 @@
 			<path d="M1.25 1.25L14.6731 14.6729L1.25 28.0959" stroke="#707070" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		</v-flex>
-		<v-flex offset-xs2 xs5 style="display:flex; margin-top: 20%;">
-			<v-flex offset-xs2 xs4><p style="font-weight: 100;">Mercedes-Benz S-class BMW 7 Series</p></v-flex>
-			<v-flex offset-xs1 xs5><v-btn to="/tarifs" style="margin: auto 15%;width: 70%; height: 70%;" outline color="black">Тарифы</v-btn></v-flex>
-		</v-flex>
 	</v-flex>
 	</v-layout>
 </template>
@@ -128,21 +124,21 @@ import Vuetify, {
 		left 20%
 		font-size 18px
 .coolCar.second
-	width: 40%
+	width 35%
 	margin-top 27vh
-	right: 43vw
+	right 43vw
 	b
 		left 20%
 		font-size 32px
 .coolCar.third
-	width: 25%
-	margin-top 25vh
+	width 23%
+	margin-top 22vh
 	right 8vw 
 	b
 		left 10%
 		font-size 18px
 .coolCar.four
-	width: 20%
+	width 20%
 	margin-top 5vh
 	right 88vw 
 	b

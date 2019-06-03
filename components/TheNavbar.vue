@@ -1,7 +1,8 @@
 <template>
   <v-container mx-0 py-0 style=" min-width: 100%;">
-    <v-layout row wrap>
-      <v-flex offset-xs1 xs10>
+    <v-layout style="display: flex; justify-content: center;" row wrap>
+      <div class="static">
+      <v-flex xs12>
         <v-tabs
         v-model="active"
         color="#00000000"
@@ -9,14 +10,14 @@
         slider-color="#136CE2"
         class="hidden-sm-and-down"
         >
-        <v-spacer></v-spacer>
-        <v-flex mr-2 justify-center class="v-tabs__div nav-info text-lowercase" xs1>
+        <!-- <v-spacer></v-spacer> -->
+        <v-flex px-2 mx-4 justify-center class="v-tabs__div nav-info text-lowercase" xs1>
           <a  class="nav-link" href="tel:+78005503934">8 800 550 39 34</a>
         </v-flex>
         <v-flex style="justify-content: flex-start;" class="v-tabs__div nav-info text-lowercase" xs1>
           <a class="nav-link" href="mailto:info@slv24.ru">info@slv24.ru</a>
         </v-flex>
-        <v-flex class="v-tabs__div text-lowercase" offset-xs3 xs5>
+        <v-flex style="justify-content: flex-end;" class="v-tabs__div text-lowercase" offset-xs3 xs7>
           <nuxt-link
           class="nav-links"
           :id="nav.link"
@@ -45,10 +46,12 @@
       </v-list>
     </v-menu>
   </v-flex>
-        <v-spacer></v-spacer>
+        <!-- <v-spacer></v-spacer> -->
 
 </v-tabs>
 </v-flex>
+</div>
+
 
 </v-layout>
 
@@ -214,4 +217,9 @@ div[data-v-20ae26d4] .theme--dark.v-tabs__bar{
   }
 }
 
+</style>
+<style type="text/css">
+  div[data-v-20ae26d4] .theme--dark.tabs__bar {
+    background: none !important
+  }
 </style>

@@ -5,12 +5,14 @@
 					<v-text-field
 					class="form-white"
 					label="ФИО"
+					single-line
 					outline
 					></v-text-field>
 				</v-flex>
 			<v-flex xs12 >
 				<v-text-field
 				class="form-white"
+				single-line
 				outline
 				v-model="email"
 				:rules="[rules.required, rules.email]"
@@ -22,6 +24,7 @@
 					<v-text-field
 					class="form-white"
 					label="Компания"
+					single-line
 					outline
 					></v-text-field>
 				</v-flex>
@@ -88,13 +91,16 @@
 	}
 </script>
 <style>
-.v-text-field--outline > .v-input__control > .v-input__slot{
-		background: #fff !important;
-		border-radius: 10px;
-	}
-.v-text-field--outline.v-input--has-state>.v-input__control>.v-input__slot, .v-text-field--outline.v-input--is-focused>.v-input__control>.v-input__slot {
-    border: 2px solid;
-    transition: border .3s cubic-bezier(.25,.8,.5,1);
+div[data-v-5404b582] .v-text-field--outline > .v-input__control > .v-input__slot{
+	background: #fff !important;
+}
+div[data-v-5404b582] .v-text-field--outline.v-input--has-state>.v-input__control>.v-input__slot {
+    background: white !important;
+}
+div[data-v-5404b582] .v-text-field--outline.v-input--is-focused>.v-input__control>.v-input__slot {
+    background: white !important;
+}
+div[data-v-2980cee7] .v-text-field--outline.v-input--is-focused>.v-input__control>.v-input__slot {
     background: white !important;
 }
 </style>

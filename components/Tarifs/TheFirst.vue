@@ -3,9 +3,11 @@
     <v-flex xs2>
       
       <v-img class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" cover :src="require('../../static/tarifs/preview.png')" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
-      <v-flex offset-xs2>
-        <img class="logo2" style="padding-bottom: 42px;" :src="logo">
-      </v-flex>
+        <div class="static">
+        <v-flex mx-3>
+          <img class="logo2" style="padding-bottom: 42px;" :src="logo">
+        </v-flex>
+        </div>
     </v-img>
     </v-flex>
   </v-layout>
@@ -35,8 +37,6 @@
 </script>
 
 <style lang="stylus" scoped>
-.v-responsive__content
-  align-self: flex-end;
 .full-screen
   width 100vwz
 div[data-v-00bd8e1c].container
@@ -72,7 +72,9 @@ div[data-v-00bd8e1c].container
 }
 </style>
 <style type="text/css">
-.v-responsive__content{
+div[data-v-00bd8e1c] .v-responsive__content{
+  display: flex;
+  justify-content: center;
   align-self: flex-end;
 }
 </style>

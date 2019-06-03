@@ -1,8 +1,9 @@
 <template>
-		<v-flex xs12 style="height: 65vh;">
+		<v-flex xs12 style="height: 65vh; min-height: 430px">
 	<v-img cover :src="bg" style="width: 100vw;">
-			<v-layout row wrap>
-				<v-flex offset-md2 md5 offset-xs1 xs10 class="fourth-block">
+			<v-layout style="display: flex; justify-content: center;" row wrap>
+				<div class="static">
+				<v-flex px-2 mx-4 md6 xs12 class="fourth-block">
 					<img :src="logo">
 					<h1 class="neue">Мобильное приложение</h1>
 					<div class="phone-container">
@@ -14,17 +15,17 @@
 					</div>
 					<appInstallButtons class="fourth-app-install"/>
 				</v-flex>
-				<v-flex  xs4 class="fourth-phone">
+				<v-flex  xs6 class="fourth-phone">
 					<v-img
 					xs5
-					cover
+					contain
 					:src="phone"
 					:lazy-src="phone"
-					position="center 20%"
-					sizes="150%"
+					position="120% 10%"
 					>
 				</v-img>
 			</v-flex>
+			</div>
 		</v-layout>
 </v-img>
 	</v-flex>
@@ -121,8 +122,8 @@ export default {
 div[data-v-32a09d94] .v-responsive__content{
 	    align-self: center;
 }
-div[data-v-32a09d94] .v-image__image.v-image__image--cover{
-	background-size: 150%;
+div[data-v-32a09d94] .v-image__image.v-image__image--contain{
+	background-size: 120%;
 }
 div[data-v-32a09d94] .v-responsive.v-image{
 	    height: 65vh;

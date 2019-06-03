@@ -1,26 +1,29 @@
 <template>
   <v-layout class="full-screen" row wrap>
     <v-img class="parallax-screen change" dark cover :src="driver" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
-      <v-flex offset-xs2 xs2>
+      <div class="static">
+      <v-flex xs2>
         <img style="padding-bottom: 42px;" :src="logo">
       </v-flex>
+      </div>
     </v-img>
-    <v-flex offset-md2 md8 offset-xs1 xs10>
+      <div style="flex-direction: column;" class="static">
+    <v-flex md8 xs10>
       <p  class="driver-title"> Зарабатывайте с JEEVES </p>
     </v-flex>
-    <v-flex style="margin-top: 0px !important;" class="thin" offset-md2 md5 offset-xs1 xs10>
+    <v-flex style="margin-top: 0px !important;" class="thin"  md6 xs10>
       <b style="color: #136CE2;">JEEVES</b> — компания с высокими стандартами качества и обслуживания.</v-flex>
-    <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
+    <v-flex class="thin" md6 xs10>
       Водитель - это лицо компании, наша главная гордость и ценность, по качеству работы которого формируется мнение о компании в целом.
     </v-flex>
    <!--  <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
       Основным принципом работы компании, является высочайший уровень предоставляемых услуг. С нашей помощью пассажиры получают высококлассный сервис, а водители — достойно зарабатывают.
       Наша главная ценность и гордость  — это наши сотрудники.
     </v-flex> -->
-    <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
+    <v-flex class="thin" md6 xs10>
        Мы сотрудничаем с профессионалами, с большой ответственностью подходящим к своему делу, соблюдающими этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем  виде. 
     </v-flex>
-    <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>
+    <v-flex class="thin" md6  xs10>
       Приглашаем к сотрудничеству! 
       <ul>
         <li>Водителей на автомобили нашего автопарка</li>
@@ -28,16 +31,17 @@
         <li>Автопарки бизнес и премиум класса</li>
       </ul>
     </v-flex>
-    <v-flex class="thin" offset-md2 md5 offset-xs1 xs10>Cтаньте частью команды и зарабатывайте вместе с <b style="color: #136CE2;">JEEVES</b>!</v-flex>
-    <v-flex offset-md2 md8 offset-xs1 xs10>
+    <v-flex class="thin" md6 xs10>Cтаньте частью команды и зарабатывайте вместе с <b style="color: #136CE2;">JEEVES</b>!</v-flex>
+    <v-flex md8  xs10>
       <p class="driver-title"> Преимущества работы с JEEVES </p>
     </v-flex>
-    <v-flex offset-xs1 xs9>
+    <v-flex xs12>
       <AboutVector style="max-width: 1500px;" :aboutBuisness="false"/>
     </v-flex>
     <v-flex offset-md2 md8 offset-xs1 xs10>
       <p class="driver-title"> Станьте партнёром JEEVES прямо сейчас </p>
     </v-flex>
+      </div>
     <DriverForm/>
   </v-layout>
 </template>
@@ -71,10 +75,10 @@ import DriverForm from '~/components/Drivers/DriverForm.vue'
 </script>
 
 <style lang="stylus" scoped>
-.v-responsive__content
-  align-self: flex-end;
 .full-screen
   width 100vw
+  display flex 
+  justify-content center
 div[data-v-00bd8e1c].container
   align-items: flex-end !important
 .parallax-screen
@@ -123,8 +127,10 @@ li
 }
 </style>
 <style type="text/css">
-.v-responsive__content{
+div[data-v-374f68fe] .v-responsive__content{
   align-self: flex-end;
+  display: flex;
+  justify-content: center;
 }
 </style>
 
