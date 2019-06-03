@@ -25,7 +25,7 @@
           solo
           background-color="#333333"
           dark
-          style="width: 40% !important;"
+          style="width: 40% !important; background-color: #333333 !important"
         ></v-select>
         <v-text-field
           class='tel-mask'

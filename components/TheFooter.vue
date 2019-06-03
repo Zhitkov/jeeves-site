@@ -12,7 +12,7 @@
 		<v-flex offset-xs2 xs3>
 
 			<v-card-title class="size">
-				<Logo style="width: 70px;  margin-top: -130px;"/>
+				<v-img style="width: 35px;" :src="logo"></v-img>
 				<strong class="subheading">
 					<ul>
 						<nuxt-link tag="li" to="/drivers">Водителям</nuxt-link>
@@ -64,11 +64,11 @@
 </v-footer>
 </template>
 <script>
-import Logo from '~/components/layouts/Logo.vue'
+// import Logo from '~/components/layouts/Logo.vue'
 
   export default {
   	components: {
-      Logo,
+      // Logo,
   },
     data: () => ({
       icons: [
@@ -78,6 +78,7 @@ import Logo from '~/components/layouts/Logo.vue'
         'fab fa-linkedin',
         'fab fa-instagram'
       ],
+      logo: require('../static/logos/footer-logo.svg')
     }),
   }
 </script>

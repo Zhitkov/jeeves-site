@@ -1,5 +1,5 @@
 <template>
-		<v-flex xs12 style="height: 55vh;">
+		<v-flex xs12 style="height: 65vh;">
 	<v-img cover :src="bg" style="width: 100vw;">
 			<v-layout row wrap>
 				<v-flex offset-md2 md5 offset-xs1 xs10 class="fourth-block">
@@ -21,6 +21,7 @@
 					:src="phone"
 					:lazy-src="phone"
 					position="center 20%"
+					sizes="150%"
 					>
 				</v-img>
 			</v-flex>
@@ -113,14 +114,17 @@ export default {
 	}
 }
 .v-responsive__content {
-	    height: 55vh;
+	    height: 65vh;
 }
 </style>
 <style type="text/css">
 div[data-v-32a09d94] .v-responsive__content{
 	    align-self: center;
 }
+div[data-v-32a09d94] .v-image__image.v-image__image--cover{
+	background-size: 150%;
+}
 div[data-v-32a09d94] .v-responsive.v-image{
-	    height: 55vh;
+	    height: 65vh;
 }
 </style>

@@ -92,4 +92,9 @@
 		background: #fff !important;
 		border-radius: 10px;
 	}
+.v-text-field--outline.v-input--has-state>.v-input__control>.v-input__slot, .v-text-field--outline.v-input--is-focused>.v-input__control>.v-input__slot {
+    border: 2px solid;
+    transition: border .3s cubic-bezier(.25,.8,.5,1);
+    background: white !important;
+}
 </style>
