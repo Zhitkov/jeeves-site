@@ -24,7 +24,7 @@ export default {
     },
 	data () {
 		return {
-			bg: require('../../static/Signin/bg.png'),
+			bg: require('../../static/Signin/bg.webp'),
 		}
 	}
 }

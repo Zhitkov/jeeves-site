@@ -39,8 +39,8 @@
     },
     data () {
       return {
-        phone: require('../../static/Assistent/phone.png'),
-        bg: require('../../static/Assistent/bg.png'),
+        phone: require('../../static/Assistent/phone.webp'),
+        bg: require('../../static/Assistent/bg.webp'),
         texts2: 
         [
         	{

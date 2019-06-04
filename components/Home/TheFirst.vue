@@ -32,7 +32,7 @@ import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
     },
     data () {
       return {
-        bg: require('../../static/Home/First.png')
+        bg: require('../../static/Home/First.webp')
       
     }
   }

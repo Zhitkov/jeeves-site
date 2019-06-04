@@ -1,5 +1,5 @@
 <template>
-	<v-container fluid style="background-size: 100% 100vh; background-position: center -25vh; padding: auto 0; min-width: 100vw; margin-bottom: 165px; height: 100vh;" >
+	<v-container fluid style="background-size: 100% 110vh; background-position: center -25vh; padding: auto 0; min-width: 100vw; margin-bottom: 165px; height: 100vh;" >
 	  <v-layout column wrap >
 	    <v-flex xs12>
 	    <v-flex offset-md2 md8 xs12 class="text-c third-container">

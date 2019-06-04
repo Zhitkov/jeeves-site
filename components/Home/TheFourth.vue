@@ -1,6 +1,6 @@
 <template>
 		<v-flex xs12 style="height: 55vh;">
-	<v-img cover :src="bg" style="width: 100vw;">
+	<v-img cover :src="bg" style="width: 100vw; max-height:70vh">
 			<v-layout style="display: flex; justify-content: center;" row wrap>
 				<div class="static">
 				<v-flex px-2 mx-4 md6 xs12 class="fourth-block">
@@ -41,9 +41,9 @@ export default {
     },
 	data () {
 		return {
-			phone: require('../../static/Home/Fourth/iphone.png'),
+			phone: require('../../static/Home/Fourth/iphone.webp'),
 			logo: require('../../static/logos/logo2.svg'),
-		    bg: require('../../static/Home/Fourth/bg.png'),
+		    bg: require('../../static/Home/Fourth/bg.webp'),
 		}
 	}
 }

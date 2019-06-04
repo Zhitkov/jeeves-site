@@ -163,7 +163,7 @@
     data () {
       return {
         logo: require('../../static/logos/logo2.svg'),
-        bg: require('../../static/Contacts/bg.png'),
+        bg: require('../../static/Contacts/bg.webp'),
         dialog: false,
         dialog2: false,
         on: true

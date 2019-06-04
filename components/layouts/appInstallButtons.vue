@@ -1,7 +1,7 @@
 <template>
 	<div class="downloads text-c">
-        <img src="../../static/buttons/android.png" alt="downloads android">
-        <img src="../../static/buttons/Ios.png" alt="downloads ios">
+        <img src="../../static/buttons/android.webp" alt="downloads android">
+        <img src="../../static/buttons/Ios.webp" alt="downloads ios">
       </div>
 </template>
 <style type="text/css" scoped>

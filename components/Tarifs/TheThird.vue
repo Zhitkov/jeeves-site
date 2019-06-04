@@ -2,7 +2,7 @@
 	<v-container mb-5 pa-0 style="width: 100vw">
 	  <v-layout v-for="car in cars" row wrap>
 	  		<v-flex offset-xs1 md10 xs12 class="car-block">
-	    <v-flex class="third-car"
+	    <v-flex class="third-car" style="display: flex; align-self: center;"
 	     px-2 offset-md1 md7 xs12  >
 	      <v-carousel 
 	      	light

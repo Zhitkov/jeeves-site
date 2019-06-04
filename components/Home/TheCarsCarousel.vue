@@ -29,27 +29,27 @@ import Vuetify, {
       return {
         cars: [
           {
-            src: require('../../static/cars/luxe1.png'),
+            src: require('../../static/cars/luxe1.webp'),
             pos: 'first',
             text: 'VIP',
             current: false
           },
           {
-            src: require('../../static/cars/vip1.png'),
+            src: require('../../static/cars/vip1.webp'),
             pos: 'second',
             text: 'Премиум',
             mark: 'Premium wow car',
             current: true
           },
           {
-            src: require('../../static/cars/plus1.png'),
+            src: require('../../static/cars/plus1.webp'),
             pos: 'third',
             text: 'Минивен',
             mark: 'Miniven wow car',
             current: false
           },
           {
-            src: require('../../static/cars/business1.png'),
+            src: require('../../static/cars/business1.webp'),
             pos: 'four',
             text: 'Бизнес',
             mark: 'Buisness wow car',

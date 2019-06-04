@@ -44,7 +44,7 @@ export default {
 	data () {
 		return {
 			logo: require('../../static/logos/logo2bg.svg'),
-		    bg: require('../../static/Assistent/bg2.png'),
+		    bg: require('../../static/Assistent/bg2.webp'),
 		}
 	}
 }

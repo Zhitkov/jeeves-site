@@ -59,7 +59,7 @@ import DriverForm from '~/components/Drivers/DriverForm.vue'
     data () {
       return {
         logo: require('../../static/logos/logo2.svg'),
-        driver: require('../../static/Drivers/bg.png')
+        driver: require('../../static/Drivers/bg.webp')
       }
     },
     methods: {

@@ -34,7 +34,7 @@ export default {
     },
 	data () {
 		return {
-			bg: require('../../static/Buisness/bg.png'),
+			bg: require('../../static/Buisness/bg.webp'),
 		}
 	}
 }

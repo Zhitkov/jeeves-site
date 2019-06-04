@@ -49,10 +49,6 @@ export default {
     font-style: normal;
     src: url("../assets/fonts/9116.otf");
   }
-  .v-text-field--outline>.v-input-control>.v-input__slot 
-    background #fff !important
-    -webkit-border-radius auto !important 
-    border-radius auto !important 
 .theme--light.application
   background: #fff !important
 body
@@ -77,5 +73,12 @@ body
   .v-parallax__image{
     min-height: 137vh !important;
   }
+}
+</style>
+<style type="text/css">
+  .v-input__slot {
+    background: transparent!important;
+    background: white !important;
+    border-radius: 4px;
 }
 </style>

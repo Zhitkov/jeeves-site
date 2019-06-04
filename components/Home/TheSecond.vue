@@ -26,7 +26,7 @@
 	export default {
 		data() {
 			return {
-				bg: require('../../static/Home/Second.png')
+				bg: require('../../static/Home/Second.webp')
 			}
 		}
 	}
