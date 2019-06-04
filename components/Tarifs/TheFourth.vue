@@ -60,9 +60,9 @@ export default {
     },
 	data () {
 		return {
-			bg: require('../../static/tarifs/Fourth/car.png'),
-			phone: require('../../static/tarifs/Fourth/phones.png'),
-			logo: require('../../static/logos/logo2.png'),
+			bg: require('../../static/tarifs/Fourth/car.webp'),
+			phone: require('../../static/tarifs/Fourth/phones.webp'),
+			logo: require('../../static/logos/logo2.svg'),
 		}
 	}
 }

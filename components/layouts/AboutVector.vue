@@ -1,6 +1,6 @@
 <template>
-	<v-layout v-if="aboutBuisness" row wrap>
-			<v-flex sm10 md2 offset-md1 offset-xs0>
+	<v-layout style="display: flex; justify-content: space-between;" v-if="aboutBuisness" row wrap>
+			<v-flex sm10 md2 offset-xs0>
 				<svg width="66" height="65" viewBox="0 0 66 65" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<rect x="1" y="1" width="39.7889" height="8.94472" rx="4.47236" stroke="white" stroke-width="2"/>
 					<rect x="16.5879" y="10.2861" width="39.7889" height="8.94472" rx="4.47236" stroke="white" stroke-width="2"/>
@@ -61,8 +61,8 @@
 				<p class="title2">Возможность установки лимитов для сотрудников</p>
 			</v-flex>
 	</v-layout>
-	<v-layout v-else row wrap>
-			<v-flex offset-xs1 sm10 md2>
+	<v-layout style="display: flex;justify-content: space-between;" v-else row wrap>
+			<v-flex sm10 md2>
 				<svg width="79" height="80" viewBox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M1 18.4336C1 15.1199 3.68629 12.4336 7 12.4336H68.5159C71.8296 12.4336 74.5159 15.1199 74.5159 18.4336V72.9996C74.5159 76.3133 71.8296 78.9996 68.5159 78.9996H7.00001C3.6863 78.9996 1 76.3133 1 72.9996V18.4336Z" stroke="#1D1919" stroke-width="2"/>
 					<path d="M8.4458 20.377H73.5286" stroke="#1D1919" stroke-width="2" stroke-linecap="round"/>
@@ -134,7 +134,7 @@ export default {
 	    display: flex;
 	    flex-direction: column;
 	    align-items: center;
-	    padding: 20px;
+	    padding: 10px;
     }
     .flex.sm10.md2 .title2 {
     	font-size: 14px !important;

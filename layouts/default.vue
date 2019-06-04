@@ -1,11 +1,11 @@
 <template>
   <v-app light>
-    <v-container v-if="false" class="loading-container" fill-height fluid>
+<!--     <v-container v-if="false" class="loading-container" fill-height fluid>
       <v-layout row justify-center align-center>
         <v-progress-circular indeterminate :size="70" :width="7" color="white"></v-progress-circular>
       </v-layout>
-    </v-container>
-    <div v-else>
+    </v-container> -->
+    <div>
       <TheNavbar class="nav-fix"/>
         <nuxt />
       <TheFooter/>
@@ -26,26 +26,24 @@ export default {
     loading: true
   }),
   mounted() {
-    // window.addEventListener("load", function(event) {
-    //   console.log("All resources finished loading!");
-    // });
+
   },
   methods: {
     look : () => {
       return this.loading = false;;
     }
   }
-  // mounted () {
-  //   this.$nextTick(() => {
-  //     this.$nuxt.$loading.start();
-  //     this.loading = false
-  //     setTimeout(() => this.$nuxt.$loading.finish(), 1000)
-  //   })
-  // }
+ 
 }
 </script>
 
 <style lang="stylus">
+.static 
+  justify-self: center;
+  display: flex;
+  align-self: center;
+  max-width: 1200px !important;
+  // width: 1200px !important;
 @font-face {
     font-family: Neue;
     font-style: normal;
@@ -56,8 +54,10 @@ export default {
 body
   overflow: hidden
   background: #fff
+  .v-parallax__image
+    min-height: 110vh;
   .loading-container
-     background: #000000;
+    background: #000000;
   .nav-fix
     position: fixed;
     z-index: 9999;
@@ -69,4 +69,16 @@ body
     cursor pointer
   .neue
     font-family 'Neue' !important
+@media screen and (max-width: 2000px) {
+  .v-parallax__image{
+    min-height: 137vh !important;
+  }
+}
+</style>
+<style type="text/css">
+  .v-input__slot {
+    background: transparent!important;
+    background: white !important;
+    border-radius: 4px;
+}
 </style>

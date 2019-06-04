@@ -1,10 +1,15 @@
 <template>
   <v-layout class="full-screen" row wrap>
-    <v-img class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" cover :src="require('../../static/tarifs/preview.png')" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
-      <v-flex offset-xs2>
-        <img style="padding-bottom: 42px;" :src="logo">
-      </v-flex>
+    <v-flex xs2>
+      
+      <v-img class="parallax-screen change" dark :lazy-src="require('../../static/tarifs/preview.png')" cover :src="require('../../static/tarifs/preview.png')" gradient="to top right, rgba(1, 22, 46, 0.2), rgba(1, 22, 46, 0.2)">
+        <div class="static">
+        <v-flex mx-3>
+          <img class="logo2" style="padding-bottom: 42px;" :src="logo">
+        </v-flex>
+        </div>
     </v-img>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -16,7 +21,7 @@
     },
     data () {
       return {
-        logo: require('../../static/logos/logo2.png'),
+        logo: require('../../static/logos/logo2.svg'),
       }
     },
     methods: {
@@ -32,10 +37,8 @@
 </script>
 
 <style lang="stylus" scoped>
-.v-responsive__content
-  align-self: flex-end;
 .full-screen
-  width 100vw
+  width 100vwz
 div[data-v-00bd8e1c].container
   align-items: flex-end !important
 .parallax-screen
@@ -52,6 +55,12 @@ div[data-v-00bd8e1c].container
   margin-bottom 10vw 
 </style>
 <style scoped>
+.logo2{
+
+}
+@media screen and (max-width: 1400px){
+
+}
 @media screen and (max-width: 900px){
   .First-text{
     font-size: 20px; 
@@ -63,7 +72,9 @@ div[data-v-00bd8e1c].container
 }
 </style>
 <style type="text/css">
-.v-responsive__content{
+div[data-v-00bd8e1c] .v-responsive__content{
+  display: flex;
+  justify-content: center;
   align-self: flex-end;
 }
 </style>

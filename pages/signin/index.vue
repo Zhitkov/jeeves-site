@@ -1,15 +1,13 @@
 <template>
-  <v-parallax class="parallax-screen" cover :src="bg" :lazy-src="bg">
-  <v-layout
+ <v-layout
     column
     justify-center
     align-center
   >
-    <v-flex xs12>
+    <!-- <v-flex xs12> -->
         <TheFirst />
-    </v-flex>
+    <!-- </v-flex> -->
   </v-layout>
-  </v-parallax>
 </template>
 
 <script>
@@ -27,8 +25,15 @@ export default {
 }
 </script>
 <style scoped>
+
   .parallax-screen{
   width: 100vw;
-  height: 80vh !important;
+  height: 100vh !important;
+}
+@media screen and (max-width: 900px){
+ .parallax-screen{
+  width: 100vw;
+  height: 120vh !important;
+}
 }
 </style>

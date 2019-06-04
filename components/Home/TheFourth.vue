@@ -1,30 +1,34 @@
 <template>
-	<v-container pa-0 :style="'background-image: url(' + bg + ')'" fluid>
-		<v-layout row wrap class="hei100">
-			<v-flex offset-xs2 xs5 class="fourth-container">
-				<img :src="logo">
-				<h1 class="neue" style="font-weight: 100;">Мобильное приложение</h1>
-				<div class="phone-container">
-					<p>Введите номер телефона, чтобы получить ссылку на приложение </p>
-					<div style="display: flex">
-						<PhoneForm/>
-						<v-btn large color="primary">Отправить заявку</v-btn>
+		<v-flex xs12 style="height: 55vh;">
+	<v-img cover :src="bg" style="width: 100vw; max-height:70vh">
+			<v-layout style="display: flex; justify-content: center;" row wrap>
+				<div class="static">
+				<v-flex px-2 mx-4 md6 xs12 class="fourth-block">
+					<img :src="logo">
+					<h1 class="neue">Мобильное приложение</h1>
+					<div class="phone-container">
+						<p>Введите номер телефона, чтобы получить ссылку на приложение </p>
+						<div style="display: flex">
+							<PhoneForm/>
+							<v-btn large color="primary">Отправить заявку</v-btn>
+						</div>
 					</div>
-				</div>
 					<appInstallButtons class="fourth-app-install"/>
-			</v-flex>
-			<v-flex  xs5 class="fourth-container">
+				</v-flex>
+				<v-flex  xs6 class="fourth-phone">
 					<v-img
 					xs5
-					cover
-                  :src="phone"
-                  :lazy-src="phone"
-                  position="center 20%"
-                >
-	            </v-img>
-	        </v-flex>
+					contain
+					:src="phone"
+					:lazy-src="phone"
+					position="120% 10%"
+					>
+				</v-img>
+			</v-flex>
+			</div>
 		</v-layout>
-	</v-container>
+</v-img>
+	</v-flex>
 </template>
 <script>
 import appInstallButtons from '~/components/layouts/appInstallButtons.vue'
@@ -37,9 +41,9 @@ export default {
     },
 	data () {
 		return {
-			bg: require('../../static/Home/Fourth/bg.png'),
-			phone: require('../../static/Home/Fourth/iphone.png'),
-			logo: require('../../static/logos/logo2.png'),
+			phone: require('../../static/Home/Fourth/iphone.webp'),
+			logo: require('../../static/logos/logo2.svg'),
+		    bg: require('../../static/Home/Fourth/bg.webp'),
 		}
 	}
 }
@@ -49,25 +53,22 @@ export default {
 	.neue {
 	  font-size: 36px;
 	  line-height: 36px; 
+	  font-weight: 100;
+	  color: white;
   	}
-	.hei100, .v-image {
-	    height: 100% !important;
-	}
-	.container {
-		background-size: cover;
-		width: 100vw;
-		height: 70vh;
-		color: white;
-	}
-	.fourth-container {
+	.fourth-block {
 		margin-top: 45px;
 	}
 	.phone-container {
+		font-weight: 300;
 		display: flex;
 		-webkit-flex-direction: column;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 		margin: 10% 0% 0%;
+	}
+	.phone-container > p {
+		color: #FFF;
 	}
 	.fourth-app-install {
 		text-align: left;
@@ -77,9 +78,19 @@ export default {
 	}
 </style>
 <style scoped>
+
+@media screen and (max-width: 1400px){
+.fourth-container {
+		margin-top: 45px;
+	}
+}
 @media screen and (max-width: 900px){
+	.fourth-container {
+		margin-top: 45px;
+	    padding-left: 0;
+	}
 	.container{
-		height: 85vh;
+		max-height: 80vh;
 	    padding: 20px !important;
     }
     .v-btn--large {
@@ -90,8 +101,8 @@ export default {
 	.fourth-app-install{
 		text-align: center !important;
 	}
-	.v-image{
-		display: none !important;
+	.fourth-phone {
+		display: none;
 	}
 	.phone-container > div{
 		display: flex;
@@ -102,5 +113,16 @@ export default {
 	.downloads{
 	    text-align: center !important;
 	}
+}
+.v-responsive__content {
+	    height: 55vh;
+}
+</style>
+<style type="text/css">
+div[data-v-32a09d94] .v-responsive__content{
+	    align-self: center;
+}
+div[data-v-32a09d94] .v-responsive.v-image{
+	    height: 55vh;
 }
 </style>

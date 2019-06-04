@@ -1,13 +1,15 @@
 <template>
-		<v-layout style="padding-top: 20vh; width: 100vw; height: 100vh; background: linear-gradient(to top, #000 0%, #ffffff50 100%) !important;" row wrap>
-		  <v-flex offset-xs1 xs10 offset-md1 md3 justify-start>
-		    <Logo style="margin-left: 80px"/>
+	<v-parallax class="parallax-screen" cover :src="bg" :lazy-src="bg">
+		<v-layout style="padding-top: 20vh; width: 100vw;" row wrap>
+		  <v-flex offset-xs3 xs6 offset-md3 md2 justify-start>
+		    <Logo/>
 		  </v-flex>
-		  <v-flex  pa-4 offset-md2 xs10 md3>
+		  <v-flex pl-5 offset-md1 md3 offset-xs1 xs10>
 		    <p class="title">Вход в личный кабинет</p>
 		    <Form class="signIn" :aboutBuisness="false"/>
 		  </v-flex>
 		</v-layout>
+  </v-parallax>
 </template>
 
 <script>
@@ -22,7 +24,7 @@ export default {
     },
 	data () {
 		return {
-			bg: require('../../static/Home/First.png'),
+			bg: require('../../static/Signin/bg.webp'),
 		}
 	}
 }

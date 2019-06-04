@@ -1,28 +1,32 @@
 <template>
-	<v-img class="second-block"  style="min-width: 100vw; width: auto;" :lazy-src="bg" :src="bg" fluid>
-		<v-layout style="justify-content: center" row wrap>
-			<v-flex xs8 style="margin: 20px 0 0 105px">
-				<v-flex offset-xs1 xs6 style="margin: 0 0 30px 0; min-width: 430px;">
-					<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
-				</v-flex>
-				<ul class="second-list">
-					<li>Тщательный отбор в соответствии со строгими критериями.</li>
-					<li>Классический костюм и галстук.</li>
-					<li>Владеют иностранными языками.</li>
-					<li>Подождут в аэропорту с табличкой, если укажете номер рейса.</li>
-					<li>Откроют для Вас дверь, помогут с багажом, в случае дождя встретят с зонтом. </li>
-					<li>Прислушиваются к Вашим пожеланиям по маршруту, музыке, температуре.</li>
-				</ul>
+			<v-layout row wrap>
+	<v-img class="second-block" cover style="justify-content: center; width: 100vw;" :lazy-src="bg" :src="bg">
+				<div class="static">
+				<v-flex px-2 mx-4 md12>
+					<v-flex xs10 md6>
+						<h1 class="second-title">Наши водители — профессионалы, соблюдающие этикет и корпоративные стандарты в выполнении своих обязанностей, в поведении и внешнем виде.</h1>
+					</v-flex>
+					<v-flex xs10 md6>
+					<ul class="second-list">
+						<li>Тщательный отбор в соответствии со строгими критериями.</li>
+						<li>Классический костюм и галстук.</li>
+						<li>Владеют иностранными языками.</li>
+						<li>Подождут в аэропорту с табличкой, если укажете номер рейса.</li>
+						<li>Откроют для Вас дверь, помогут с багажом, в случае дождя встретят с зонтом. </li>
+						<li>Прислушиваются к Вашим пожеланиям по маршруту, музыке, температуре.</li>
+					</ul>
+					</v-flex>
 
-			</v-flex>
-		</v-layout>
+				</v-flex>
+			</div>
 	</v-img>
+			</v-layout>
 </template>
 <script type="text/javascript">
 	export default {
 		data() {
 			return {
-				bg: require('../../static/Home/Second.png')
+				bg: require('../../static/Home/Second.webp')
 			}
 		}
 	}
@@ -30,22 +34,23 @@
 <style lang="stylus" scoped>
 .container 
 	background-size cover
-	background-color #000 
 	margin 0
 	width 100vw !important
 	padding 0 5vw
 	height auto
-.flex
-	    margin 3vw 0
+// .flex
+// 	    margin 3vw 0
 </style>
 <style scoped>
 .second-title{
 	color: white;
     font-size: 21px; 
 	margin: 10px auto;
+	font-weight: 500
 }
 .second-list{
 	margin: 10px 10px 10px 0px;
+	font-weight: 500
 }
 .second-list > li{
 	color: white;
@@ -69,5 +74,10 @@
 <style type="text/css">
 .second-block .v-responsive__content {
 	align-self: center !important;
+	display: flex;
+    justify-content: center;
+}
+.layout.row.wrap[data-v-e67e62e0] .v-responsive__sizer {
+	padding: 10% 0 !important;
 }
 </style>

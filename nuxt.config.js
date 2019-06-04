@@ -1,6 +1,7 @@
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
+
 module.exports = {
   mode: 'universal',
 
@@ -21,6 +22,9 @@ module.exports = {
         href:
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
       }
+    ],
+     script: [
+      { src: 'https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/plugins/prefixfree.dynamic-dom.min.js' }
     ]
   },
 
